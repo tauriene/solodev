@@ -79,7 +79,7 @@ const translations = {
     ru: {
         meta_title: 'Бизнес-решения под ключ | Не теряйте заявки',
         logo: 'нексиум.дев',
-        header_telegram: 'Telegram →',
+        header_telegram: 'Telegram',
         hero_badge_1: 'Автоматизация для малого бизнеса',
         hero_badge_2: 'ИИ-ассистенты 24/7',
         hero_badge_3: 'CRM и онлайн-запись',
@@ -203,7 +203,7 @@ const translations = {
     en: {
         meta_title: 'Turnkey Business Automation | Stop Losing Leads',
         logo: 'nexium.dev',
-        header_telegram: 'Telegram →',
+        header_telegram: 'Telegram',
         hero_badge_1: 'Small Business Automation',
         hero_badge_2: 'AI Assistants 24/7',
         hero_badge_3: 'CRM and Online Booking',
@@ -438,64 +438,46 @@ function initShowcaseTilt() {
     });
 }
 
-function initPortfolioFilters() {
-    const pills = document.querySelectorAll('.pf-filter-pill');
-    const cells = document.querySelectorAll('.pf-cell');
-    if (!pills.length || !cells.length) return;
+function initBurgerMenu() {
+    const burgerBtn = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    if (!burgerBtn || !mobileMenu || !backdrop) return;
 
-    pills.forEach((pill) => {
-        pill.addEventListener('click', () => {
-            pills.forEach((item) => item.classList.remove('on'));
-            pill.classList.add('on');
-
-            const value = pill.dataset.filter;
-            cells.forEach((cell) => {
-                const niche = cell.dataset.niche;
-                const match = value === 'all' || niche === value;
-                cell.style.display = match ? 'block' : 'none';
-            });
-        });
-    });
-}
-
-function initPseudoRouting() {
-    const mainView = document.getElementById('site-main');
-    const portfolioView = document.getElementById('portfolio-view');
-    const portfolioLink = document.querySelector('[data-nav=\"cases\"]');
-    const homeLink = document.querySelector('[data-nav=\"home\"]');
-    if (!mainView || !portfolioView || !portfolioLink || !homeLink) return;
-
-    const setView = (view) => {
-        const showCases = view === 'cases';
-        mainView.hidden = showCases;
-        portfolioView.hidden = !showCases;
-        portfolioLink.classList.toggle('is-active', showCases);
-        window.scrollTo({ top: 0, behavior: 'auto' });
+    const openMenu = () => {
+        burgerBtn.classList.add('is-open');
+        burgerBtn.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.add('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        backdrop.classList.add('is-visible');
+        document.body.style.overflow = 'hidden';
     };
 
-    const syncFromHash = () => {
-        setView(window.location.hash === '#cases' ? 'cases' : 'home');
+    const closeMenu = () => {
+        burgerBtn.classList.remove('is-open');
+        burgerBtn.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        backdrop.classList.remove('is-visible');
+        document.body.style.overflow = '';
     };
 
-    portfolioLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        if (window.location.hash !== '#cases') {
-            window.location.hash = 'cases';
-        } else {
-            setView('cases');
-        }
+    burgerBtn.addEventListener('click', () => {
+        const isOpen = burgerBtn.classList.contains('is-open');
+        isOpen ? closeMenu() : openMenu();
     });
 
-    homeLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        if (window.location.hash === '#cases') {
-            history.pushState('', document.title, window.location.pathname + window.location.search);
-        }
-        setView('home');
+    backdrop.addEventListener('click', closeMenu);
+
+    // Close on link click
+    mobileMenu.querySelectorAll('.mobile-menu-link').forEach((link) => {
+        link.addEventListener('click', closeMenu);
     });
 
-    window.addEventListener('hashchange', syncFromHash);
-    syncFromHash();
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeMenu();
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -510,8 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     applyTranslations(defaultLanguage);
     initShowcaseTilt();
-    initPortfolioFilters();
-    initPseudoRouting();
+    initBurgerMenu();
     updateMobileServiceLabel();
 
     document.querySelectorAll('[data-mobile-nav]').forEach((button) => {
