@@ -4,19 +4,45 @@ function switchTab(paneId, btnElement) {
     btnElement.classList.add('active');
 
     const panes = document.querySelectorAll('.panel-pane');
-    panes.forEach((pane) => pane.classList.remove('active'));
+    const currentPane = document.querySelector('.panel-pane.active');
+    if (currentPane && currentPane.id !== paneId) {
+        currentPane.classList.remove('active');
+        currentPane.classList.add('is-leaving');
+        setTimeout(() => {
+            currentPane.classList.remove('is-leaving');
+        }, 520);
+    }
 
     const activePane = document.getElementById(paneId);
     if (activePane) {
+        panes.forEach((pane) => {
+            if (pane !== activePane) {
+                pane.classList.remove('active');
+            }
+        });
         activePane.classList.add('active');
+        activePane.classList.remove('is-leaving');
     }
+
+    const idx = tabs.findIndex((tab) => tab === btnElement);
+    if (idx >= 0) {
+        currentTabIndex = idx;
+    }
+    updateMobileServiceLabel();
 }
 
-const tabs = document.querySelectorAll('.tabs-wrapper .badge[data-pane]');
+const tabs = Array.from(document.querySelectorAll('.tabs-wrapper .badge[data-pane]'));
 let autoSwitchInterval;
 let currentTabIndex = 0;
 
+function updateMobileServiceLabel() {
+    const label = document.querySelector('[data-mobile-service-label]');
+    if (!label || !tabs[currentTabIndex]) return;
+    label.textContent = tabs[currentTabIndex].textContent.trim();
+}
+
 function startAutoSwitch() {
+    if (window.matchMedia('(max-width: 768px)').matches) return;
     autoSwitchInterval = setInterval(() => {
         currentTabIndex = (currentTabIndex + 1) % tabs.length;
         const btn = tabs[currentTabIndex];
@@ -33,6 +59,7 @@ tabs.forEach((button, index) => {
         stopAutoSwitch();
         switchTab(button.dataset.pane, button);
         currentTabIndex = index;
+        updateMobileServiceLabel();
     });
 });
 
@@ -76,7 +103,33 @@ const translations = {
         tab_1: '01 / Сайты под задачу',
         tab_2: '02 / Системы записи',
         tab_3: '03 / Умные напоминания',
+        tab_4: '04 / Автоматизация с нуля + ИИ-системы',
         solutions_note: 'Нажмите на шаг, чтобы увидеть интерфейс решения изнутри.',
+        phone_site_label: 'nexium.site',
+        phone_site_title: 'Лендинг под услугу за 1 экран',
+        phone_site_copy: 'Чистый оффер, доверие и понятное целевое действие без лишних шагов.',
+        phone_site_cta: 'Записаться на консультацию',
+        phone_site_kpi_1: '+32% заявок',
+        phone_site_kpi_2: '0.8с загрузка',
+        phone_booking_label: 'Онлайн-запись',
+        phone_booking_title: 'Выберите слот',
+        phone_booking_day_1: 'Пн, 12',
+        phone_booking_day_2: 'Вт, 13',
+        phone_booking_day_3: 'Ср, 14',
+        phone_booking_confirm: 'Слот 12:00 подтвержден',
+        phone_remind_label: 'CRM · Напоминания',
+        phone_remind_title: 'Автоуведомления клиентам',
+        phone_remind_item_1: 'WhatsApp: «Напоминание за 2 часа отправлено»',
+        phone_remind_item_2: 'Telegram: «Клиент подтвердил визит»',
+        phone_remind_item_3: 'CRM: «Отзыв запрошен автоматически»',
+        phone_ai_label: 'Nexium OS · AI',
+        phone_ai_title: 'Система управления бизнесом',
+        phone_ai_copy: 'Операционные процессы, воронка и автоматизация в одной iOS-панели.',
+        phone_ai_item_1: 'AI-помощник: «План дня собран автоматически»',
+        phone_ai_item_2: 'Управление: «12 автосценариев в работе»',
+        phone_ai_item_3: 'CRM: «Потери лидов снижены ниже 3%»',
+        phone_ai_kpi_1: '+18% загрузки',
+        phone_ai_kpi_2: '12 процессов',
         pane_1_title: 'Конверсионные лендинги',
         pane_1_copy: 'Создаем лаконичные посадочные страницы, оптимизированные под мобильный трафик. Главная цель — заставить пользователя сделать целевое действие.',
         pane_1_mock_label: 'Интерактивный блок услуг',
@@ -174,7 +227,33 @@ const translations = {
         tab_1: '01 / Task-Focused Websites',
         tab_2: '02 / Booking Systems',
         tab_3: '03 / Smart Reminders',
+        tab_4: '04 / AI Business Systems',
         solutions_note: 'Click a step to preview the solution interface.',
+        phone_site_label: 'nexium.site',
+        phone_site_title: 'Landing page with one clear action',
+        phone_site_copy: 'A clean offer, social proof, and a focused CTA with no extra steps.',
+        phone_site_cta: 'Book a strategy call',
+        phone_site_kpi_1: '+32% leads',
+        phone_site_kpi_2: '0.8s load time',
+        phone_booking_label: 'Online Booking',
+        phone_booking_title: 'Choose a slot',
+        phone_booking_day_1: 'Mon, 12',
+        phone_booking_day_2: 'Tue, 13',
+        phone_booking_day_3: 'Wed, 14',
+        phone_booking_confirm: '12:00 slot confirmed',
+        phone_remind_label: 'CRM · Reminders',
+        phone_remind_title: 'Automated client notifications',
+        phone_remind_item_1: 'WhatsApp: "Reminder sent 2 hours before"',
+        phone_remind_item_2: 'Telegram: "Client confirmed the visit"',
+        phone_remind_item_3: 'CRM: "Review request sent automatically"',
+        phone_ai_label: 'Nexium OS · AI',
+        phone_ai_title: 'AI Business Control System',
+        phone_ai_copy: 'Operations, funnel, and automation in one iOS-style dashboard.',
+        phone_ai_item_1: 'AI Assistant: "Daily plan generated automatically"',
+        phone_ai_item_2: 'Control: "12 automation flows are active"',
+        phone_ai_item_3: 'CRM: "Lead leakage reduced below 3%"',
+        phone_ai_kpi_1: '+18% capacity',
+        phone_ai_kpi_2: '12 live flows',
         pane_1_title: 'Conversion Landing Pages',
         pane_1_copy: 'We build clean landing pages optimized for mobile traffic. The main goal is to drive users to a target action.',
         pane_1_mock_label: 'Interactive services block',
@@ -316,6 +395,47 @@ function applyTranslations(lang) {
     });
 
     localStorage.setItem('site-language', lang);
+    updateMobileServiceLabel();
+}
+
+function initShowcaseTilt() {
+    const root = document.querySelector('[data-tilt-root]');
+    const target = document.querySelector('[data-tilt-target]');
+    if (!root || !target) return;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+    let rafId;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    const animate = () => {
+        currentX += (targetX - currentX) * 0.12;
+        currentY += (targetY - currentY) * 0.12;
+        target.style.transform = `rotateX(${currentY}deg) rotateY(${currentX}deg) translateZ(0)`;
+        rafId = requestAnimationFrame(animate);
+    };
+
+    const handleMove = (event) => {
+        const rect = root.getBoundingClientRect();
+        const px = (event.clientX - rect.left) / rect.width - 0.5;
+        const py = (event.clientY - rect.top) / rect.height - 0.5;
+        targetX = px * 14;
+        targetY = -py * 14;
+    };
+
+    root.addEventListener('mousemove', handleMove, { passive: true });
+    root.addEventListener('mouseleave', () => {
+        targetX = 0;
+        targetY = 0;
+    });
+
+    animate();
+
+    window.addEventListener('beforeunload', () => {
+        cancelAnimationFrame(rafId);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -329,6 +449,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     applyTranslations(defaultLanguage);
+    initShowcaseTilt();
+    updateMobileServiceLabel();
+
+    document.querySelectorAll('[data-mobile-nav]').forEach((button) => {
+        button.addEventListener('click', () => {
+            stopAutoSwitch();
+            const dir = button.dataset.mobileNav === 'next' ? 1 : -1;
+            currentTabIndex = (currentTabIndex + dir + tabs.length) % tabs.length;
+            const nextTab = tabs[currentTabIndex];
+            switchTab(nextTab.dataset.pane, nextTab);
+        });
+    });
 
     const observerOptions = {
         root: null,
