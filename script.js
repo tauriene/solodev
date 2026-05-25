@@ -351,9 +351,16 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    const cardElements = document.querySelectorAll('.card, .p3-cell, .hero-actions');
+    const cardElements = document.querySelectorAll('.card, .hero-actions');
     cardElements.forEach((el) => {
         el.classList.add('animate-on-scroll', 'animate-slide');
+        observer.observe(el);
+    });
+
+    const p3Cells = document.querySelectorAll('.p3-cell');
+    p3Cells.forEach((el, index) => {
+        el.classList.add('animate-on-scroll', 'animate-fade-right');
+        el.style.transitionDelay = `${index * 0.15}s`;
         observer.observe(el);
     });
 
