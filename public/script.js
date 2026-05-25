@@ -198,7 +198,18 @@ const translations = {
         industry_4: 'Онлайн-платформы',
         industry_5: 'Фитнес-клубы',
         industry_6: 'Студии йоги',
-        typewriter_text: 'Начните их обрабатывать!'
+        typewriter_text: 'Начните их обрабатывать!',
+        footer_privacy: 'Политика конфиденциальности',
+        footer_agreement: 'Согласие на обработку персональных данных',
+        footer_copyright: '© 2017—2026 «Nexium» —<br>студия автоматизации бизнеса',
+        footer_legal: 'ИП Некрасов Виктор Владимирович<br>ИНН 710407135800<br>ОГРНИП 317715400000700',
+        footer_nav_about: 'О нас',
+        footer_nav_portfolio: 'Портфолио',
+        footer_nav_services: 'Услуги',
+        footer_nav_clients: 'Клиенты',
+        footer_nav_prices: 'Цены',
+        footer_nav_contacts: 'Контакты',
+        footer_up: 'Вверх'
     },
     en: {
         meta_title: 'Turnkey Business Automation | Stop Losing Leads',
@@ -322,7 +333,18 @@ const translations = {
         industry_4: 'Online Platforms',
         industry_5: 'Fitness Clubs',
         industry_6: 'Yoga Studios',
-        typewriter_text: 'Start processing them now!'
+        typewriter_text: 'Start processing them now!',
+        footer_privacy: 'Privacy Policy',
+        footer_agreement: 'Personal Data Processing Agreement',
+        footer_copyright: '© 2017—2026 "Nexium" —<br>business automation studio',
+        footer_legal: 'Individual Entrepreneur Nekrasov Viktor Vladimirovich<br>TIN 710407135800<br>OGRNIP 317715400000700',
+        footer_nav_about: 'About Us',
+        footer_nav_portfolio: 'Portfolio',
+        footer_nav_services: 'Services',
+        footer_nav_clients: 'Clients',
+        footer_nav_prices: 'Pricing',
+        footer_nav_contacts: 'Contacts',
+        footer_up: 'Up'
     }
 };
 

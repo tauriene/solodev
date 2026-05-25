@@ -12,16 +12,16 @@ export default function Footer() {
       <div className="container footer-container">
 
         <div className="footer-col footer-col-info">
-          <Link to="/" className="footer-logo">нексиум.дев</Link>
+          <Link to="/" className="footer-logo" data-i18n="logo">нексиум.дев</Link>
           <div className="footer-text-small">
-            <a href="#">Политика конфиденциальности</a><br />
-            <a href="#">Согласие на обработку персональных данных</a>
+            <a href="#" data-i18n="footer_privacy">Политика конфиденциальности</a><br />
+            <a href="#" data-i18n="footer_agreement">Согласие на обработку персональных данных</a>
           </div>
-          <div className="footer-text-small mt-4">
+          <div className="footer-text-small mt-4" data-i18n-html="footer_copyright">
             © 2017—2026 «Nexium» —<br />
             студия автоматизации бизнеса
           </div>
-          <div className="footer-text-small mt-4">
+          <div className="footer-text-small mt-4" data-i18n-html="footer_legal">
             ИП Некрасов Виктор Владимирович<br />
             ИНН 710407135800<br />
             ОГРНИП 317715400000700
@@ -30,17 +30,17 @@ export default function Footer() {
 
         <div className="footer-col footer-col-nav">
           <ul className="footer-nav">
-            <li><Link to="/">О нас</Link></li>
-            <li><Link to="/cases">Портфолио</Link></li>
-            <li><Link to="/">Услуги</Link></li>
+            <li><Link to="/" data-i18n="footer_nav_about">О нас</Link></li>
+            <li><Link to="/cases" data-i18n="footer_nav_portfolio">Портфолио</Link></li>
+            <li><Link to="/" data-i18n="footer_nav_services">Услуги</Link></li>
           </ul>
         </div>
 
         <div className="footer-col footer-col-nav">
           <ul className="footer-nav">
-            <li><Link to="/">Клиенты</Link></li>
-            <li><Link to="/">Цены</Link></li>
-            <li><Link to="/">Контакты</Link></li>
+            <li><Link to="/" data-i18n="footer_nav_clients">Клиенты</Link></li>
+            <li><Link to="/" data-i18n="footer_nav_prices">Цены</Link></li>
+            <li><Link to="/" data-i18n="footer_nav_contacts">Контакты</Link></li>
           </ul>
         </div>
 
@@ -52,7 +52,7 @@ export default function Footer() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="18 15 12 9 6 15"></polyline>
             </svg>
-            Вверх
+            <span data-i18n="footer_up">Вверх</span>
           </button>
         </div>
 
