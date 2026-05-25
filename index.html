@@ -149,53 +149,105 @@
                             <button class="badge active" data-pane="pane-1" data-i18n="tab_1">01 / Сайты под задачу</button>
                             <button class="badge" data-pane="pane-2" data-i18n="tab_2">02 / Системы записи</button>
                             <button class="badge" data-pane="pane-3" data-i18n="tab_3">03 / Умные напоминания</button>
+                            <button class="badge" data-pane="pane-4" data-i18n="tab_4">04 / Автоматизация с нуля + ИИ-системы</button>
                         </div>
                         <p class="solutions-note" data-i18n="solutions_note">Нажмите на шаг, чтобы увидеть интерфейс решения изнутри.</p>
                     </div>
 
-                    <div class="card solution-card">
-                        <div class="panels-stack">
+                    <div class="solution-showcase">
+                        <div class="mobile-service-nav" aria-label="Mobile services switcher">
+                            <button class="mobile-nav-btn" type="button" data-mobile-nav="prev" aria-label="Previous service">←</button>
+                            <div class="mobile-service-label" data-mobile-service-label></div>
+                            <button class="mobile-nav-btn" type="button" data-mobile-nav="next" aria-label="Next service">→</button>
+                        </div>
+                        <div class="showcase-glow"></div>
+                        <div class="iphone-stage" data-tilt-root>
+                            <div class="iphone-shadow"></div>
+                            <div class="iphone-device" data-tilt-target>
+                                <div class="iphone-frame-reflect"></div>
+                                <div class="iphone-notch"></div>
+                                <div class="iphone-screen">
+                                    <div class="panels-stack phone-panels">
+                                        <div class="panel-pane phone-pane active" id="pane-1">
+                                            <div class="phone-app phone-app-landing">
+                                                <div class="phone-app-topline" data-i18n="phone_site_label">nexium.site</div>
+                                                <h3 class="phone-title" data-i18n="phone_site_title">Лендинг под услугу за 1 экран</h3>
+                                                <p class="phone-copy" data-i18n="phone_site_copy">Чистый оффер, доверие и понятное целевое действие без лишних шагов.</p>
+                                                <button class="phone-cta" type="button" data-i18n="phone_site_cta">Записаться на консультацию</button>
+                                                <div class="phone-kpis">
+                                                    <span class="phone-kpi" data-i18n="phone_site_kpi_1">+32% заявок</span>
+                                                    <span class="phone-kpi" data-i18n="phone_site_kpi_2">0.8с загрузка</span>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                            <div class="panel-pane active" id="pane-1">
-                                <h3 class="text-accent" data-i18n="pane_1_title">Конверсионные лендинги</h3>
-                                <p class="panel-copy" data-i18n="pane_1_copy">Создаем лаконичные посадочные страницы, оптимизированные под мобильный трафик. Главная цель — заставить пользователя сделать целевое действие.</p>
-                                <div class="mock-ui">
-                                    <div class="mock-placeholder">
-                                        <div class="mock-placeholder-label" data-i18n="pane_1_mock_label">Интерактивный блок услуг</div>
+                                        <div class="panel-pane phone-pane" id="pane-2">
+                                            <div class="phone-app phone-app-booking">
+                                                <div class="phone-app-topline" data-i18n="phone_booking_label">Онлайн-запись</div>
+                                                <h3 class="phone-title" data-i18n="phone_booking_title">Выберите слот</h3>
+                                                <div class="phone-calendar">
+                                                    <div class="phone-calendar-day active" data-i18n="phone_booking_day_1">Пн, 12</div>
+                                                    <div class="phone-calendar-day" data-i18n="phone_booking_day_2">Вт, 13</div>
+                                                    <div class="phone-calendar-day" data-i18n="phone_booking_day_3">Ср, 14</div>
+                                                </div>
+                                                <div class="phone-slots">
+                                                    <div class="phone-slot">10:30</div>
+                                                    <div class="phone-slot active">12:00</div>
+                                                    <div class="phone-slot">14:30</div>
+                                                </div>
+                                                <div class="phone-confirm" data-i18n="phone_booking_confirm">Слот 12:00 подтвержден</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-pane phone-pane" id="pane-3">
+                                            <div class="phone-app phone-app-reminders">
+                                                <div class="phone-app-topline" data-i18n="phone_remind_label">CRM · Напоминания</div>
+                                                <h3 class="phone-title" data-i18n="phone_remind_title">Автоуведомления клиентам</h3>
+                                                <div class="notify-list">
+                                                    <div class="notify-item">
+                                                        <span class="notify-dot"></span>
+                                                        <span data-i18n="phone_remind_item_1">WhatsApp: «Напоминание за 2 часа отправлено»</span>
+                                                    </div>
+                                                    <div class="notify-item">
+                                                        <span class="notify-dot"></span>
+                                                        <span data-i18n="phone_remind_item_2">Telegram: «Клиент подтвердил визит»</span>
+                                                    </div>
+                                                    <div class="notify-item">
+                                                        <span class="notify-dot"></span>
+                                                        <span data-i18n="phone_remind_item_3">CRM: «Отзыв запрошен автоматически»</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-pane phone-pane" id="pane-4">
+                                            <div class="phone-app phone-app-automation">
+                                                <div class="phone-app-topline" data-i18n="phone_ai_label">Nexium OS · AI</div>
+                                                <h3 class="phone-title" data-i18n="phone_ai_title">Система управления бизнесом</h3>
+                                                <p class="phone-copy" data-i18n="phone_ai_copy">Операционные процессы, воронка и автоматизация в одной iOS-панели.</p>
+                                                <div class="notify-list">
+                                                    <div class="notify-item">
+                                                        <span class="notify-dot"></span>
+                                                        <span data-i18n="phone_ai_item_1">AI-помощник: «План дня собран автоматически»</span>
+                                                    </div>
+                                                    <div class="notify-item">
+                                                        <span class="notify-dot"></span>
+                                                        <span data-i18n="phone_ai_item_2">Управление: «12 автосценариев в работе»</span>
+                                                    </div>
+                                                    <div class="notify-item">
+                                                        <span class="notify-dot"></span>
+                                                        <span data-i18n="phone_ai_item_3">CRM: «Потери лидов снижены ниже 3%»</span>
+                                                    </div>
+                                                </div>
+                                                <div class="phone-kpis">
+                                                    <span class="phone-kpi" data-i18n="phone_ai_kpi_1">+18% загрузки</span>
+                                                    <span class="phone-kpi" data-i18n="phone_ai_kpi_2">12 процессов</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <button class="btn mock-action" data-i18n="pane_1_mock_button">ВЫБРАТЬ ВРЕМЯ ВИЗИТА</button>
                                 </div>
                             </div>
-
-                            <div class="panel-pane" id="pane-2">
-                                <h3 class="text-accent" data-i18n="pane_2_title">Единая CRM и онлайн-запись</h3>
-                                <p class="panel-copy" data-i18n="pane_2_copy">Интегрируем календарь, где клиенты видят актуальные окна 24/7. Администратор получает уведомление и готовую карточку без рутины в чатах.</p>
-                                <div class="mock-ui mock-ui-column">
-                                    <div class="crm-row crm-row-accent">
-                                        <div class="crm-label" data-i18n="pane_2_row_1">Детейлинг / Мастер: Иван</div>
-                                        <div class="badge active badge-compact" data-i18n="pane_2_status_1">НОВАЯ ЗАЯВКА</div>
-                                    </div>
-                                    <div class="crm-row crm-row-done">
-                                        <div class="crm-label" data-i18n="pane_2_row_2">Стрижка / Мастер: Алекс</div>
-                                        <div class="badge badge-compact badge-done" data-i18n="pane_2_status_2">ПОДТВЕРЖДЕНО</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="panel-pane" id="pane-3">
-                                <h3 class="text-accent" data-i18n="pane_3_title">Автоматизация мессенджеров</h3>
-                                <p class="panel-copy" data-i18n="pane_3_copy">Настраиваем триггерных ботов (WhatsApp/Telegram). Они автоматически подтверждают запись, напоминают за 2 часа и соберут отзывы. Минимум отмен.</p>
-                                <div class="mock-ui">
-                                    <div class="chat-bubble" data-i18n-html="pane_3_chat_html">
-                                        ⚡️ <strong>NexiumBot:</strong> Вы записаны на завтра в 15:00. Подтвердите, пожалуйста, свой визит кнопкой ниже.
-                                    </div>
-                                    <div class="chat-actions">
-                                        <div class="chat-action chat-action-confirm" data-i18n="pane_3_action_1">ПОДТВЕРДИТЬ</div>
-                                        <div class="chat-action chat-action-cancel" data-i18n="pane_3_action_2">ОТМЕНИТЬ</div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
