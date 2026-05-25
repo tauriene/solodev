@@ -161,7 +161,6 @@ section {
 #hero {
     min-height: 100vh;
     min-height: 100dvh;
-    padding-top: 0;
 }
 
 .container {
@@ -386,6 +385,10 @@ button.badge:hover:not(.active) {
     height: 90vw;
     background: radial-gradient(circle, rgba(200, 241, 53, 0.07) 0%, transparent 60%);
     transform: translate(-50%, -50%);
+}
+
+.hero-section {
+    margin-top: -100px;
 }
 
 .hero-badges {
@@ -852,16 +855,60 @@ button.badge:hover:not(.active) {
 
 /* Адаптивность */
 @media (max-width: 992px) {
-    .nav-link-text { display: none; }
-    .nav-link-icon { display: block; width: 22px; height: 22px; }
-    .nav-link { padding: 10px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .logo { font-size: 1.05rem; }
-    .lang-switcher { gap: 2px; }
-    .lang-btn { font-size: 9px; padding: 6px 8px; }
+    #hero {
+        padding-top: 100px;
+    }
 
-    .hero-lead { font-size: 0.95rem; line-height: 1.5; margin-bottom: 24px; }
-    .hero-badges { gap: 6px; margin-bottom: 20px; }
-    .hero-badges .badge-static { font-size: 9px; padding: 6px 10px; }
+    .hero-section {
+        margin-top: 0;
+    }
+
+    .nav-link-text {
+        display: none;
+    }
+
+    .nav-link-icon {
+        display: block;
+        width: 22px;
+        height: 22px;
+    }
+
+    .nav-link {
+        padding: 10px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 1.05rem;
+    }
+
+    .lang-switcher {
+        gap: 2px;
+    }
+
+    .lang-btn {
+        font-size: 9px;
+        padding: 6px 8px;
+    }
+
+    .hero-lead {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 24px;
+    }
+
+    .hero-badges {
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+
+    .hero-badges .badge-static {
+        font-size: 9px;
+        padding: 6px 10px;
+    }
 
     .typewriter {
         font-size: 0.75em;
