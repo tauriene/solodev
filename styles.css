@@ -1385,6 +1385,14 @@ button.badge:hover:not(.active) {
         gap: 8px;
     }
 
+    .testimonials-nav {
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+
     .mobile-nav-btn {
         width: 42px;
         height: 42px;

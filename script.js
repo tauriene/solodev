@@ -462,6 +462,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.querySelectorAll('[data-testi-nav]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const grid = document.querySelector('#testimonials .grid-3');
+            if (!grid) return;
+            const card = grid.querySelector('.card');
+            if (!card) return;
+            const scrollAmount = card.offsetWidth + 16;
+            const dir = button.dataset.testiNav === 'next' ? 1 : -1;
+            grid.scrollBy({ left: scrollAmount * dir, behavior: 'smooth' });
+        });
+    });
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
