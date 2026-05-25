@@ -252,6 +252,16 @@ p {
     box-shadow: 0 10px 30px rgba(200, 241, 53, 0.15);
 }
 
+#advantages .card {
+    cursor: default;
+}
+
+#advantages .card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border-color);
+}
+
 .nested-box {
     background-color: var(--bg-nested);
     border: 1px solid var(--border-color);
@@ -834,7 +844,7 @@ button.badge:hover:not(.active) {
 
 .cases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
@@ -873,26 +883,37 @@ button.badge:hover:not(.active) {
 
 .case-flow {
     display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 12px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
 .case-before {
     color: #76767c;
     text-decoration: line-through;
-    font-size: 17px;
+    font-size: 18px;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
 }
 
 .case-arrow {
     color: var(--text-sec);
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.case-arrow svg {
+    width: 22px;
+    height: 22px;
 }
 
 .case-after {
     color: #ccff00;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 28px;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
     line-height: 1;
 }
 
@@ -1330,6 +1351,10 @@ button.badge:hover:not(.active) {
         gap: 20px;
     }
 
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+
     .solution-showcase {
         min-height: 500px;
     }
@@ -1410,7 +1435,11 @@ button.badge:hover:not(.active) {
     }
 
     .card {
-        padding: 24px;
+        padding: 16px;
+    }
+
+    .faq-item {
+        padding: 0 !important;
     }
 
     .faq-item summary {
