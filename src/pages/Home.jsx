@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 export default function Home() {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = '/script.js';
+    script.src = import.meta.env.BASE_URL + 'script.js';
     document.body.appendChild(script);
     return () => {
       document.body.removeChild(script);

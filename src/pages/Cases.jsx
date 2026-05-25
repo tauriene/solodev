@@ -295,7 +295,7 @@ export default function Cases() {
   useEffect(() => {
     document.body.classList.add('cases-page');
     const script = document.createElement('script');
-    script.src = '/cases.js';
+    script.src = import.meta.env.BASE_URL + 'cases.js';
     document.body.appendChild(script);
     
     const handleLangChange = () => {
