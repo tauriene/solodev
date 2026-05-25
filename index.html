@@ -18,12 +18,13 @@
 
     <header>
         <div class="header-inner">
-            <div class="logo" data-i18n="logo">нексиум.дев</div>
+            <a href="#" class="logo" data-i18n="logo" data-nav="home">нексиум.дев</a>
             <div class="header-controls">
                 <div class="lang-switcher" aria-label="Language switcher">
                     <button class="lang-btn active" type="button" data-lang="ru">RU</button>
                     <button class="lang-btn" type="button" data-lang="en">EN</button>
                 </div>
+                <a href="#cases" class="nav-link unbounded" data-nav="cases">Портфолио</a>
                 <a href="https://t.me/your_telegram" target="_blank" class="nav-link unbounded">
                     <span class="nav-link-text" data-i18n="header_telegram">Telegram →</span>
                     <svg class="nav-link-icon" fill="currentColor" width="16" height="16" viewBox="0 0 32 32"
@@ -37,7 +38,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="site-main" class="app-view">
 
         <section id="hero">
             <div class="glow-ambient glow-hero"></div>
@@ -385,6 +386,113 @@
         </section>
 
     </main>
+
+    <div id="portfolio-view" class="app-view portfolio-view" hidden>
+        <div class="pf-filters-wrap">
+            <div class="pf-filters container">
+                <button class="pf-filter-pill on" type="button" data-filter="all">все ниши</button>
+                <button class="pf-filter-pill" type="button" data-filter="auto">автосервисы</button>
+                <button class="pf-filter-pill" type="button" data-filter="beauty">салоны красоты</button>
+                <button class="pf-filter-pill" type="button" data-filter="med">медицина</button>
+                <button class="pf-filter-pill" type="button" data-filter="fitness">фитнес</button>
+                <button class="pf-filter-pill" type="button" data-filter="online">онлайн-платформы</button>
+            </div>
+        </div>
+
+        <div class="pf-grid-wrap container">
+            <div class="pf-grid">
+                <a class="pf-cell big" href="#" data-niche="auto">
+                    <div class="pf-cell-bg">−92%</div>
+                    <div class="pf-cell-overlay"></div>
+                    <div class="pf-cell-always">
+                        <div class="pf-cell-niche">автосервис · казань</div>
+                        <div class="pf-cell-name">Мастер Плюс</div>
+                        <div class="pf-cell-metric">−92%</div>
+                        <div class="pf-cell-caption">пропущенных заявок · 40 заявок в месяц → 3</div>
+                    </div>
+                    <div class="pf-cell-info">
+                        <div class="pf-cell-tags">crm, боты, напоминания</div>
+                        <div class="pf-cell-title">Автосервис в Казани: выстроили автопоток заявок</div>
+                        <div class="pf-cell-link">смотреть кейс →</div>
+                    </div>
+                </a>
+
+                <a class="pf-cell" href="#" data-niche="beauty">
+                    <div class="pf-cell-bg">−68%</div>
+                    <div class="pf-cell-overlay"></div>
+                    <div class="pf-cell-always">
+                        <div class="pf-cell-niche">салон красоты · самара</div>
+                        <div class="pf-cell-name">Облик</div>
+                        <div class="pf-cell-metric">−68%</div>
+                        <div class="pf-cell-caption">отмен в день записи · 28% отмен → 9% за 6 недель</div>
+                    </div>
+                    <div class="pf-cell-info">
+                        <div class="pf-cell-tags">whatsapp-бот, депозиты</div>
+                        <div class="pf-cell-title">Снизили отмены через сценарии подтверждения</div>
+                        <div class="pf-cell-link">смотреть кейс →</div>
+                    </div>
+                </a>
+
+                <a class="pf-cell" href="#" data-niche="med">
+                    <div class="pf-badge-new">новый</div>
+                    <div class="pf-cell-bg">−77%</div>
+                    <div class="pf-cell-overlay"></div>
+                    <div class="pf-cell-always">
+                        <div class="pf-cell-niche">стоматология · пермь</div>
+                        <div class="pf-cell-name">Дентал</div>
+                        <div class="pf-cell-metric">−77%</div>
+                        <div class="pf-cell-caption">ручной рутины · 2.5 ч → 35 мин в день</div>
+                    </div>
+                    <div class="pf-cell-info">
+                        <div class="pf-cell-tags">crm, авторазметка</div>
+                        <div class="pf-cell-title">Автоматизировали рутину администраторов клиники</div>
+                        <div class="pf-cell-link">смотреть кейс →</div>
+                    </div>
+                </a>
+
+                <a class="pf-cell" href="#" data-niche="fitness">
+                    <div class="pf-badge-new">новый</div>
+                    <div class="pf-cell-bg">×3</div>
+                    <div class="pf-cell-overlay"></div>
+                    <div class="pf-cell-always">
+                        <div class="pf-cell-niche">фитнес · москва</div>
+                        <div class="pf-cell-name">FitLife Studio</div>
+                        <div class="pf-cell-metric">×3</div>
+                        <div class="pf-cell-caption">онлайн-записей · запустили расписание с нуля за 4 дня</div>
+                    </div>
+                    <div class="pf-cell-info">
+                        <div class="pf-cell-tags">лендинг, онлайн-запись</div>
+                        <div class="pf-cell-title">Запустили запись на тренировки в едином окне</div>
+                        <div class="pf-cell-link">смотреть кейс →</div>
+                    </div>
+                </a>
+
+                <a class="pf-cell big" href="#" data-niche="med">
+                    <div class="pf-cell-bg">−55%</div>
+                    <div class="pf-cell-overlay"></div>
+                    <div class="pf-cell-always">
+                        <div class="pf-cell-niche">медцентр · екатеринбург</div>
+                        <div class="pf-cell-name">МЦ «Здоровье»</div>
+                        <div class="pf-cell-metric">−55%</div>
+                        <div class="pf-cell-caption">нагрузки на ресепшн · автоматизировали запись на 6 врачей</div>
+                    </div>
+                    <div class="pf-cell-info">
+                        <div class="pf-cell-tags">telegram-бот, crm</div>
+                        <div class="pf-cell-title">Сняли нагрузку с ресепшн и собрали обращения в CRM</div>
+                        <div class="pf-cell-link">смотреть кейс →</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="pf-cta-row container">
+            <div>
+                <div class="pf-cta-title">Хотите похожий результат?</div>
+                <div class="pf-cta-sub">Покажем прототип под вашу нишу за 1 день — до оплаты.</div>
+            </div>
+            <a href="https://t.me/your_telegram" target="_blank" class="pf-cta-btn">обсудить проект →</a>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 
