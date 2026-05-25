@@ -356,4 +356,49 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('animate-on-scroll', 'animate-slide');
         observer.observe(el);
     });
+
+    // Плавная анимация аккордеона FAQ
+    document.querySelectorAll('details.faq-item').forEach((el) => {
+        const summary = el.querySelector('summary');
+        
+        el.style.cursor = 'pointer';
+
+        el.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            if (window.getSelection().toString().length > 0) return;
+
+            e.preventDefault();
+            
+            el.style.overflow = 'hidden';
+            
+            if (el.open) {
+                el.style.height = `${el.offsetHeight}px`;
+                requestAnimationFrame(() => {
+                    el.style.transition = 'height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)';
+                    el.style.height = `${summary.offsetHeight}px`;
+                    
+                    setTimeout(() => {
+                        el.open = false;
+                        el.style.height = '';
+                        el.style.transition = '';
+                        el.style.overflow = '';
+                    }, 300);
+                });
+            } else {
+                el.style.height = `${el.offsetHeight}px`;
+                el.open = true;
+                requestAnimationFrame(() => {
+                    const targetHeight = el.scrollHeight;
+                    el.style.transition = 'height 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)';
+                    el.style.height = `${targetHeight}px`;
+                    
+                    setTimeout(() => {
+                        el.style.height = '';
+                        el.style.transition = '';
+                        el.style.overflow = '';
+                    }, 300);
+                });
+            }
+        });
+    });
 });

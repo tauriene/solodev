@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,9 +8,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Press+Start+2P&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Press+Start+2P&family=Unbounded:wght@400;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <header>
@@ -20,7 +24,15 @@
                     <button class="lang-btn active" type="button" data-lang="ru">RU</button>
                     <button class="lang-btn" type="button" data-lang="en">EN</button>
                 </div>
-                <a href="https://t.me/your_telegram" target="_blank" class="nav-link unbounded" data-i18n="header_telegram">Telegram →</a>
+                <a href="https://t.me/your_telegram" target="_blank" class="nav-link unbounded">
+                    <span class="nav-link-text" data-i18n="header_telegram">Telegram →</span>
+                    <svg class="nav-link-icon" fill="currentColor" width="16" height="16" viewBox="0 0 32 32"
+                        version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.122 10.040c0.006-0 0.014-0 0.022-0 0.209 0 0.403 0.065 0.562 0.177l-0.003-0.002c0.116 0.101 0.194 0.243 0.213 0.403l0 0.003c0.020 0.122 0.031 0.262 0.031 0.405 0 0.065-0.002 0.129-0.007 0.193l0-0.009c-0.225 2.369-1.201 8.114-1.697 10.766-0.21 1.123-0.623 1.499-1.023 1.535-0.869 0.081-1.529-0.574-2.371-1.126-1.318-0.865-2.063-1.403-3.342-2.246-1.479-0.973-0.52-1.51 0.322-2.384 0.221-0.23 4.052-3.715 4.127-4.031 0.004-0.019 0.006-0.040 0.006-0.062 0-0.078-0.029-0.149-0.076-0.203l0 0c-0.052-0.034-0.117-0.053-0.185-0.053-0.045 0-0.088 0.009-0.128 0.024l0.002-0.001q-0.198 0.045-6.316 4.174c-0.445 0.351-1.007 0.573-1.619 0.599l-0.006 0c-0.867-0.105-1.654-0.298-2.401-0.573l0.074 0.024c-0.938-0.306-1.683-0.467-1.619-0.985q0.051-0.404 1.114-0.827 6.548-2.853 8.733-3.761c1.607-0.853 3.47-1.555 5.429-2.010l0.157-0.031zM15.93 1.025c-8.302 0.020-15.025 6.755-15.025 15.060 0 8.317 6.742 15.060 15.060 15.060s15.060-6.742 15.060-15.060c0-8.305-6.723-15.040-15.023-15.060h-0.002q-0.035-0-0.070 0z">
+                        </path>
+                    </svg>
+                </a>
             </div>
         </div>
     </header>
@@ -29,19 +41,25 @@
 
         <section id="hero">
             <div class="glow-ambient glow-hero"></div>
-            <div class="container">
+            <div class="container hero-section">
                 <div class="hero-badges">
-                    <span class="badge active badge-static" data-i18n="hero_badge_1">Автоматизация для малого бизнеса</span>
+                    <span class="badge active badge-static" data-i18n="hero_badge_1">Автоматизация для малого
+                        бизнеса</span>
                     <span class="badge active badge-static" data-i18n="hero_badge_2">ИИ-ассистенты 24/7</span>
                     <span class="badge active badge-static" data-i18n="hero_badge_3">CRM и онлайн-запись</span>
                     <span class="badge active badge-static" data-i18n="hero_badge_4">Конверсионные сайты</span>
                 </div>
-                <h1><span data-i18n="hero_title_prefix">Хватит терять клиентов.</span><br><span class="typewriter text-accent"></span></h1>
+                <h1 class="hero-main-title">
+                    <span class="hero-title-prefix" data-i18n="hero_title_prefix">Хватит терять клиентов.</span>
+                    <span class="typewriter text-accent"></span>
+                </h1>
                 <p class="hero-lead" data-i18n="hero_lead">
-                    Помогаем салонам, сервисам и клиникам автоматизировать хаос. Настраиваем систему онлайн-записи и умных ботов, которые удерживают клиентов, пока вы заняты операционкой.
+                    Помогаем салонам, сервисам и клиникам автоматизировать хаос. Настраиваем систему онлайн-записи и
+                    умных ботов, которые удерживают клиентов, пока вы заняты операционкой.
                 </p>
                 <div class="hero-actions">
-                    <a href="https://t.me/your_telegram" target="_blank" class="btn" data-i18n="hero_cta">Запросить демо-версию</a>
+                    <a href="https://t.me/your_telegram" target="_blank" class="btn" data-i18n="hero_cta">Запросить
+                        демо-версию</a>
                     <div class="hero-note" data-i18n-html="hero_note_html">
                         Покажем работающий прототип под вашу нишу <span class="text-accent">до оплаты</span>.
                     </div>
@@ -56,7 +74,8 @@
                     <article class="p3-cell">
                         <div class="p3-quote">"</div>
                         <h3 class="pain-title p3-title" data-i18n="pain_card_1_title">Никто не отвечает</h3>
-                        <p class="p3-body" data-i18n="pain_card_1_copy">Клиенты пишут ночью или пока администратор занят звонком. Каждый пропущенный контакт — готовый лид конкурента.</p>
+                        <p class="p3-body" data-i18n="pain_card_1_copy">Клиенты пишут ночью или пока администратор занят
+                            звонком. Каждый пропущенный контакт — готовый лид конкурента.</p>
                         <div class="p3-consequence">
                             <span class="p3-arrow">→</span>
                             <span data-i18n="pain_card_1_consequence">клиент уходит не дождавшись ответа</span>
@@ -65,7 +84,8 @@
                     <article class="p3-cell">
                         <div class="p3-quote">"</div>
                         <h3 class="pain-title p3-title" data-i18n="pain_card_2_title">Хаос в каналах</h3>
-                        <p class="p3-body" data-i18n="pain_card_2_copy">Заявки в WhatsApp, Telegram, соцсетях и личных номерах. База не ведётся, аналитики ноль.</p>
+                        <p class="p3-body" data-i18n="pain_card_2_copy">Заявки в WhatsApp, Telegram, соцсетях и личных
+                            номерах. База не ведётся, аналитики ноль.</p>
                         <div class="p3-consequence">
                             <span class="p3-arrow">→</span>
                             <span data-i18n="pain_card_2_consequence">теряется каждая третья заявка</span>
@@ -74,7 +94,8 @@
                     <article class="p3-cell">
                         <div class="p3-quote">"</div>
                         <h3 class="pain-title p3-title" data-i18n="pain_card_3_title">Нет контроля</h3>
-                        <p class="p3-body" data-i18n="pain_card_3_copy">Не видно сколько обращений пришло, сколько потеряно и чья это вина.</p>
+                        <p class="p3-body" data-i18n="pain_card_3_copy">Не видно сколько обращений пришло, сколько
+                            потеряно и чья это вина.</p>
                         <div class="p3-consequence">
                             <span class="p3-arrow">→</span>
                             <span data-i18n="pain_card_3_consequence">деньги утекают незаметно</span>
@@ -87,7 +108,8 @@
         <section id="cases">
             <div class="container">
                 <h2 data-i18n="cases_title">Кейсы и результаты</h2>
-                <p class="section-lead" data-i18n="cases_lead">Реальные бизнесы, реальные цифры. Считаем только измеримые изменения после внедрения.</p>
+                <p class="section-lead" data-i18n="cases_lead">Реальные бизнесы, реальные цифры. Считаем только
+                    измеримые изменения после внедрения.</p>
                 <div class="cases-grid">
                     <article class="card case-card">
                         <div class="case-meta" data-i18n="case_1_meta">Автосервис · Казань</div>
@@ -116,7 +138,8 @@
                             <span class="case-delta-icon">↘</span>
                             <span data-i18n="case_2_delta">−68% отмен</span>
                         </div>
-                        <p class="case-footnote" data-i18n="case_2_footnote">WhatsApp-бот с депозитными напоминаниями.</p>
+                        <p class="case-footnote" data-i18n="case_2_footnote">WhatsApp-бот с депозитными напоминаниями.
+                        </p>
                     </article>
 
                     <article class="card case-card">
@@ -141,16 +164,19 @@
             <div class="glow-ambient glow-solutions"></div>
             <div class="container">
                 <h2 data-i18n="solutions_title">Что мы внедряем</h2>
-                <p class="section-lead" data-i18n="solutions_lead">Простые инструменты без лишней терминологии. Вы выбираете ключевую задачу — мы разворачиваем готовое IT-решение.</p>
+                <p class="section-lead" data-i18n="solutions_lead">Простые инструменты без лишней терминологии. Вы
+                    выбираете ключевую задачу — мы разворачиваем готовое IT-решение.</p>
 
                 <div class="grid-2">
                     <div>
                         <div class="tabs-wrapper">
-                            <button class="badge active" data-pane="pane-1" data-i18n="tab_1">01 / Сайты под задачу</button>
+                            <button class="badge active" data-pane="pane-1" data-i18n="tab_1">01 / Сайты под
+                                задачу</button>
                             <button class="badge" data-pane="pane-2" data-i18n="tab_2">02 / Системы записи</button>
                             <button class="badge" data-pane="pane-3" data-i18n="tab_3">03 / Умные напоминания</button>
                         </div>
-                        <p class="solutions-note" data-i18n="solutions_note">Нажмите на шаг, чтобы увидеть интерфейс решения изнутри.</p>
+                        <p class="solutions-note" data-i18n="solutions_note">Нажмите на шаг, чтобы увидеть интерфейс
+                            решения изнутри.</p>
                     </div>
 
                     <div class="card solution-card">
@@ -158,40 +184,53 @@
 
                             <div class="panel-pane active" id="pane-1">
                                 <h3 class="text-accent" data-i18n="pane_1_title">Конверсионные лендинги</h3>
-                                <p class="panel-copy" data-i18n="pane_1_copy">Создаем лаконичные посадочные страницы, оптимизированные под мобильный трафик. Главная цель — заставить пользователя сделать целевое действие.</p>
+                                <p class="panel-copy" data-i18n="pane_1_copy">Создаем лаконичные посадочные страницы,
+                                    оптимизированные под мобильный трафик. Главная цель — заставить пользователя сделать
+                                    целевое действие.</p>
                                 <div class="mock-ui">
                                     <div class="mock-placeholder">
-                                        <div class="mock-placeholder-label" data-i18n="pane_1_mock_label">Интерактивный блок услуг</div>
+                                        <div class="mock-placeholder-label" data-i18n="pane_1_mock_label">Интерактивный
+                                            блок услуг</div>
                                     </div>
-                                    <button class="btn mock-action" data-i18n="pane_1_mock_button">ВЫБРАТЬ ВРЕМЯ ВИЗИТА</button>
+                                    <button class="btn mock-action" data-i18n="pane_1_mock_button">ВЫБРАТЬ ВРЕМЯ
+                                        ВИЗИТА</button>
                                 </div>
                             </div>
 
                             <div class="panel-pane" id="pane-2">
                                 <h3 class="text-accent" data-i18n="pane_2_title">Единая CRM и онлайн-запись</h3>
-                                <p class="panel-copy" data-i18n="pane_2_copy">Интегрируем календарь, где клиенты видят актуальные окна 24/7. Администратор получает уведомление и готовую карточку без рутины в чатах.</p>
+                                <p class="panel-copy" data-i18n="pane_2_copy">Интегрируем календарь, где клиенты видят
+                                    актуальные окна 24/7. Администратор получает уведомление и готовую карточку без
+                                    рутины в чатах.</p>
                                 <div class="mock-ui mock-ui-column">
                                     <div class="crm-row crm-row-accent">
                                         <div class="crm-label" data-i18n="pane_2_row_1">Детейлинг / Мастер: Иван</div>
-                                        <div class="badge active badge-compact" data-i18n="pane_2_status_1">НОВАЯ ЗАЯВКА</div>
+                                        <div class="badge active badge-compact" data-i18n="pane_2_status_1">НОВАЯ ЗАЯВКА
+                                        </div>
                                     </div>
                                     <div class="crm-row crm-row-done">
                                         <div class="crm-label" data-i18n="pane_2_row_2">Стрижка / Мастер: Алекс</div>
-                                        <div class="badge badge-compact badge-done" data-i18n="pane_2_status_2">ПОДТВЕРЖДЕНО</div>
+                                        <div class="badge badge-compact badge-done" data-i18n="pane_2_status_2">
+                                            ПОДТВЕРЖДЕНО</div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="panel-pane" id="pane-3">
                                 <h3 class="text-accent" data-i18n="pane_3_title">Автоматизация мессенджеров</h3>
-                                <p class="panel-copy" data-i18n="pane_3_copy">Настраиваем триггерных ботов (WhatsApp/Telegram). Они автоматически подтверждают запись, напоминают за 2 часа и соберут отзывы. Минимум отмен.</p>
+                                <p class="panel-copy" data-i18n="pane_3_copy">Настраиваем триггерных ботов
+                                    (WhatsApp/Telegram). Они автоматически подтверждают запись, напоминают за 2 часа и
+                                    соберут отзывы. Минимум отмен.</p>
                                 <div class="mock-ui">
                                     <div class="chat-bubble" data-i18n-html="pane_3_chat_html">
-                                        ⚡️ <strong>NexiumBot:</strong> Вы записаны на завтра в 15:00. Подтвердите, пожалуйста, свой визит кнопкой ниже.
+                                        ⚡️ <strong>NexiumBot:</strong> Вы записаны на завтра в 15:00. Подтвердите,
+                                        пожалуйста, свой визит кнопкой ниже.
                                     </div>
                                     <div class="chat-actions">
-                                        <div class="chat-action chat-action-confirm" data-i18n="pane_3_action_1">ПОДТВЕРДИТЬ</div>
-                                        <div class="chat-action chat-action-cancel" data-i18n="pane_3_action_2">ОТМЕНИТЬ</div>
+                                        <div class="chat-action chat-action-confirm" data-i18n="pane_3_action_1">
+                                            ПОДТВЕРДИТЬ</div>
+                                        <div class="chat-action chat-action-cancel" data-i18n="pane_3_action_2">ОТМЕНИТЬ
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -208,12 +247,14 @@
                     <div class="card">
                         <div class="metric" data-i18n="metric_1">1 день</div>
                         <h3 data-i18n="adv_1_title">На сборку демо-версии</h3>
-                        <p data-i18n="adv_1_copy">Мы против «котов в мешке». Сначала разрабатываем архитектуру под ваши задачи и показываем кликабельный прототип. Вы оцениваете удобство до проведения оплаты.</p>
+                        <p data-i18n="adv_1_copy">Мы против «котов в мешке». Сначала разрабатываем архитектуру под ваши
+                            задачи и показываем кликабельный прототип. Вы оцениваете удобство до проведения оплаты.</p>
                     </div>
                     <div class="card">
                         <div class="metric" data-i18n="metric_2">3–5 дней</div>
                         <h3 data-i18n="adv_2_title">До полного запуска</h3>
-                        <p data-i18n="adv_2_copy">После утверждения концепта бесшовно подключаем CRM, настраиваем уведомления и интегрируем каналы связи. Передаем систему под ключ с инструкциями.</p>
+                        <p data-i18n="adv_2_copy">После утверждения концепта бесшовно подключаем CRM, настраиваем
+                            уведомления и интегрируем каналы связи. Передаем систему под ключ с инструкциями.</p>
                     </div>
                 </div>
             </div>
@@ -222,22 +263,26 @@
         <section id="testimonials">
             <div class="container">
                 <h2 data-i18n="testimonials_title">Отзывы клиентов</h2>
-                <p class="section-lead" data-i18n="testimonials_lead">Отзывы можно показать скринами из Telegram/WhatsApp или в формате карточек с результатом.</p>
+                <p class="section-lead" data-i18n="testimonials_lead">Отзывы можно показать скринами из
+                    Telegram/WhatsApp или в формате карточек с результатом.</p>
                 <div class="grid-3">
                     <div class="card testimonial-card">
                         <h3 data-i18n="testimonial_1_name">Илья, владелец автосервиса</h3>
                         <p data-i18n="testimonial_1_niche">Ниша: обслуживание авто</p>
-                        <p data-i18n="testimonial_1_result">Результат: пропущенные обращения снизились с 40 до 3 в месяц.</p>
+                        <p data-i18n="testimonial_1_result">Результат: пропущенные обращения снизились с 40 до 3 в
+                            месяц.</p>
                     </div>
                     <div class="card testimonial-card">
                         <h3 data-i18n="testimonial_2_name">Марина, управляющая салоном</h3>
                         <p data-i18n="testimonial_2_niche">Ниша: бьюти-услуги</p>
-                        <p data-i18n="testimonial_2_result">Результат: доля отмен сократилась с 28% до 9% за 6 недель.</p>
+                        <p data-i18n="testimonial_2_result">Результат: доля отмен сократилась с 28% до 9% за 6 недель.
+                        </p>
                     </div>
                     <div class="card testimonial-card">
                         <h3 data-i18n="testimonial_3_name">Олег, главный врач клиники</h3>
                         <p data-i18n="testimonial_3_niche">Ниша: медицинские услуги</p>
-                        <p data-i18n="testimonial_3_result">Результат: администраторы освободили около 10 часов в неделю.</p>
+                        <p data-i18n="testimonial_3_result">Результат: администраторы освободили около 10 часов в
+                            неделю.</p>
                     </div>
                 </div>
             </div>
@@ -249,15 +294,18 @@
                 <div class="faq-list">
                     <details class="card faq-item" open>
                         <summary data-i18n="faq_q1">А если клиенты не пользуются Telegram?</summary>
-                        <p data-i18n="faq_a1">Подключаем несколько каналов сразу: WhatsApp, Telegram, сайт-форму и звонки. Клиент выбирает удобный канал, а вы получаете все обращения в одной системе.</p>
+                        <p data-i18n="faq_a1">Подключаем несколько каналов сразу: WhatsApp, Telegram, сайт-форму и
+                            звонки. Клиент выбирает удобный канал, а вы получаете все обращения в одной системе.</p>
                     </details>
                     <details class="card faq-item">
                         <summary data-i18n="faq_q2">Нужен ли технический специалист в штате?</summary>
-                        <p data-i18n="faq_a2">Нет. Мы внедряем систему под ключ, даем короткий регламент и шаблоны. Для ежедневной работы достаточно администратора.</p>
+                        <p data-i18n="faq_a2">Нет. Мы внедряем систему под ключ, даем короткий регламент и шаблоны. Для
+                            ежедневной работы достаточно администратора.</p>
                     </details>
                     <details class="card faq-item">
                         <summary data-i18n="faq_q3">Сколько стоит поддержка?</summary>
-                        <p data-i18n="faq_a3">Поддержка рассчитывается по объему задач. Обычно это фиксированный ежемесячный тариф с прозрачным списком работ и SLA по реакции.</p>
+                        <p data-i18n="faq_a3">Поддержка рассчитывается по объему задач. Обычно это фиксированный
+                            ежемесячный тариф с прозрачным списком работ и SLA по реакции.</p>
                     </details>
                 </div>
             </div>
@@ -268,9 +316,11 @@
             <div class="container cta-container">
                 <h2 class="cta-title" data-i18n-html="cta_title_html">Готовы навести порядок<br>в бизнес-процессах?</h2>
                 <p class="cta-copy" data-i18n="cta_copy">
-                    Напишите мне в Telegram. Задам 3 коротких вопроса о вашей специфике, а через день наглядно продемонстрирую архитектуру вашей будущей системы.
+                    Напишите мне в Telegram. Задам 3 коротких вопроса о вашей специфике, а через день наглядно
+                    продемонстрирую архитектуру вашей будущей системы.
                 </p>
-                <a href="https://t.me/your_telegram" target="_blank" class="btn cta-button" data-i18n="cta_button">Обсудить проект в Telegram</a>
+                <a href="https://t.me/your_telegram" target="_blank" class="btn cta-button"
+                    data-i18n="cta_button">Обсудить проект в Telegram</a>
 
                 <div class="cta-badges-container">
                     <div class="cta-badges-track">
@@ -298,4 +348,5 @@
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>

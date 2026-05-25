@@ -158,6 +158,12 @@ section {
     overflow: hidden;
 }
 
+#hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: 0;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -167,11 +173,20 @@ section {
 }
 
 /* Типографика */
-h1 {
+h1.hero-main-title {
     font-size: clamp(2.2rem, 6vw, 4.2rem);
     line-height: 1.1;
     margin-bottom: 1.5rem;
     font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1 span.hero-title-prefix {
+    font-size: 0.65em;
+    display: block;
+    line-height: 1.1;
 }
 
 h2 {
@@ -383,6 +398,8 @@ button.badge:hover:not(.active) {
 .badge-static {
     cursor: default;
 }
+
+
 
 #hero .hero-badges .badge-static:nth-child(1) {
     background-color: rgba(200, 241, 53, 0.1);
@@ -771,7 +788,8 @@ button.badge:hover:not(.active) {
     font-size: 0.7em;
     display: inline-block;
     vertical-align: middle;
-    margin-top: 10px;
+    margin-top: 0;
+    line-height: 1.1;
 }
 
 .typewriter::after {
@@ -828,13 +846,38 @@ button.badge:hover:not(.active) {
     }
 }
 
+.nav-link-icon {
+    display: none;
+}
+
 /* Адаптивность */
 @media (max-width: 992px) {
+    .nav-link-text { display: none; }
+    .nav-link-icon { display: block; width: 22px; height: 22px; }
+    .nav-link { padding: 10px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .logo { font-size: 1.05rem; }
+    .lang-switcher { gap: 2px; }
+    .lang-btn { font-size: 9px; padding: 6px 8px; }
+
+    .hero-lead { font-size: 0.95rem; line-height: 1.5; margin-bottom: 24px; }
+    .hero-badges { gap: 6px; margin-bottom: 20px; }
+    .hero-badges .badge-static { font-size: 9px; padding: 6px 10px; }
+
+    .typewriter {
+        font-size: 0.75em;
+        margin-top: 0;
+    }
+
     section {
         min-height: auto;
         height: auto;
         padding-top: 100px;
         padding-bottom: 40px;
+    }
+
+    #hero {
+        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     .grid-2 {
@@ -924,11 +967,13 @@ button.badge:hover:not(.active) {
 }
 
 .animate-fade {
-    transform: none; /* Только прозрачность */
+    transform: none;
+    /* Только прозрачность */
 }
 
 .animate-slide {
-    transform: translateY(40px); /* Выезжает снизу */
+    transform: translateY(40px);
+    /* Выезжает снизу */
 }
 
 .animate-on-scroll.is-visible {
@@ -937,14 +982,35 @@ button.badge:hover:not(.active) {
 }
 
 /* Hero Section Delays */
-#hero .badge-static { transition-delay: 0.2s; }
-#hero .hero-lead { transition-delay: 0.6s; }
-#hero .hero-actions { transition-delay: 0.8s; }
+#hero .badge-static {
+    transition-delay: 0.2s;
+}
+
+#hero .hero-lead {
+    transition-delay: 0.6s;
+}
+
+#hero .hero-actions {
+    transition-delay: 0.8s;
+}
 
 /* Задержки для карточек */
-.grid-3 .card:nth-child(1) { transition-delay: 0.1s; }
-.grid-3 .card:nth-child(2) { transition-delay: 0.2s; }
-.grid-3 .card:nth-child(3) { transition-delay: 0.3s; }
+.grid-3 .card:nth-child(1) {
+    transition-delay: 0.1s;
+}
 
-.grid-2 > .card:nth-child(1) { transition-delay: 0.1s; }
-.grid-2 > .card:nth-child(2) { transition-delay: 0.2s; }
+.grid-3 .card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.grid-3 .card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.grid-2>.card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.grid-2>.card:nth-child(2) {
+    transition-delay: 0.2s;
+}
