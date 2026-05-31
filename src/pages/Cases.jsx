@@ -48,8 +48,8 @@ export default function Cases() {
           <h1 className="cases-hero-title">{t('Кейсы и результаты', 'Cases and Results')}</h1>
           <p className="cases-hero-sub">
             {t(
-              'Начинаем наполнять портфолио реальными проектами. Первым добавили CRM систему для малого бизнеса с основным экраном интерфейса.',
-              'We are starting to populate the portfolio with real projects. The first one is a CRM system for small business with its main interface screen.'
+              'Начинаем наполнять портфолио реальными проектами. Сейчас уже добавили CRM систему для малого бизнеса и сайт интернет-магазина цветов.',
+              'We are starting to populate the portfolio with real projects. So far we have added a CRM system for small business and a flower online store website.'
             )}
           </p>
       </section>
@@ -60,12 +60,13 @@ export default function Cases() {
       </div>
 
       <section className="cg-wrap">
-          <div className="cg-grid">
+          <div className="cg-grid cg-grid--portfolio">
               {casesCatalog.map((caseItem) => (
                   <article
                     key={caseItem.slug}
                     className={`cg-card${caseItem.isPlaceholder ? ' cg-card-placeholder' : ''}`}
                     data-layout={caseItem.layout}
+                    data-slot={caseItem.slot}
                   >
                       {caseItem.isPlaceholder ? (
                         <div className="cg-bg cg-bg-placeholder" aria-hidden="true"></div>

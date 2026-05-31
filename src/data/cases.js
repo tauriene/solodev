@@ -1,9 +1,11 @@
 import crmLanding from '../cases_assets/crm/landing.png';
+import moonLanding from '../cases_assets/moon/moonlanding.png';
 
 export const casesCatalog = [
   {
     slug: 'crm',
     layout: 'A1',
+    slot: 'crm',
     categoryRu: 'CRM система · малый бизнес',
     categoryEn: 'CRM system · small business',
     titleRu: 'CRM система для малого бизнеса',
@@ -23,25 +25,31 @@ export const casesCatalog = [
     imageAltEn: 'Main screen of the CRM system for small business',
   },
   {
-    slug: 'case-02',
-    layout: 'A2',
-    isPlaceholder: true,
-    categoryRu: 'Следующий кейс',
-    categoryEn: 'Next case',
-    titleRu: 'Место под новый проект',
-    titleEn: 'Reserved for a new project',
-    summaryRu: 'Сюда добавим следующий реальный кейс после подготовки материалов.',
-    summaryEn: 'The next real case will be added here once the materials are ready.',
+    slug: 'moon',
+    layout: 'A1',
+    slot: 'moon',
+    categoryRu: 'Интернет-магазин · цветы',
+    categoryEn: 'Online store · flowers',
+    titleRu: 'Сайт интернет-магазина цветов',
+    titleEn: 'Flower online store website',
+    summaryRu: 'конверсии в оформление заказа',
+    summaryEn: 'checkout conversion',
     detailsRu:
-      'Слот уже оставлен в сетке портфолио. После публикации подставим название проекта, описание и главное изображение.',
+      'Что внутри: каталог букетов, карточки товаров, быстрый выбор композиций, оформление заказа и аккуратная подача ассортимента.',
     detailsEn:
-      'This slot is already reserved in the portfolio grid. Once published, we will add the project name, description, and main image.',
-    tagsRu: ['Скоро'],
-    tagsEn: ['Soon'],
+      'Inside: a bouquet catalog, product cards, quick composition selection, checkout, and a neat presentation of the assortment.',
+    tagsRu: ['E-commerce', 'Цветы', 'Онлайн-магазин'],
+    tagsEn: ['E-commerce', 'Flowers', 'Online store'],
+    metricRu: '+18%',
+    metricEn: '+18%',
+    image: moonLanding,
+    imageAltRu: 'Главный экран сайта интернет-магазина цветов',
+    imageAltEn: 'Main screen of the flower online store website',
   },
   {
     slug: 'case-03',
-    layout: 'B1',
+    layout: 'A2',
+    slot: 'side',
     isPlaceholder: true,
     categoryRu: 'Следующий кейс',
     categoryEn: 'Next case',
@@ -58,7 +66,8 @@ export const casesCatalog = [
   },
   {
     slug: 'case-04',
-    layout: 'B2',
+    layout: 'B1',
+    slot: 'bottom-left',
     isPlaceholder: true,
     categoryRu: 'Следующий кейс',
     categoryEn: 'Next case',
@@ -75,7 +84,8 @@ export const casesCatalog = [
   },
   {
     slug: 'case-05',
-    layout: 'B3',
+    layout: 'B2',
+    slot: 'bottom-right',
     isPlaceholder: true,
     categoryRu: 'Следующий кейс',
     categoryEn: 'Next case',

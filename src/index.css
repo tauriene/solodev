@@ -2219,6 +2219,40 @@ button.badge:hover:not(.active) {
     overflow: hidden;
 }
 
+@media (min-width: 901px) {
+    .cg-grid--portfolio .cg-card {
+        grid-column: auto !important;
+    }
+
+    .cg-grid--portfolio .cg-card[data-slot="crm"] {
+        grid-column: 1 / 5 !important;
+        grid-row: 1;
+        min-height: 400px;
+    }
+
+    .cg-grid--portfolio .cg-card[data-slot="moon"] {
+        grid-column: 1 / 5 !important;
+        grid-row: 2;
+        min-height: 400px;
+    }
+
+    .cg-grid--portfolio .cg-card[data-slot="side"] {
+        grid-column: 5 / 7 !important;
+        grid-row: 1 / 3;
+        min-height: 400px;
+    }
+
+    .cg-grid--portfolio .cg-card[data-slot="bottom-left"] {
+        grid-column: 1 / 4 !important;
+        grid-row: 3;
+    }
+
+    .cg-grid--portfolio .cg-card[data-slot="bottom-right"] {
+        grid-column: 4 / 7 !important;
+        grid-row: 3;
+    }
+}
+
 /* Паттерн A — строка из 2: 4/6 + 2/6 */
 .cg-card[data-layout="A1"] { grid-column: span 4; }
 .cg-card[data-layout="A2"] { grid-column: span 2; }
