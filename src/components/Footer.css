@@ -1,8 +1,8 @@
 .site-footer {
   background: var(--bg-base, #060606);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--border-color);
   padding: 60px 0 40px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-sec);
   font-family: 'Golos Text', sans-serif;
 }
 
@@ -16,7 +16,7 @@
   font-family: 'Unbounded', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-main);
   text-decoration: none;
   display: inline-block;
   margin-bottom: 24px;
@@ -25,17 +25,17 @@
 .footer-text-small {
   font-size: 0.75rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-sec);
 }
 
 .footer-text-small a {
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-sec);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer-text-small a:hover {
-  color: #fff;
+  color: var(--text-main);
 }
 
 .mt-4 {
@@ -53,7 +53,7 @@
 }
 
 .footer-nav a {
-  color: #fff;
+  color: var(--text-main);
   font-size: 1rem;
   text-decoration: none;
   transition: color 0.3s;
@@ -65,8 +65,8 @@
 
 .footer-callback-btn {
   margin-top: 24px;
-  background: #6a4cff;
-  color: #fff;
+  background: var(--accent);
+  color: var(--text-on-accent);
   border: none;
   border-radius: 100px;
   padding: 12px 24px;
@@ -90,14 +90,14 @@
   font-size: clamp(1.5rem, 2.5vw, 2.2rem);
   font-family: 'Golos Text', sans-serif;
   font-weight: 500;
-  color: #fff;
+  color: var(--text-main);
   text-decoration: none;
   margin-bottom: 8px;
 }
 
 .footer-email {
   font-size: clamp(1.2rem, 2vw, 1.8rem);
-  color: #fff;
+  color: var(--text-main);
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -112,8 +112,8 @@
   align-items: center;
   gap: 8px;
   background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
   border-radius: 100px;
   padding: 8px 16px 8px 12px;
   font-size: 0.85rem;
@@ -122,14 +122,14 @@
 }
 
 .footer-up-btn svg {
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   padding: 2px;
 }
 
 .footer-up-btn:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-hover);
+  background: var(--surface-muted);
 }
 
 @media (max-width: 992px) {

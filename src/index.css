@@ -1,4 +1,3 @@
-/* Базовые переменные строго по ТЗ + Премиум тюнинг */
 :root {
     --bg-base: #0a0a0a;
     --bg-card: rgba(20, 20, 20, 0.7);
@@ -20,6 +19,11 @@
     --status-done: #007aff;
     --status-canceled: #ff3b30;
 
+    --surface-strong: rgba(10, 10, 10, 0.75);
+    --surface-elevated: rgba(10, 10, 10, 0.97);
+    --surface-muted: rgba(255, 255, 255, 0.03);
+    --surface-backdrop: rgba(0, 0, 0, 0.55);
+
     --header-height: 80px;
     --fx-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -34,6 +38,7 @@
 html {
     scroll-behavior: smooth;
     background-color: var(--bg-base);
+    color-scheme: dark;
 }
 
 body {
@@ -62,7 +67,7 @@ header {
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background-color: rgba(10, 10, 10, 0.75);
+    background-color: var(--surface-strong);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
@@ -117,7 +122,7 @@ header {
     padding: 4px;
     border-radius: 999px;
     border: 1px solid var(--border-color);
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-muted);
 }
 
 .lang-btn {
@@ -204,7 +209,7 @@ header {
     padding: 0;
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-muted);
     cursor: pointer;
     transition: border-color 0.3s ease, background 0.3s ease;
     flex-shrink: 0;
@@ -256,10 +261,10 @@ header {
 }
 
 .mobile-menu-inner {
-    background: rgba(10, 10, 10, 0.97);
+    background: var(--surface-elevated);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--border-color);
     padding: 0 24px;
     display: flex;
     flex-direction: column;
@@ -306,7 +311,7 @@ header {
     color: var(--text-main);
     text-decoration: none;
     padding: 16px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
     transition: color 0.3s ease, transform 0.3s ease;
     opacity: 0;
     transform: translateX(-12px);
@@ -336,7 +341,7 @@ header {
 
 .mobile-menu-footer {
     padding: 16px 0 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
 }
 
 .mobile-menu-logo {
@@ -344,7 +349,7 @@ header {
     font-size: 0.75rem;
     font-weight: 900;
     letter-spacing: -0.04em;
-    color: rgba(255, 255, 255, 0.15);
+    color: var(--text-sec);
     text-transform: lowercase;
 }
 
@@ -353,7 +358,7 @@ header {
     position: fixed;
     inset: 0;
     top: var(--header-height);
-    background: rgba(0, 0, 0, 0.55);
+    background: var(--surface-backdrop);
     z-index: 98;
     opacity: 0;
     pointer-events: none;
@@ -378,7 +383,7 @@ header {
 }
 
 .pf-filters-wrap {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom: 1px solid var(--border-color);
     padding: 14px 0;
     overflow-x: auto;
 }
@@ -396,8 +401,8 @@ header {
     letter-spacing: 0.03em;
     border-radius: 20px;
     padding: 9px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.45);
+    border: 1px solid var(--border-color);
+    color: var(--text-sec);
     background: transparent;
     cursor: pointer;
 }
@@ -417,7 +422,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1px;
-    background: rgba(255, 255, 255, 0.07);
+    background: var(--border-color);
 }
 
 .pf-cell {
@@ -444,7 +449,7 @@ header {
     justify-content: center;
     font-size: 72px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.03);
+    color: rgba(16, 24, 39, 0.04);
     font-family: 'Unbounded', sans-serif;
     user-select: none;
 }
@@ -452,7 +457,7 @@ header {
 .pf-cell-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 50%);
+    background: linear-gradient(to top, rgba(16, 24, 39, 0.55) 0%, transparent 50%);
     opacity: 0;
     transition: opacity 0.2s;
 }
@@ -472,14 +477,14 @@ header {
 .pf-cell-niche {
     font-size: 10px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--text-sec);
     letter-spacing: 0.04em;
     margin-bottom: 7px;
 }
 
 .pf-cell-name {
     font-size: 15px;
-    color: #fff;
+    color: var(--text-main);
     font-weight: 500;
     margin-bottom: 8px;
 }
@@ -494,7 +499,7 @@ header {
 
 .pf-cell-caption {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--text-sec);
 }
 
 .pf-cell-info {
@@ -516,7 +521,7 @@ header {
 
 .pf-cell-tags {
     font-size: 10px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--text-sec);
     margin-bottom: 7px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -524,12 +529,12 @@ header {
 
 .pf-cell-title {
     font-size: 14px;
-    color: #fff;
+    color: var(--text-main);
     margin-bottom: 8px;
 }
 
 .pf-cell-link {
-    color: #ccff00;
+    color: var(--accent);
     font-size: 12px;
     font-family: 'Unbounded', sans-serif;
 }
@@ -549,7 +554,7 @@ header {
 }
 
 .pf-cta-row {
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid var(--border-color);
     padding-top: 18px;
     padding-bottom: 18px;
     display: flex;
@@ -560,18 +565,18 @@ header {
 
 .pf-cta-title {
     font-size: 14px;
-    color: #fff;
+    color: var(--text-main);
     margin-bottom: 4px;
 }
 
 .pf-cta-sub {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--text-sec);
 }
 
 .pf-cta-btn {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
     background: transparent;
     border-radius: 8px;
     padding: 9px 18px;
@@ -697,7 +702,7 @@ p {
 /* Табы / Бейджи */
 .badge {
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: var(--surface-muted);
     border: 1px solid var(--border-color);
     color: var(--text-sec);
     font-family: 'Unbounded', sans-serif;
@@ -722,7 +727,7 @@ button.badge {
 }
 
 button.badge:hover:not(.active) {
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: var(--border-hover);
     color: var(--text-main);
 }
 
@@ -1220,17 +1225,17 @@ button.badge:hover:not(.active) {
 }
 
 .p3-cell {
-    background: #1a1a1a;
+    background: var(--bg-card);
     padding: 28px 24px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
 }
 
 .p3-quote {
     font-size: 40px;
     font-weight: 700;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.15);
+    color: var(--text-sec);
     margin-bottom: 14px;
     font-family: 'Unbounded', sans-serif;
 }
@@ -1238,14 +1243,14 @@ button.badge:hover:not(.active) {
 .p3-title {
     font-size: 16px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-main);
     margin-bottom: 10px;
     font-family: 'Unbounded', sans-serif;
 }
 
 .p3-body {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-sec);
     line-height: 1.6;
     margin-bottom: 18px;
 }
@@ -1255,16 +1260,16 @@ button.badge:hover:not(.active) {
     align-items: center;
     gap: 8px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--text-sec);
     font-style: italic;
 }
 
 .p3-arrow {
-    color: rgba(255, 255, 255, 0.2);
+    color: var(--text-sec);
 }
 
 .pain-title {
-    color: #ffffff;
+    color: var(--text-main);
 }
 
 .cases-grid {
@@ -1273,9 +1278,13 @@ button.badge:hover:not(.active) {
     gap: 16px;
 }
 
+.cases-grid-single {
+    grid-template-columns: 1fr;
+}
+
 .case-card {
-    background: #1a1a1a;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 20px;
     position: relative;
@@ -1314,7 +1323,7 @@ button.badge:hover:not(.active) {
 }
 
 .case-before {
-    color: #76767c;
+    color: var(--text-sec);
     text-decoration: line-through;
     font-size: 18px;
     font-family: 'Unbounded', sans-serif;
@@ -1361,11 +1370,76 @@ button.badge:hover:not(.active) {
 }
 
 .case-footnote {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--border-color);
     padding-top: 10px;
     margin-top: 2px;
     font-size: 12px;
     color: var(--text-sec);
+}
+
+.case-card-featured {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+    gap: 0;
+    padding: 0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.case-card-media {
+    min-height: 320px;
+    background: #050505;
+}
+
+.case-card-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.case-card-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 28px;
+}
+
+.case-feature-copy {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-main);
+}
+
+.case-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.case-card-tag {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--surface-muted);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-sec);
+}
+
+.case-card-link {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    color: var(--accent);
+    font-family: 'Unbounded', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .testimonial-card {
@@ -1437,7 +1511,7 @@ button.badge:hover:not(.active) {
     width: 100%;
     height: 90px;
     margin-bottom: 16px;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface-muted);
     border: 1px dashed var(--border-color);
     border-radius: 6px;
 }
@@ -1472,7 +1546,7 @@ button.badge:hover:not(.active) {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-muted);
     border-radius: 6px;
 }
 
@@ -1523,19 +1597,6 @@ button.badge:hover:not(.active) {
     font-size: 9px;
 }
 
-.chat-action-confirm {
-    color: var(--accent);
-    background: rgba(200, 241, 53, 0.1);
-    border: 1px solid var(--accent);
-    font-weight: 700;
-}
-
-.chat-action-cancel {
-    color: var(--text-sec);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
-}
-
 .cta-container {
     position: relative;
     z-index: 2;
@@ -1556,6 +1617,44 @@ button.badge:hover:not(.active) {
 
 .cta-button {
     padding: 20px 48px;
+}
+
+.cta-badges-container {
+    margin-top: 48px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.cta-badges-track {
+    display: flex;
+    width: max-content;
+    animation: marquee var(--marquee-speed) linear infinite;
+}
+
+.cta-badges-group {
+    display: flex;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.badge-display {
+    cursor: default;
+}
+
+.chat-action-confirm {
+    color: var(--accent);
+    background: rgba(200, 241, 53, 0.1);
+    border: 1px solid var(--accent);
+    font-weight: 700;
+}
+
+.chat-action-cancel {
+    color: var(--text-sec);
+    background: var(--surface-muted);
+    border: 1px solid var(--border-color);
 }
 
 .typewriter {
@@ -1585,31 +1684,6 @@ button.badge:hover:not(.active) {
     50% {
         opacity: 0;
     }
-}
-
-.cta-badges-container {
-    margin-top: 48px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.cta-badges-track {
-    display: flex;
-    width: max-content;
-    animation: scroll-badges 15s linear infinite;
-}
-
-.cta-badges-group {
-    display: flex;
-    gap: 10px;
-    padding-right: 10px;
-}
-
-.badge-display {
-    cursor: default;
 }
 
 @keyframes scroll-badges {
@@ -1814,9 +1888,9 @@ button.badge:hover:not(.active) {
         width: 42px;
         height: 42px;
         border-radius: 12px;
-        border: 1px solid rgba(200, 241, 53, 0.35);
-        background: rgba(200, 241, 53, 0.12);
-        color: #dbff74;
+        border: 1px solid var(--accent-border);
+        background: var(--accent-bg);
+        color: var(--accent);
         font-size: 18px;
         line-height: 1;
         font-family: 'Unbounded', sans-serif;
@@ -1831,8 +1905,8 @@ button.badge:hover:not(.active) {
         border-radius: 12px;
         padding: 8px 10px;
         border: 1px solid var(--border-color);
-        background: rgba(255, 255, 255, 0.03);
-        color: rgba(255, 255, 255, 0.78);
+        background: var(--surface-muted);
+        color: var(--text-main);
         font-size: 10px;
         letter-spacing: 0.06em;
         text-transform: uppercase;
@@ -2049,7 +2123,7 @@ button.badge:hover:not(.active) {
     position: sticky;
     top: var(--header-height);
     z-index: 50;
-    background: rgba(10, 10, 10, 0.88);
+    background: var(--surface-elevated);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-color);
@@ -2077,8 +2151,8 @@ button.badge:hover:not(.active) {
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.4);
+    border: 1px solid var(--border-color);
+    color: var(--text-sec);
     background: transparent;
     border-radius: 100px;
     padding: 9px 16px;
@@ -2088,7 +2162,7 @@ button.badge:hover:not(.active) {
 }
 
 .cf-pill:hover {
-    border-color: rgba(255, 255, 255, 0.25);
+    border-color: var(--border-hover);
     color: var(--text-main);
 }
 
@@ -2139,8 +2213,8 @@ button.badge:hover:not(.active) {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 2px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -2166,7 +2240,7 @@ button.badge:hover:not(.active) {
     min-height: 320px;
     display: block;
     text-decoration: none;
-    background: #111;
+    background: var(--bg-card);
 }
 
 /* A1 / C2 — big cards taller */
@@ -2182,6 +2256,19 @@ button.badge:hover:not(.active) {
     transition: transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1),
                 filter 0.5s ease;
     will-change: transform;
+}
+
+.cg-bg-photo {
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.cg-bg-placeholder {
+    background:
+        radial-gradient(circle at top left, rgba(200, 241, 53, 0.16), transparent 42%),
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 38%),
+        linear-gradient(135deg, #101820 0%, #17212b 52%, #0f151d 100%);
 }
 
 /* Niche-specific gradients */
@@ -2203,7 +2290,7 @@ button.badge:hover:not(.active) {
     font-family: 'Unbounded', sans-serif;
     font-size: clamp(60px, 12vw, 120px);
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.03);
+    color: rgba(16, 24, 39, 0.04);
     user-select: none;
     letter-spacing: -0.06em;
     pointer-events: none;
@@ -2222,9 +2309,9 @@ button.badge:hover:not(.active) {
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.85) 0%,
-        rgba(0, 0, 0, 0.3) 45%,
-        transparent 75%
+        rgba(16, 24, 39, 0.96) 0%,
+        rgba(16, 24, 39, 0.62) 68%,
+        transparent 90%
     );
     z-index: 1;
     transition: opacity 0.4s ease;
@@ -2247,14 +2334,14 @@ button.badge:hover:not(.active) {
     font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--text-sec);
     margin-bottom: 6px;
 }
 
 .cg-company {
     font-size: 13px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--text-main);
     margin-bottom: 8px;
 }
 
@@ -2270,7 +2357,7 @@ button.badge:hover:not(.active) {
 
 .cg-metric-label {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--text-sec);
     line-height: 1.4;
 }
 
@@ -2304,14 +2391,14 @@ button.badge:hover:not(.active) {
 
 .cg-task {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--text-sec);
     line-height: 1.5;
     margin-bottom: 14px;
     max-width: 340px;
 }
 
 .cg-task strong {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-main);
     font-weight: 500;
 }
 
@@ -2338,6 +2425,24 @@ button.badge:hover:not(.active) {
     background: rgba(200, 241, 53, 0.18);
     border-color: var(--accent);
     box-shadow: 0 0 18px rgba(200, 241, 53, 0.2);
+}
+
+.cg-btn-disabled {
+    color: rgba(245, 247, 250, 0.62);
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    cursor: default;
+    box-shadow: none;
+}
+
+.cg-btn-disabled:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: none;
+}
+
+.cg-card-placeholder {
+    cursor: default;
 }
 
 /* ---- Niche badge (top left corner) ---- */
@@ -2369,8 +2474,8 @@ button.badge:hover:not(.active) {
     font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: rgba(255, 255, 255, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-sec);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 3px 7px;
 }
@@ -2453,6 +2558,19 @@ button.badge:hover:not(.active) {
 
     .cg-card { min-height: 260px; }
     .cg-card[data-layout="A1"], .cg-card[data-layout="C2"] { min-height: 320px; }
+
+    .case-card-featured,
+    .cg-card--feature {
+        grid-template-columns: 1fr;
+    }
+
+    .case-card-media {
+        min-height: 280px;
+    }
+
+    .cg-media {
+        min-height: 360px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -2464,6 +2582,10 @@ button.badge:hover:not(.active) {
     .cg-card[data-layout] {
         grid-column: span 1 !important;
         min-height: 260px;
+    }
+
+    .case-card-copy {
+        padding: 22px;
     }
 
     .cg-metric {

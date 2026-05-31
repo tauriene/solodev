@@ -61,7 +61,7 @@ function initFilters() {
     const countEl = document.querySelector('.cases-count-num');
 
     function updateCount(visible) {
-        if (countEl) countEl.textContent = visible;
+        if (countEl) countEl.textContent = String(visible).padStart(2, '0');
     }
 
     pills.forEach((pill) => {

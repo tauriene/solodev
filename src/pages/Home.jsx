@@ -1,5 +1,6 @@
-
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { featuredCase } from '../data/cases';
 
 export default function Home() {
   useEffect(() => {
@@ -32,7 +33,7 @@ export default function Home() {
                     умных ботов, которые удерживают клиентов, пока вы заняты операционкой.
                 </p>
                 <div className="hero-actions">
-                    <a href="https://t.me/your_telegram" target="_blank" className="btn" data-i18n="hero_cta">Запросить
+                    <a href="https://t.me/your_telegram" target="_blank" rel="noreferrer" className="btn" data-i18n="hero_cta">Запросить
                         демо-версию</a>
                     <div className="hero-note" data-i18n-html="hero_note_html">
                         Покажем работающий прототип под вашу нишу <span className="text-accent">до оплаты</span>.
@@ -46,7 +47,7 @@ export default function Home() {
                 <h2 data-i18n="pain_title">Знакомая ситуация?</h2>
                 <div className="pain-quote-grid">
                     <article className="p3-cell">
-                        <div className="p3-quote">"</div>
+                        <div className="p3-quote">&ldquo;</div>
                         <h3 className="pain-title p3-title" data-i18n="pain_card_1_title">Никто не отвечает</h3>
                         <p className="p3-body" data-i18n="pain_card_1_copy">Клиенты пишут ночью или пока администратор занят
                             звонком. Каждый пропущенный контакт — готовый лид конкурента.</p>
@@ -56,7 +57,7 @@ export default function Home() {
                         </div>
                     </article>
                     <article className="p3-cell">
-                        <div className="p3-quote">"</div>
+                        <div className="p3-quote">&ldquo;</div>
                         <h3 className="pain-title p3-title" data-i18n="pain_card_2_title">Хаос в каналах</h3>
                         <p className="p3-body" data-i18n="pain_card_2_copy">Заявки в WhatsApp, Telegram, соцсетях и личных
                             номерах. База не ведётся, аналитики ноль.</p>
@@ -66,7 +67,7 @@ export default function Home() {
                         </div>
                     </article>
                     <article className="p3-cell">
-                        <div className="p3-quote">"</div>
+                        <div className="p3-quote">&ldquo;</div>
                         <h3 className="pain-title p3-title" data-i18n="pain_card_3_title">Нет контроля</h3>
                         <p className="p3-body" data-i18n="pain_card_3_copy">Не видно сколько обращений пришло, сколько
                             потеряно и чья это вина.</p>
@@ -84,66 +85,27 @@ export default function Home() {
                 <h2 data-i18n="cases_title">Кейсы и результаты</h2>
                 <p className="section-lead" data-i18n="cases_lead">Реальные бизнесы, реальные цифры. Считаем только
                     измеримые изменения после внедрения.</p>
-                <div className="cases-grid">
-                    <article className="card case-card">
-                        <div className="case-meta" data-i18n="case_1_meta">Автосервис · Казань</div>
-                        <h3 className="case-metric-title" data-i18n="case_1_metric_title">Пропущенные заявки</h3>
-                        <div className="case-flow">
-                            <span className="case-before" data-i18n="case_1_before">40</span>
-                            <span className="case-arrow">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
-                            <span className="case-after" data-i18n="case_1_after">3</span>
+                <div className="cases-grid cases-grid-single">
+                    <article className="card case-card case-card-featured">
+                        <div className="case-card-media">
+                            <img
+                              src={featuredCase.image}
+                              alt={featuredCase.imageAltRu}
+                              className="case-card-image"
+                            />
                         </div>
-                        <div className="case-delta">
-                            <span className="case-delta-icon">↘</span>
-                            <span data-i18n="case_1_delta">−92% заявок в мусор</span>
+                        <div className="case-card-copy">
+                            <div className="case-meta">{featuredCase.categoryRu}</div>
+                            <h3 className="case-metric-title">{featuredCase.titleRu}</h3>
+                            <p className="case-feature-copy">{featuredCase.summaryRu}</p>
+                            <div className="case-card-tags">
+                                {featuredCase.tagsRu.map((tag) => (
+                                    <span key={tag} className="case-card-tag">{tag}</span>
+                                ))}
+                            </div>
+                            <p className="case-footnote">{featuredCase.detailsRu}</p>
+                            <Link to="/cases" className="case-card-link">Открыть кейс</Link>
                         </div>
-                        <p className="case-footnote" data-i18n="case_1_footnote">Автоподтверждения и напоминания за 2 ч.</p>
-                    </article>
-
-                    <article className="card case-card">
-                        <div className="case-meta" data-i18n="case_2_meta">Салон красоты · Самара</div>
-                        <h3 className="case-metric-title" data-i18n="case_2_metric_title">Отмены в день записи</h3>
-                        <div className="case-flow">
-                            <span className="case-before" data-i18n="case_2_before">28%</span>
-                            <span className="case-arrow">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
-                            <span className="case-after" data-i18n="case_2_after">9%</span>
-                        </div>
-                        <div className="case-delta">
-                            <span className="case-delta-icon">↘</span>
-                            <span data-i18n="case_2_delta">−68% отмен</span>
-                        </div>
-                        <p className="case-footnote" data-i18n="case_2_footnote">WhatsApp-бот с депозитными напоминаниями.
-                        </p>
-                    </article>
-
-                    <article className="card case-card">
-                        <div className="case-meta" data-i18n="case_3_meta">Стоматология · Пермь</div>
-                        <h3 className="case-metric-title" data-i18n="case_3_metric_title">Ручная обработка в день</h3>
-                        <div className="case-flow">
-                            <span className="case-before" data-i18n="case_3_before">2.5ч</span>
-                            <span className="case-arrow">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
-                            <span className="case-after" data-i18n="case_3_after">35м</span>
-                        </div>
-                        <div className="case-delta">
-                            <span className="case-delta-icon">↘</span>
-                            <span data-i18n="case_3_delta">−77% ручной рутины</span>
-                        </div>
-                        <p className="case-footnote" data-i18n="case_3_footnote">Единая CRM и авторазметка лидов.</p>
                     </article>
                 </div>
             </div>
@@ -172,14 +134,14 @@ export default function Home() {
                     <div className="solution-showcase">
                         <div className="mobile-service-nav" aria-label="Mobile services switcher">
                             <button className="mobile-nav-btn" type="button" data-mobile-nav="prev" aria-label="Previous service">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <line x1="19" y1="12" x2="5" y2="12"></line>
                                     <polyline points="12 19 5 12 12 5"></polyline>
                                 </svg>
                             </button>
                             <div className="mobile-service-label" data-mobile-service-label></div>
                             <button className="mobile-nav-btn" type="button" data-mobile-nav="next" aria-label="Next service">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <line x1="5" y1="12" x2="19" y2="12"></line>
                                     <polyline points="12 5 19 12 12 19"></polyline>
                                 </svg>
@@ -325,13 +287,13 @@ export default function Home() {
                 </div>
                 <div className="mobile-service-nav testimonials-nav" aria-label="Testimonials switcher">
                     <button className="mobile-nav-btn" type="button" data-testi-nav="prev" aria-label="Previous testimonial">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="19" y1="12" x2="5" y2="12"></line>
                             <polyline points="12 19 5 12 12 5"></polyline>
                         </svg>
                     </button>
                     <button className="mobile-nav-btn" type="button" data-testi-nav="next" aria-label="Next testimonial">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
@@ -371,7 +333,7 @@ export default function Home() {
                     Напишите мне в Telegram. Задам 3 коротких вопроса о вашей специфике, а через день наглядно
                     продемонстрирую архитектуру вашей будущей системы.
                 </p>
-                <a href="https://t.me/your_telegram" target="_blank" className="btn cta-button"
+                <a href="https://t.me/your_telegram" target="_blank" rel="noreferrer" className="btn cta-button"
                     data-i18n="cta_button">Обсудить проект в Telegram</a>
 
                 <div className="cta-badges-container">
