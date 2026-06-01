@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { casesCatalog } from '../data/cases';
 
 export default function Cases() {
@@ -61,7 +62,7 @@ export default function Cases() {
 
       <section className="cg-wrap">
           <div className="cg-grid cg-grid--portfolio">
-              {casesCatalog.map((caseItem) => (
+              {casesCatalog.map((caseItem, index) => (
                   <article
                     key={caseItem.slug}
                     className={`cg-card${caseItem.isPlaceholder ? ' cg-card-placeholder' : ''}`}
@@ -73,7 +74,10 @@ export default function Cases() {
                       ) : (
                         <div
                           className="cg-bg cg-bg-photo"
-                          style={{ backgroundImage: `url(${caseItem.image})` }}
+                          style={{ 
+                            backgroundImage: `url(${caseItem.image})`,
+                            animationDelay: `${index * 0.08}s`
+                          }}
                           aria-hidden="true"
                         ></div>
                       )}
@@ -101,10 +105,10 @@ export default function Cases() {
                                 <span>{t('Кейс скоро', 'Coming soon')}</span>
                             </span>
                           ) : (
-                            <a href={caseItem.image} className="cg-btn" target="_blank" rel="noreferrer">
+                            <Link to={`/cases/${caseItem.slug}`} className="cg-btn">
                                 <span>{t('Открыть кейс', 'Open case')}</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </a>
+                            </Link>
                           )}
                       </div>
                   </article>

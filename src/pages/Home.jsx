@@ -1,16 +1,43 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { featuredCase } from '../data/cases';
 
 export default function Home() {
+  const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = import.meta.env.BASE_URL + 'script.js';
     document.body.appendChild(script);
+
+    const handleLangChange = () => {
+      setLang(localStorage.getItem('site-language') || 'ru');
+    };
+    window.addEventListener('storage', handleLangChange);
+    window.addEventListener('languageChanged', handleLangChange);
+
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (!btn.dataset.langBound) {
+          btn.dataset.langBound = 'true';
+          btn.addEventListener('click', () => {
+            setTimeout(() => window.dispatchEvent(new Event('languageChanged')), 50);
+          });
+        }
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
     return () => {
       document.body.removeChild(script);
+      window.removeEventListener('storage', handleLangChange);
+      window.removeEventListener('languageChanged', handleLangChange);
+      observer.disconnect();
     };
   }, []);
+
+  const t = (ru, en) => lang === 'en' ? en : ru;
+
   return (
     <main id="site-main" className="app-view">
 
@@ -95,18 +122,21 @@ export default function Home() {
                             />
                         </div>
                         <div className="case-card-copy">
-                            <div className="case-meta">{featuredCase.categoryRu}</div>
-                            <h3 className="case-metric-title">{featuredCase.titleRu}</h3>
-                            <p className="case-feature-copy">{featuredCase.summaryRu}</p>
+                            <div className="case-meta">{t(featuredCase.categoryRu, featuredCase.categoryEn)}</div>
+                            <h3 className="case-metric-title">{t(featuredCase.titleRu, featuredCase.titleEn)}</h3>
+                            <p className="case-feature-copy">{t(featuredCase.summaryRu, featuredCase.summaryEn)}</p>
                             <div className="case-card-tags">
-                                {featuredCase.tagsRu.map((tag) => (
+                                {(lang === 'en' ? featuredCase.tagsEn : featuredCase.tagsRu).map((tag) => (
                                     <span key={tag} className="case-card-tag">{tag}</span>
                                 ))}
                             </div>
-                            <p className="case-footnote">{featuredCase.detailsRu}</p>
-                            <Link to="/cases" className="case-card-link">Открыть кейс</Link>
+                            <p className="case-footnote">{t(featuredCase.detailsRu, featuredCase.detailsEn)}</p>
+                            <Link to={`/cases/${featuredCase.slug}`} className="case-card-link" data-i18n="case_open">{t('Открыть кейс', 'Open case')}</Link>
                         </div>
                     </article>
+                </div>
+                <div className="cases-actions">
+                    <Link to="/cases" className="btn" data-i18n="cases_more_cta">Смотреть еще</Link>
                 </div>
             </div>
         </section>
