@@ -379,19 +379,19 @@ export const caseDetails = {
   arhdzagi: {
     slug: 'arhdzagi',
     image: arhDzagiLanding,
-    imageAltRu: 'Главный экран Telegram Mini App для вейп-шопа в Архангельске',
-    imageAltEn: 'Main screen of the Telegram Mini App for a vape shop in Arkhangelsk',
+    imageAltRu: 'Главный экран Telegram Mini App для шопа в Архангельске',
+    imageAltEn: 'Main screen of the Telegram Mini App for a shop in Arkhangelsk',
 
     galleryRu: [
       {
         image: arhDzagiBasket,
-        alt: 'Экран корзины в Telegram Mini App для вейп-шопа',
+        alt: 'Экран корзины в Telegram Mini App для шопа',
         title: 'Экран корзины',
         caption: 'Быстрое оформление заказа без выхода из Telegram и без лишних промежуточных шагов.',
       },
       {
         image: arhDzagiItem,
-        alt: 'Экран карточки товара в Telegram Mini App для вейп-шопа',
+        alt: 'Экран карточки товара в Telegram Mini App для шопа',
         title: 'Страница товара',
         caption: 'Карточка товара с деталями, выбором позиции и прямым добавлением в корзину.',
       },
@@ -399,13 +399,13 @@ export const caseDetails = {
     galleryEn: [
       {
         image: arhDzagiBasket,
-        alt: 'Cart screen inside the vape shop Telegram Mini App',
+        alt: 'Cart screen inside the shop Telegram Mini App',
         title: 'Cart screen',
         caption: 'A fast checkout flow without leaving Telegram or adding unnecessary steps.',
       },
       {
         image: arhDzagiItem,
-        alt: 'Product page screen inside the vape shop Telegram Mini App',
+        alt: 'Product page screen inside the shop Telegram Mini App',
         title: 'Product page',
         caption: 'A product card with details, option selection, and direct add-to-cart flow.',
       },
@@ -413,8 +413,8 @@ export const caseDetails = {
 
     eyebrowRu: 'Telegram Mini App · Vape shop',
     eyebrowEn: 'Telegram Mini App · Vape shop',
-    titleRu: 'Mini App для вейп-шопа в Архангельске',
-    titleEn: 'Mini App for a vape shop in Arkhangelsk',
+    titleRu: 'Mini App для шопа в Архангельске',
+    titleEn: 'Mini App for a shop in Arkhangelsk',
     subtitleRu: 'Витрина товаров, карточка позиции и корзина внутри Telegram. Быстрый путь к заказу для локального магазина без лишнего трения.',
     subtitleEn: 'A product storefront, item page, and cart inside Telegram. A fast order path for a local shop with less friction.',
 
@@ -425,8 +425,8 @@ export const caseDetails = {
 
     challengeTitleRu: 'Задача',
     challengeTitleEn: 'Challenge',
-    challengeRu: 'Локальному вейп-шопу в Архангельске нужен был быстрый мобильный сценарий заказа без отдельного приложения и без ухода пользователя в перегруженный сайт. Важно было показать ассортимент, упростить выбор товара и сократить путь до оформления заказа прямо внутри привычного Telegram.',
-    challengeEn: 'A local vape shop in Arkhangelsk needed a fast mobile ordering flow without building a separate app and without sending users to an overloaded website. The goal was to show the assortment clearly, simplify product selection, and shorten the path to checkout right inside Telegram.',
+    challengeRu: 'Локальному шопу в Архангельске нужен был быстрый мобильный сценарий заказа без отдельного приложения и без ухода пользователя в перегруженный сайт. Важно было показать ассортимент, упростить выбор товара и сократить путь до оформления заказа прямо внутри привычного Telegram.',
+    challengeEn: 'A local shop in Arkhangelsk needed a fast mobile ordering flow without building a separate app and without sending users to an overloaded website. The goal was to show the assortment clearly, simplify product selection, and shorten the path to checkout right inside Telegram.',
 
     solutionTitleRu: 'Решение',
     solutionTitleEn: 'Solution',
