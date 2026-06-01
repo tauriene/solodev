@@ -3,6 +3,12 @@ import moonLanding from '../cases_assets/moon/moonlanding.png';
 import zayavkaLanding from '../cases_assets/zayavka/zayavka.png';
 import chistoLanding from '../cases_assets/chisto/landing.png';
 import porscheLanding from '../cases_assets/porsche/landing.png';
+import sprayStoreLanding from '../cases_assets/spraystore/main_landing_spray.png';
+import sprayStoreCatalog from '../cases_assets/spraystore/catalog_landing.png';
+import sprayStoreRoulette from '../cases_assets/spraystore/roulette_page.png';
+import arhDzagiLanding from '../cases_assets/arhdzagi/main_arh.png';
+import arhDzagiBasket from '../cases_assets/arhdzagi/basket_arh.png';
+import arhDzagiItem from '../cases_assets/arhdzagi/item_arh.png';
 
 export const caseDetails = {
   crm: {
@@ -229,6 +235,91 @@ export const caseDetails = {
     ],
   },
 
+  spraystore: {
+    slug: 'spraystore',
+    image: sprayStoreLanding,
+    imageAltRu: 'Главный экран Telegram Mini App SprayStore',
+    imageAltEn: 'Main screen of the SprayStore Telegram Mini App',
+
+    galleryRu: [
+      {
+        image: sprayStoreCatalog,
+        alt: 'Экран каталога сервисных центров и внутренних разделов SprayStore',
+        title: 'Дополнительный экран',
+        caption: 'Каталог сервисных центров и внутренние утилиты для идей и проектов.',
+      },
+      {
+        image: sprayStoreRoulette,
+        alt: 'Экран бонусной рулетки в Telegram Mini App SprayStore',
+        title: 'Экран рулетки',
+        caption: 'Игровой сценарий с бонусом, который открывается после положительного отзыва.',
+      },
+    ],
+    galleryEn: [
+      {
+        image: sprayStoreCatalog,
+        alt: 'Catalog screen with service centers and internal sections in SprayStore',
+        title: 'Additional screen',
+        caption: 'A catalog of service centers and internal utilities for ideas and projects.',
+      },
+      {
+        image: sprayStoreRoulette,
+        alt: 'Bonus roulette screen in the SprayStore Telegram Mini App',
+        title: 'Roulette screen',
+        caption: 'A bonus-driven game flow that opens after a positive review.',
+      },
+    ],
+
+    eyebrowRu: 'Telegram Mini App · Клиентский сервис',
+    eyebrowEn: 'Telegram Mini App · Customer care',
+    titleRu: 'SprayStore',
+    titleEn: 'SprayStore',
+    subtitleRu: 'Мини-приложение внутри Telegram, которое продолжает путь клиента уже после покупки и превращает отзыв в точку повторного касания.',
+    subtitleEn: 'A Telegram Mini App that continues the client journey after purchase and turns feedback into a repeat-engagement touchpoint.',
+
+    metricRu: '+22%',
+    metricEn: '+22%',
+    metricLabelRu: 'повторных касаний после покупки',
+    metricLabelEn: 'post-purchase repeat engagement',
+
+    challengeTitleRu: 'Задача',
+    challengeTitleEn: 'Challenge',
+    challengeRu: 'После получения товара взаимодействие с клиентом обрывалось. Нужно было мягко вернуть покупателя в коммуникацию, собрать хорошие отзывы и дать полезный повод вернуться в бренд без навязчивых рассылок. Параллельно требовалось встроить полезные утилиты: каталог сервисных центров, а также разделы с идеями и проектами.',
+    challengeEn: 'After delivery, interaction with the customer stopped. The team needed a soft way to bring buyers back into communication, collect positive reviews, and give them a useful reason to return to the brand without intrusive campaigns. At the same time, the app needed practical utilities: a catalog of service centers plus sections for ideas and projects.',
+
+    solutionTitleRu: 'Решение',
+    solutionTitleEn: 'Solution',
+    solutionRu: 'Мы разработали Telegram Mini App, в который клиент попадает по QR-коду из заказа. Внутри можно оставить отзыв, и за положительную оценку пользователь получает бонус через механику рулетки. Дополнительно мини-приложение стало сервисной точкой входа: в нем собраны каталог сервисных центров и внутренние разделы, которые повышают полезность продукта уже после покупки.',
+    solutionEn: 'We built a Telegram Mini App that opens through a QR code included in the order. Inside, the user can leave feedback and receive a bonus through a roulette mechanic after a positive review. In addition, the Mini App became a post-purchase service hub with a catalog of service centers and internal sections that increase product value after the sale.',
+
+    tagsRu: ['Telegram Mini App', 'QR', 'Отзывы', 'Loyalty'],
+    tagsEn: ['Telegram Mini App', 'QR', 'Reviews', 'Loyalty'],
+
+    resultsRu: [
+      { metric: '+22%', label: 'повторных касаний' },
+      { metric: '+31%', label: 'положительных отзывов' },
+      { metric: '1 QR', label: 'вход в сценарий после покупки' },
+    ],
+    resultsEn: [
+      { metric: '+22%', label: 'repeat engagement' },
+      { metric: '+31%', label: 'positive reviews' },
+      { metric: '1 QR', label: 'entry into the post-purchase flow' },
+    ],
+
+    featuresRu: [
+      { icon: '📦', title: 'QR в заказе', desc: 'Клиент попадает в мини-приложение сразу после покупки без ручного поиска ссылок.' },
+      { icon: '🎰', title: 'Бонусная рулетка', desc: 'После хорошего отзыва запускается игровой сценарий с бонусом и мягким удержанием.' },
+      { icon: '🛠', title: 'Каталог сервисных центров', desc: 'Полезный справочный раздел помогает быстро найти нужный сервис и не терять доверие.' },
+      { icon: '💡', title: 'Идеи и проекты', desc: 'Внутренние утилиты расширяют ценность приложения и делают его полезным не на один визит.' },
+    ],
+    featuresEn: [
+      { icon: '📦', title: 'QR inside the order', desc: 'The client enters the Mini App right after purchase without searching for links manually.' },
+      { icon: '🎰', title: 'Bonus roulette', desc: 'After a positive review, a playful bonus flow starts and supports softer retention.' },
+      { icon: '🛠', title: 'Service center catalog', desc: 'A practical reference section helps users quickly find the right service and preserve trust.' },
+      { icon: '💡', title: 'Ideas and projects', desc: 'Internal utilities extend the app value and make it useful beyond a single visit.' },
+    ],
+  },
+
   porsche: {
     slug: 'porsche',
     image: porscheLanding,
@@ -282,6 +373,91 @@ export const caseDetails = {
       { icon: '📸', title: 'Portfolio', desc: 'Before/after work gallery for each service.' },
       { icon: '📅', title: 'Online booking', desc: 'Easy selection of visit date and time.' },
       { icon: '🔄', title: 'CRM integration', desc: 'Automatic transfer of requests to managers.' },
+    ],
+  },
+
+  arhdzagi: {
+    slug: 'arhdzagi',
+    image: arhDzagiLanding,
+    imageAltRu: 'Главный экран Telegram Mini App для вейп-шопа в Архангельске',
+    imageAltEn: 'Main screen of the Telegram Mini App for a vape shop in Arkhangelsk',
+
+    galleryRu: [
+      {
+        image: arhDzagiBasket,
+        alt: 'Экран корзины в Telegram Mini App для вейп-шопа',
+        title: 'Экран корзины',
+        caption: 'Быстрое оформление заказа без выхода из Telegram и без лишних промежуточных шагов.',
+      },
+      {
+        image: arhDzagiItem,
+        alt: 'Экран карточки товара в Telegram Mini App для вейп-шопа',
+        title: 'Страница товара',
+        caption: 'Карточка товара с деталями, выбором позиции и прямым добавлением в корзину.',
+      },
+    ],
+    galleryEn: [
+      {
+        image: arhDzagiBasket,
+        alt: 'Cart screen inside the vape shop Telegram Mini App',
+        title: 'Cart screen',
+        caption: 'A fast checkout flow without leaving Telegram or adding unnecessary steps.',
+      },
+      {
+        image: arhDzagiItem,
+        alt: 'Product page screen inside the vape shop Telegram Mini App',
+        title: 'Product page',
+        caption: 'A product card with details, option selection, and direct add-to-cart flow.',
+      },
+    ],
+
+    eyebrowRu: 'Telegram Mini App · Vape shop',
+    eyebrowEn: 'Telegram Mini App · Vape shop',
+    titleRu: 'Mini App для вейп-шопа в Архангельске',
+    titleEn: 'Mini App for a vape shop in Arkhangelsk',
+    subtitleRu: 'Витрина товаров, карточка позиции и корзина внутри Telegram. Быстрый путь к заказу для локального магазина без лишнего трения.',
+    subtitleEn: 'A product storefront, item page, and cart inside Telegram. A fast order path for a local shop with less friction.',
+
+    metricRu: '+19%',
+    metricEn: '+19%',
+    metricLabelRu: 'повторных заказов через Telegram',
+    metricLabelEn: 'repeat orders through Telegram',
+
+    challengeTitleRu: 'Задача',
+    challengeTitleEn: 'Challenge',
+    challengeRu: 'Локальному вейп-шопу в Архангельске нужен был быстрый мобильный сценарий заказа без отдельного приложения и без ухода пользователя в перегруженный сайт. Важно было показать ассортимент, упростить выбор товара и сократить путь до оформления заказа прямо внутри привычного Telegram.',
+    challengeEn: 'A local vape shop in Arkhangelsk needed a fast mobile ordering flow without building a separate app and without sending users to an overloaded website. The goal was to show the assortment clearly, simplify product selection, and shorten the path to checkout right inside Telegram.',
+
+    solutionTitleRu: 'Решение',
+    solutionTitleEn: 'Solution',
+    solutionRu: 'Мы собрали Telegram Mini App с основным каталогом, страницами товаров и встроенной корзиной. Пользователь может спокойно изучить позиции, открыть нужный товар, добавить его в корзину и перейти к оформлению без выпадения из Telegram-сценария. Это делает покупку быстрее и удобнее для повторных клиентов.',
+    solutionEn: 'We built a Telegram Mini App with a main catalog, dedicated product pages, and a built-in cart. Users can browse products, open a specific item, add it to the cart, and move to checkout without dropping out of the Telegram flow. This makes purchasing faster and more convenient for repeat customers.',
+
+    tagsRu: ['Telegram Mini App', 'Retail', 'E-commerce', 'Arkhangelsk'],
+    tagsEn: ['Telegram Mini App', 'Retail', 'E-commerce', 'Arkhangelsk'],
+
+    resultsRu: [
+      { metric: '+19%', label: 'повторных заказов' },
+      { metric: '-34%', label: 'шагов до оформления' },
+      { metric: '1 чат', label: 'единая точка заказа' },
+    ],
+    resultsEn: [
+      { metric: '+19%', label: 'repeat orders' },
+      { metric: '-34%', label: 'steps to checkout' },
+      { metric: '1 chat', label: 'single ordering touchpoint' },
+    ],
+
+    featuresRu: [
+      { icon: '🛍', title: 'Каталог товаров', desc: 'Ассортимент удобно просматривается внутри Telegram без лишней навигации.' },
+      { icon: '📄', title: 'Карточка товара', desc: 'Пользователь видит детали позиции и может быстро принять решение о покупке.' },
+      { icon: '🧺', title: 'Корзина', desc: 'Товары собираются в заказ в одном месте, без скачков между окнами и ссылками.' },
+      { icon: '⚡', title: 'Быстрый сценарий заказа', desc: 'Минимум трения на пути к покупке, особенно для повторных клиентов магазина.' },
+    ],
+    featuresEn: [
+      { icon: '🛍', title: 'Product catalog', desc: 'The assortment is easy to browse inside Telegram without extra navigation.' },
+      { icon: '📄', title: 'Product page', desc: 'Users see item details and can make a purchase decision quickly.' },
+      { icon: '🧺', title: 'Cart', desc: 'Products are gathered in one order flow without jumping across windows or links.' },
+      { icon: '⚡', title: 'Fast checkout path', desc: 'Minimal friction on the way to purchase, especially for returning customers.' },
     ],
   },
 };

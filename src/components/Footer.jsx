@@ -20,11 +20,6 @@ export default function Footer() {
             © 2017—2026 «Nexium» —<br />
             студия автоматизации бизнеса
           </div>
-          <div className="footer-text-small mt-4" data-i18n-html="footer_legal">
-            ИП Некрасов Виктор Владимирович<br />
-            ИНН 710407135800<br />
-            ОГРНИП 317715400000700
-          </div>
         </div>
 
         <div className="footer-col footer-col-nav">

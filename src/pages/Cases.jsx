@@ -6,6 +6,7 @@ export default function Cases() {
   const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     document.body.classList.add('cases-page');
     const script = document.createElement('script');
     script.src = import.meta.env.BASE_URL + 'cases.js';
@@ -49,8 +50,8 @@ export default function Cases() {
           <h1 className="cases-hero-title">{t('Кейсы и результаты', 'Cases and Results')}</h1>
           <p className="cases-hero-sub">
             {t(
-              'Начинаем наполнять портфолио реальными проектами. Сейчас уже добавили CRM систему для малого бизнеса и сайт интернет-магазина цветов.',
-              'We are starting to populate the portfolio with real projects. So far we have added a CRM system for small business and a flower online store website.'
+              'Портфолио постепенно наполняется реальными проектами: CRM, e-commerce, сервисные сайты и Telegram Mini Apps для локального бизнеса.',
+              'The portfolio is gradually filling up with real projects: CRM systems, e-commerce, service websites, and Telegram Mini Apps for local businesses.'
             )}
           </p>
       </section>

@@ -3,6 +3,8 @@ import moonLanding from '../cases_assets/moon/moonlanding.png';
 import zayavkaLanding from '../cases_assets/zayavka/zayavka.png';
 import chistoLanding from '../cases_assets/chisto/landing.png';
 import porscheLanding from '../cases_assets/porsche/landing.png';
+import sprayStoreLanding from '../cases_assets/spraystore/main_landing_spray.png';
+import arhDzagiLanding from '../cases_assets/arhdzagi/main_arh.png';
 
 export const casesCatalog = [
   {
@@ -94,8 +96,30 @@ export const casesCatalog = [
     imageAltEn: 'Main screen of the cleaning company website',
   },
   {
-    slug: 'porsche',
+    slug: 'spraystore',
     layout: 'B2',
+    slot: 'bottom-center',
+    categoryRu: 'Telegram Mini App · клиентский сервис',
+    categoryEn: 'Telegram Mini App · customer care',
+    titleRu: 'SprayStore',
+    titleEn: 'SprayStore',
+    summaryRu: 'повторных касаний после покупки',
+    summaryEn: 'post-purchase repeat engagement',
+    detailsRu:
+      'Что внутри: QR-механика в заказе, бонусная рулетка за положительный отзыв, каталог сервисных центров и внутренние разделы с идеями и проектами.',
+    detailsEn:
+      'Inside: a QR mechanic inside each order, a bonus roulette for positive reviews, a catalog of service centers, and internal sections for ideas and projects.',
+    tagsRu: ['Telegram', 'Mini App', 'QR', 'Loyalty'],
+    tagsEn: ['Telegram', 'Mini App', 'QR', 'Loyalty'],
+    metricRu: '+22%',
+    metricEn: '+22%',
+    image: sprayStoreLanding,
+    imageAltRu: 'Главный экран Telegram Mini App SprayStore',
+    imageAltEn: 'Main screen of the SprayStore Telegram Mini App',
+  },
+  {
+    slug: 'porsche',
+    layout: 'B3',
     slot: 'bottom-right',
     categoryRu: 'Детейлинг · премиум',
     categoryEn: 'Detailing · premium',
@@ -114,6 +138,28 @@ export const casesCatalog = [
     image: porscheLanding,
     imageAltRu: 'Главный экран сайта детейлинг-центра',
     imageAltEn: 'Main screen of the detailing center website',
+  },
+  {
+    slug: 'arhdzagi',
+    layout: 'C2',
+    slot: 'extra-row',
+    categoryRu: 'Telegram Mini App · vape shop',
+    categoryEn: 'Telegram Mini App · vape shop',
+    titleRu: 'Telegram Mini App для вейп-шопа в Архангельске',
+    titleEn: 'Telegram Mini App for a vape shop in Arkhangelsk',
+    summaryRu: 'повторных заказов через Telegram',
+    summaryEn: 'repeat orders through Telegram',
+    detailsRu:
+      'Что внутри: каталог товаров, страница товара, корзина и быстрый сценарий оформления заказа внутри Telegram Mini App для локального вейп-шопа.',
+    detailsEn:
+      'Inside: a product catalog, product page, cart, and a fast checkout flow inside a Telegram Mini App for a local vape shop.',
+    tagsRu: ['Telegram', 'Mini App', 'Retail', 'Vape shop'],
+    tagsEn: ['Telegram', 'Mini App', 'Retail', 'Vape shop'],
+    metricRu: '+19%',
+    metricEn: '+19%',
+    image: arhDzagiLanding,
+    imageAltRu: 'Главный экран Telegram Mini App для вейп-шопа в Архангельске',
+    imageAltEn: 'Main screen of the Telegram Mini App for a vape shop in Arkhangelsk',
   },
 ];
 

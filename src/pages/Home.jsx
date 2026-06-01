@@ -4,6 +4,7 @@ import { featuredCase } from '../data/cases';
 
 export default function Home() {
   const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
+  const [typedText, setTypedText] = useState('');
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -36,6 +37,47 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const fullText = lang === 'en' ? 'Start processing them now!' : 'Начните их обрабатывать!';
+    let index = 0;
+    let deleting = false;
+    let timeoutId;
+
+    const tick = () => {
+      if (!deleting) {
+        const next = fullText.slice(0, index + 1);
+        setTypedText(next);
+        index += 1;
+
+        if (index === fullText.length) {
+          deleting = true;
+          timeoutId = setTimeout(tick, 2000);
+          return;
+        }
+      } else {
+        const next = fullText.slice(0, Math.max(index - 1, 0));
+        setTypedText(next);
+        index -= 1;
+
+        if (index <= 0) {
+          deleting = false;
+          index = 0;
+          timeoutId = setTimeout(tick, 500);
+          return;
+        }
+      }
+
+      timeoutId = setTimeout(tick, deleting ? 40 : 100);
+    };
+
+    setTypedText('');
+    timeoutId = setTimeout(tick, 200);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [lang]);
+
   const t = (ru, en) => lang === 'en' ? en : ru;
 
   return (
@@ -53,7 +95,7 @@ export default function Home() {
                 </div>
                 <h1 className="hero-main-title">
                     <span className="hero-title-prefix" data-i18n="hero_title_prefix">Хватит терять клиентов.</span>
-                    <span className="typewriter text-accent"></span>
+                    <span className="typewriter text-accent" data-managed-by-react="true">{typedText}</span>
                 </h1>
                 <p className="hero-lead" data-i18n="hero_lead">
                     Помогаем салонам, сервисам и клиникам автоматизировать хаос. Настраиваем систему онлайн-записи и

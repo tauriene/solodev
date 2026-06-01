@@ -58,6 +58,7 @@ export default function CasePage() {
   const results = isRu ? caseData.resultsRu : caseData.resultsEn;
   const features = isRu ? caseData.featuresRu : caseData.featuresEn;
   const tags = isRu ? caseData.tagsRu : caseData.tagsEn;
+  const gallery = isRu ? caseData.galleryRu : caseData.galleryEn;
 
   return (
     <main className="cp-main">
@@ -128,6 +129,31 @@ export default function CasePage() {
           </div>
         </div>
       </section>
+
+      {gallery?.length ? (
+        <section className="cp-section cp-gallery-section">
+          <div className="container">
+            <h2 className="cp-section-title">{t('Дополнительные экраны', 'Additional screens')}</h2>
+            <div className="cp-gallery-grid">
+              {gallery.map((screen, index) => (
+                <div key={index} className="cp-gallery-card">
+                  <div className="cp-gallery-image-wrap">
+                    <img
+                      src={screen.image}
+                      alt={screen.alt}
+                      className="cp-gallery-image"
+                    />
+                  </div>
+                  <div className="cp-gallery-copy">
+                    <h3 className="cp-gallery-title">{screen.title}</h3>
+                    <p className="cp-gallery-caption">{screen.caption}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* ─── FEATURES ─── */}
       <section className="cp-section">

@@ -205,7 +205,6 @@ const translations = {
         footer_privacy: 'Политика конфиденциальности',
         footer_agreement: 'Согласие на обработку персональных данных',
         footer_copyright: '© 2017—2026 «Nexium» —<br>студия автоматизации бизнеса',
-        footer_legal: 'ИП Некрасов Виктор Владимирович<br>ИНН 710407135800<br>ОГРНИП 317715400000700',
         footer_nav_about: 'О нас',
         footer_nav_portfolio: 'Портфолио',
         footer_nav_services: 'Услуги',
@@ -343,7 +342,6 @@ const translations = {
         footer_privacy: 'Privacy Policy',
         footer_agreement: 'Personal Data Processing Agreement',
         footer_copyright: '© 2017—2026 "Nexium" —<br>business automation studio',
-        footer_legal: 'Individual Entrepreneur Nekrasov Viktor Vladimirovich<br>TIN 710407135800<br>OGRNIP 317715400000700',
         footer_nav_about: 'About Us',
         footer_nav_portfolio: 'Portfolio',
         footer_nav_services: 'Services',
@@ -359,9 +357,10 @@ let textToType = translations.ru.typewriter_text;
 let typeIndex = 0;
 let isDeleting = false;
 let typewriterTimeout;
+const isReactManagedTypewriter = typewriterElement?.dataset.managedByReact === 'true';
 
 function typeWriter() {
-    if (!typewriterElement) return;
+    if (!typewriterElement || isReactManagedTypewriter) return;
 
     if (!isDeleting) {
         typewriterElement.textContent = textToType.substring(0, typeIndex + 1);
@@ -386,6 +385,7 @@ function typeWriter() {
 }
 
 function restartTypewriter() {
+    if (isReactManagedTypewriter) return;
     clearTimeout(typewriterTimeout);
     typeIndex = 0;
     isDeleting = false;
