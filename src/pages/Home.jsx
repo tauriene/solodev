@@ -1,31 +1,23 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 import { featuredCase } from '../data/cases';
-import { getStorage } from '../utils/storage';
 
 export default function Home() {
-    const [lang, setLang] = useState(getStorage('site-language') || 'ru');
+    const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
     const [typedText, setTypedText] = useState('');
-
-    const seoTitle = lang === 'en'
-        ? 'Nexium — Business Automation Studio | CRM, Bots, Websites'
-        : 'Nexium — Автоматизация бизнеса под ключ | CRM, боты, сайты';
-    const seoDesc = lang === 'en'
-        ? 'We help salons, services and clinics set up online booking, CRM and smart bots. We show a working prototype before payment.'
-        : 'Помогаем салонам, сервисам и клиникам настроить онлайн-запись, CRM и умных ботов. Показываем рабочий прототип до оплаты.';
 
     useEffect(() => {
         const scriptSrc = import.meta.env.BASE_URL + 'script.js';
-        if (!document.querySelector(`script[src="${scriptSrc}"]`)) {
-            const script = document.createElement('script');
+        let script = document.querySelector(`script[src="${scriptSrc}"]`);
+        if (!script) {
+            script = document.createElement('script');
             script.src = scriptSrc;
             document.body.appendChild(script);
         }
 
         const handleLangChange = () => {
-            setLang(getStorage('site-language') || 'ru');
+            setLang(localStorage.getItem('site-language') || 'ru');
         };
         window.addEventListener('storage', handleLangChange);
         window.addEventListener('languageChanged', handleLangChange);
@@ -43,7 +35,9 @@ export default function Home() {
         observer.observe(document.body, { childList: true, subtree: true });
 
         return () => {
-            document.body.removeChild(script);
+            if (script && script.parentNode) {
+                script.parentNode.removeChild(script);
+            }
             window.removeEventListener('storage', handleLangChange);
             window.removeEventListener('languageChanged', handleLangChange);
             observer.disconnect();
@@ -95,14 +89,6 @@ export default function Home() {
 
     return (
         <main id="site-main" className="app-view">
-            <Helmet>
-                <title>{seoTitle}</title>
-                <meta name="description" content={seoDesc} />
-                <meta property="og:title" content={seoTitle} />
-                <meta property="og:description" content={seoDesc} />
-                <meta property="og:url" content="https://nexium.dev/" />
-                <link rel="canonical" href="https://nexium.dev/" />
-            </Helmet>
 
             <section id="hero">
                 <div className="glow-ambient glow-hero"></div>
@@ -409,7 +395,7 @@ export default function Home() {
                                     <img className="testi-avatar" src="/avatar_oleg.png" alt="Олег" />
                                     <div className="testi-author-info">
                                         <span className="testi-name">{t('Олег Павлов', 'Oleg Pavlov')}</span>
-                                        <span className="testi-role">{t('Владелец цветочного магазина', 'Flower Shop Owner')}</span>
+                                        <span className="testi-role">{t('Владелец магазина', 'Flower Shop Owner')}</span>
                                     </div>
                                 </div>
                                 <Link to="/cases/moon" className="cg-btn testi-btn">

@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { FiArrowLeft } from 'react-icons/fi';
 import { caseDetails } from '../data/caseDetails';
-import { getStorage } from '../utils/storage';
 
 export default function CasePage() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const [lang, setLang] = useState(getStorage('site-language') || 'ru');
+  const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
 
   const caseData = caseDetails[slug];
 
@@ -22,14 +20,15 @@ export default function CasePage() {
 
     // Load script.js for burger menu, lang switcher, etc.
     const scriptSrc = import.meta.env.BASE_URL + 'script.js';
-    if (!document.querySelector(`script[src="${scriptSrc}"]`)) {
-      const script = document.createElement('script');
+    let script = document.querySelector(`script[src="${scriptSrc}"]`);
+    if (!script) {
+      script = document.createElement('script');
       script.src = scriptSrc;
       document.body.appendChild(script);
     }
 
     const handleLangChange = () => {
-      setLang(getStorage('site-language') || 'ru');
+      setLang(localStorage.getItem('site-language') || 'ru');
     };
     window.addEventListener('storage', handleLangChange);
     window.addEventListener('languageChanged', handleLangChange);
@@ -49,7 +48,9 @@ export default function CasePage() {
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      document.body.removeChild(script);
+      if (script && script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
       window.removeEventListener('storage', handleLangChange);
       window.removeEventListener('languageChanged', handleLangChange);
       observer.disconnect();
@@ -68,16 +69,6 @@ export default function CasePage() {
 
   return (
     <main className="cp-main">
-
-      <Helmet>
-        <title>{isRu ? caseData.titleRu : caseData.titleEn} — Nexium</title>
-        <meta name="description" content={isRu ? caseData.subtitleRu : caseData.subtitleEn} />
-        <meta property="og:title" content={`${isRu ? caseData.titleRu : caseData.titleEn} — Nexium`} />
-        <meta property="og:description" content={isRu ? caseData.subtitleRu : caseData.subtitleEn} />
-        <meta property="og:url" content={`https://nexium.dev/cases/${slug}`} />
-        <meta property="og:image" content={caseData.image} />
-        <link rel="canonical" href={`https://nexium.dev/cases/${slug}`} />
-      </Helmet>
 
       {/* ─── HERO ─── */}
       <section className="cp-hero">

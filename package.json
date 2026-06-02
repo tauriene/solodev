@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp dist/index.html dist/404.html",
-    "build:ssg": "vite build && vite build --ssr src/entry-server.jsx --outDir dist/server && node prerender.js && cp dist/index.html dist/404.html",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

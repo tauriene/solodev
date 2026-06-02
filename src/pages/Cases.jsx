@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { casesCatalog } from '../data/cases';
-import { getStorage } from '../utils/storage';
 
 export default function Cases() {
-  const [lang, setLang] = useState(getStorage('site-language') || 'ru');
+  const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -15,7 +13,7 @@ export default function Cases() {
     document.body.appendChild(script);
 
     const handleLangChange = () => {
-      setLang(getStorage('site-language') || 'ru');
+      setLang(localStorage.getItem('site-language') || 'ru');
     };
     window.addEventListener('storage', handleLangChange);
     window.addEventListener('languageChanged', handleLangChange);
@@ -35,7 +33,9 @@ export default function Cases() {
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      document.body.removeChild(script);
+      if (script && script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
       document.body.classList.remove('cases-page');
       window.removeEventListener('storage', handleLangChange);
       window.removeEventListener('languageChanged', handleLangChange);
@@ -47,16 +47,6 @@ export default function Cases() {
 
   return (
     <main className="app-view cases-page-main">
-      <Helmet>
-        <title>{t('Nexium — Портфолио кейсов | CRM, боты, Telegram Mini Apps', 'Nexium — Case Studies Portfolio | CRM, Bots, Telegram Mini Apps')}</title>
-        <meta name="description" content={t(
-          'Реальные проекты студии Nexium: CRM-системы, интернет-магазины, сайты услуг и Telegram Mini Apps для малого бизнеса. Реальные цифры и результаты.',
-          'Real projects by Nexium studio: CRM systems, e-commerce stores, service websites and Telegram Mini Apps for small business. Real numbers and results.'
-        )} />
-        <meta property="og:title" content={t('Портфолио | Nexium', 'Portfolio | Nexium')} />
-        <meta property="og:url" content="https://nexium.dev/cases" />
-        <link rel="canonical" href="https://nexium.dev/cases" />
-      </Helmet>
       <section className="cases-hero">
         <div className="cases-hero-eyebrow">{t('Портфолио', 'Portfolio')}</div>
         <h1 className="cases-hero-title">{t('Кейсы и результаты', 'Cases and Results')}</h1>
