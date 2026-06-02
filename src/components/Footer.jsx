@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FiChevronUp } from 'react-icons/fi';
 import './Footer.css';
 
 export default function Footer() {
@@ -12,10 +13,6 @@ export default function Footer() {
 
         <div className="footer-col footer-col-info">
           <Link to="/" className="footer-logo" data-i18n="logo">нексиум.дев</Link>
-          <div className="footer-text-small">
-            <a href="#" data-i18n="footer_privacy">Политика конфиденциальности</a><br />
-            <a href="#" data-i18n="footer_agreement">Согласие на обработку персональных данных</a>
-          </div>
           <div className="footer-text-small mt-4" data-i18n-html="footer_copyright">
             © 2017—2026 «Nexium» —<br />
             студия автоматизации бизнеса
@@ -24,28 +21,24 @@ export default function Footer() {
 
         <div className="footer-col footer-col-nav">
           <ul className="footer-nav">
-            <li><Link to="/" data-i18n="footer_nav_about">О нас</Link></li>
+            <li><a href="/#advantages" data-i18n="footer_nav_about">О нас</a></li>
             <li><Link to="/cases" data-i18n="footer_nav_portfolio">Портфолио</Link></li>
-            <li><Link to="/" data-i18n="footer_nav_services">Услуги</Link></li>
+            <li><a href="/#solutions" data-i18n="footer_nav_services">Услуги</a></li>
           </ul>
         </div>
 
         <div className="footer-col footer-col-nav">
           <ul className="footer-nav">
-            <li><Link to="/" data-i18n="footer_nav_clients">Клиенты</Link></li>
-            <li><Link to="/" data-i18n="footer_nav_prices">Цены</Link></li>
-            <li><Link to="/" data-i18n="footer_nav_contacts">Контакты</Link></li>
+            <li><a href="/#testimonials" data-i18n="footer_nav_clients">Клиенты</a></li>
+            <li><a href="/#cta" data-i18n="footer_nav_contacts">Контакты</a></li>
           </ul>
         </div>
 
         <div className="footer-col footer-col-contacts">
-          <a href="tel:84951097765" className="footer-phone">8 495 109 77 65</a>
           <a href="mailto:info@nexium.dev" className="footer-email">info@nexium.dev</a>
 
           <button className="footer-up-btn" onClick={scrollToTop} aria-label="Наверх">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
+            <FiChevronUp size={18} />
             <span data-i18n="footer_up">Вверх</span>
           </button>
         </div>

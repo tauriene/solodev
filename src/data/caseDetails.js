@@ -9,7 +9,16 @@ import sprayStoreRoulette from '../cases_assets/spraystore/roulette_page.png';
 import arhDzagiLanding from '../cases_assets/arhdzagi/main_arh.png';
 import arhDzagiBasket from '../cases_assets/arhdzagi/basket_arh.png';
 import arhDzagiItem from '../cases_assets/arhdzagi/item_arh.png';
-
+import {
+  FiFolder, FiFilter, FiSearch, FiBarChart2,
+  FiGrid, FiShoppingCart, FiImage,
+  FiSettings, FiCalendar, FiClipboard,
+  FiStar, FiRefreshCcw,
+  FiBox, FiGift, FiTool,
+  FiCamera,
+  FiShoppingBag, FiFileText, FiZap
+} from 'react-icons/fi';
+import { FaTelegramPlane, FaRobot, FaCalculator, FaGem, FaLightbulb } from 'react-icons/fa';
 export const caseDetails = {
   crm: {
     slug: 'crm',
@@ -54,16 +63,16 @@ export const caseDetails = {
     ],
 
     featuresRu: [
-      { icon: '🗂', title: 'База клиентов', desc: 'Единый реестр с историей всех контактов и сделок. Никаких дублей.' },
-      { icon: '🔄', title: 'Воронка продаж', desc: 'Настраиваемые этапы под ваш процесс. Статус сделки виден сразу.' },
-      { icon: '🔍', title: 'Быстрый поиск', desc: 'Находим клиента по имени, телефону или тегу за секунду.' },
-      { icon: '📊', title: 'Аналитика', desc: 'Конверсия по этапам, нагрузка на менеджеров и динамика продаж.' },
+      { icon: FiFolder, title: 'База клиентов', desc: 'Единый реестр с историей всех контактов и сделок. Никаких дублей.' },
+      { icon: FiFilter, title: 'Воронка продаж', desc: 'Настраиваемые этапы под ваш процесс. Статус сделки виден сразу.' },
+      { icon: FiSearch, title: 'Быстрый поиск', desc: 'Находим клиента по имени, телефону или тегу за секунду.' },
+      { icon: FiBarChart2, title: 'Аналитика', desc: 'Конверсия по этапам, нагрузка на менеджеров и динамика продаж.' },
     ],
     featuresEn: [
-      { icon: '🗂', title: 'Client base', desc: 'A unified registry with the full history of contacts and deals. No duplicates.' },
-      { icon: '🔄', title: 'Sales pipeline', desc: 'Configurable stages for your process. Deal status is visible at a glance.' },
-      { icon: '🔍', title: 'Quick search', desc: 'Find a client by name, phone, or tag in a second.' },
-      { icon: '📊', title: 'Analytics', desc: 'Stage conversion, manager workload, and sales dynamics.' },
+      { icon: FiFolder, title: 'Client base', desc: 'A unified registry with the full history of contacts and deals. No duplicates.' },
+      { icon: FiFilter, title: 'Sales pipeline', desc: 'Configurable stages for your process. Deal status is visible at a glance.' },
+      { icon: FiSearch, title: 'Quick search', desc: 'Find a client by name, phone, or tag in a second.' },
+      { icon: FiBarChart2, title: 'Analytics', desc: 'Stage conversion, manager workload, and sales dynamics.' },
     ],
   },
 
@@ -110,16 +119,16 @@ export const caseDetails = {
     ],
 
     featuresRu: [
-      { icon: '💐', title: 'Каталог букетов', desc: 'Фильтрация по поводу, бюджету и составу. Клиент находит нужное быстро.' },
-      { icon: '🛒', title: 'Корзина и оплата', desc: 'Онлайн-оплата без звонков и ожидания. Заказ оформляется за 3 шага.' },
-      { icon: '📲', title: 'Telegram-уведомления', desc: 'Клиент получает статус заказа прямо в Telegram. Ноль тревожных звонков.' },
-      { icon: '🖼', title: 'Фотогалерея', desc: 'Каждый букет — с несколькими фото и описанием состава.' },
+      { icon: FiGrid, title: 'Каталог букетов', desc: 'Фильтрация по поводу, бюджету и составу. Клиент находит нужное быстро.' },
+      { icon: FiShoppingCart, title: 'Корзина и оплата', desc: 'Онлайн-оплата без звонков и ожидания. Заказ оформляется за 3 шага.' },
+      { icon: FaTelegramPlane, title: 'Telegram-уведомления', desc: 'Клиент получает статус заказа прямо в Telegram. Ноль тревожных звонков.' },
+      { icon: FiImage, title: 'Фотогалерея', desc: 'Каждый букет — с несколькими фото и описанием состава.' },
     ],
     featuresEn: [
-      { icon: '💐', title: 'Bouquet catalog', desc: 'Filter by occasion, budget, and composition. Clients find what they need fast.' },
-      { icon: '🛒', title: 'Cart and payment', desc: 'Online payment without calls or waiting. Order placed in 3 steps.' },
-      { icon: '📲', title: 'Telegram notifications', desc: 'Client gets order status right in Telegram. Zero anxious calls.' },
-      { icon: '🖼', title: 'Photo gallery', desc: 'Each bouquet comes with multiple photos and composition details.' },
+      { icon: FiGrid, title: 'Bouquet catalog', desc: 'Filter by occasion, budget, and composition. Clients find what they need fast.' },
+      { icon: FiShoppingCart, title: 'Cart and payment', desc: 'Online payment without calls or waiting. Order placed in 3 steps.' },
+      { icon: FaTelegramPlane, title: 'Telegram notifications', desc: 'Client gets order status right in Telegram. Zero anxious calls.' },
+      { icon: FiImage, title: 'Photo gallery', desc: 'Each bouquet comes with multiple photos and composition details.' },
     ],
   },
 
@@ -133,7 +142,7 @@ export const caseDetails = {
     eyebrowEn: 'Service site · Small business',
     titleRu: 'Платформа онлайн-записи ZayavkaScript',
     titleEn: 'ZayavkaScript online booking platform',
-    subtitleRu: 'Адмнистратор создаёт услуги — клиенты записываются в Telegram. Ноль лишних звонков, ноль потерянных заявок.',
+    subtitleRu: 'Администратор создаёт услуги — клиенты записываются в Telegram. Ноль лишних звонков, ноль потерянных заявок.',
     subtitleEn: 'Admin creates services — clients book via Telegram. Zero unnecessary calls, zero lost bookings.',
 
     metricRu: '+45%',
@@ -166,16 +175,16 @@ export const caseDetails = {
     ],
 
     featuresRu: [
-      { icon: '⚙️', title: 'Панель администратора', desc: 'Добавляй, редактируй и архивируй услуги в пару кликов. Никакого кода.' },
-      { icon: '📅', title: 'Онлайн-запись', desc: 'Клиент выбирает услугу, удобное время и мгновенно получает подтверждение.' },
-      { icon: '🤖', title: 'Telegram-бот', desc: 'Автоматические уведомления о записи, напоминания за 2 часа и сбор отзывов.' },
-      { icon: '📋', title: 'Журнал заявок', desc: 'Все записи в одном месте. Статусы, история и контакты клиентов.' },
+      { icon: FiSettings, title: 'Панель администратора', desc: 'Добавляй, редактируй и архивируй услуги в пару кликов. Никакого кода.' },
+      { icon: FiCalendar, title: 'Онлайн-запись', desc: 'Клиент выбирает услугу, удобное время и мгновенно получает подтверждение.' },
+      { icon: FaRobot, title: 'Telegram-бот', desc: 'Автоматические уведомления о записи, напоминания за 2 часа и сбор отзывов.' },
+      { icon: FiClipboard, title: 'Журнал заявок', desc: 'Все записи в одном месте. Статусы, история и контакты клиентов.' },
     ],
     featuresEn: [
-      { icon: '⚙️', title: 'Admin panel', desc: 'Add, edit, and archive services in a couple of clicks. No code needed.' },
-      { icon: '📅', title: 'Online booking', desc: 'Client picks a service, a time slot, and instantly receives confirmation.' },
-      { icon: '🤖', title: 'Telegram bot', desc: 'Automatic booking notifications, 2-hour reminders, and review collection.' },
-      { icon: '📋', title: 'Booking journal', desc: 'All appointments in one place. Statuses, history, and client contacts.' },
+      { icon: FiSettings, title: 'Admin panel', desc: 'Add, edit, and archive services in a couple of clicks. No code needed.' },
+      { icon: FiCalendar, title: 'Online booking', desc: 'Client picks a service, a time slot, and instantly receives confirmation.' },
+      { icon: FaRobot, title: 'Telegram bot', desc: 'Automatic booking notifications, 2-hour reminders, and review collection.' },
+      { icon: FiClipboard, title: 'Booking journal', desc: 'All appointments in one place. Statuses, history, and client contacts.' },
     ],
   },
 
@@ -222,16 +231,16 @@ export const caseDetails = {
     ],
 
     featuresRu: [
-      { icon: '🧮', title: 'Калькулятор стоимости', desc: 'Прозрачный расчет цены онлайн в зависимости от параметров.' },
-      { icon: '📅', title: 'Онлайн-запись', desc: 'Удобный выбор даты и времени уборки прямо на сайте.' },
-      { icon: '⭐️', title: 'Отзывы клиентов', desc: 'Блок с реальными отзывами для повышения доверия.' },
-      { icon: '🔄', title: 'Интеграция с CRM', desc: 'Автоматическая передача заявок менеджерам.' },
+      { icon: FaCalculator, title: 'Калькулятор стоимости', desc: 'Прозрачный расчет цены онлайн в зависимости от параметров.' },
+      { icon: FiCalendar, title: 'Онлайн-запись', desc: 'Удобный выбор даты и времени уборки прямо на сайте.' },
+      { icon: FiStar, title: 'Отзывы клиентов', desc: 'Блок с реальными отзывами для повышения доверия.' },
+      { icon: FiRefreshCcw, title: 'Интеграция с CRM', desc: 'Автоматическая передача заявок менеджерам.' },
     ],
     featuresEn: [
-      { icon: '🧮', title: 'Cost calculator', desc: 'Transparent online price calculation based on parameters.' },
-      { icon: '📅', title: 'Online booking', desc: 'Convenient selection of cleaning date and time right on the site.' },
-      { icon: '⭐️', title: 'Client reviews', desc: 'A section with real reviews to increase trust.' },
-      { icon: '🔄', title: 'CRM integration', desc: 'Automatic transfer of requests to managers.' },
+      { icon: FaCalculator, title: 'Cost calculator', desc: 'Transparent online price calculation based on parameters.' },
+      { icon: FiCalendar, title: 'Online booking', desc: 'Convenient selection of cleaning date and time right on the site.' },
+      { icon: FiStar, title: 'Client reviews', desc: 'A section with real reviews to increase trust.' },
+      { icon: FiRefreshCcw, title: 'CRM integration', desc: 'Automatic transfer of requests to managers.' },
     ],
   },
 
@@ -307,16 +316,16 @@ export const caseDetails = {
     ],
 
     featuresRu: [
-      { icon: '📦', title: 'QR в заказе', desc: 'Клиент попадает в мини-приложение сразу после покупки без ручного поиска ссылок.' },
-      { icon: '🎰', title: 'Бонусная рулетка', desc: 'После хорошего отзыва запускается игровой сценарий с бонусом и мягким удержанием.' },
-      { icon: '🛠', title: 'Каталог сервисных центров', desc: 'Полезный справочный раздел помогает быстро найти нужный сервис и не терять доверие.' },
-      { icon: '💡', title: 'Идеи и проекты', desc: 'Внутренние утилиты расширяют ценность приложения и делают его полезным не на один визит.' },
+      { icon: FiBox, title: 'QR в заказе', desc: 'Клиент попадает в мини-приложение сразу после покупки без ручного поиска ссылок.' },
+      { icon: FiGift, title: 'Бонусная рулетка', desc: 'После хорошего отзыва запускается игровой сценарий с бонусом и мягким удержанием.' },
+      { icon: FiTool, title: 'Каталог сервисных центров', desc: 'Полезный справочный раздел помогает быстро найти нужный сервис и не терять доверие.' },
+      { icon: FaLightbulb, title: 'Идеи и проекты', desc: 'Внутренние утилиты расширяют ценность приложения и делают его полезным не на один визит.' },
     ],
     featuresEn: [
-      { icon: '📦', title: 'QR inside the order', desc: 'The client enters the Mini App right after purchase without searching for links manually.' },
-      { icon: '🎰', title: 'Bonus roulette', desc: 'After a positive review, a playful bonus flow starts and supports softer retention.' },
-      { icon: '🛠', title: 'Service center catalog', desc: 'A practical reference section helps users quickly find the right service and preserve trust.' },
-      { icon: '💡', title: 'Ideas and projects', desc: 'Internal utilities extend the app value and make it useful beyond a single visit.' },
+      { icon: FiBox, title: 'QR inside the order', desc: 'The client enters the Mini App right after purchase without searching for links manually.' },
+      { icon: FiGift, title: 'Bonus roulette', desc: 'After a positive review, a playful bonus flow starts and supports softer retention.' },
+      { icon: FiTool, title: 'Service center catalog', desc: 'A practical reference section helps users quickly find the right service and preserve trust.' },
+      { icon: FaLightbulb, title: 'Ideas and projects', desc: 'Internal utilities extend the app value and make it useful beyond a single visit.' },
     ],
   },
 
@@ -363,16 +372,16 @@ export const caseDetails = {
     ],
 
     featuresRu: [
-      { icon: '✨', title: 'Премиум дизайн', desc: 'Стильный темный интерфейс, подчеркивающий статусность.' },
-      { icon: '📸', title: 'Портфолио', desc: 'Галерея работ до/после для каждой услуги.' },
-      { icon: '📅', title: 'Онлайн-запись', desc: 'Удобный выбор даты и времени визита.' },
-      { icon: '🔄', title: 'Интеграция с CRM', desc: 'Автоматическая передача заявок менеджерам.' },
+      { icon: FaGem, title: 'Премиум дизайн', desc: 'Стильный темный интерфейс, подчеркивающий статусность.' },
+      { icon: FiCamera, title: 'Портфолио', desc: 'Галерея работ до/после для каждой услуги.' },
+      { icon: FiCalendar, title: 'Онлайн-запись', desc: 'Удобный выбор даты и времени визита.' },
+      { icon: FiRefreshCcw, title: 'Интеграция с CRM', desc: 'Автоматическая передача заявок менеджерам.' },
     ],
     featuresEn: [
-      { icon: '✨', title: 'Premium design', desc: 'Stylish dark interface highlighting status.' },
-      { icon: '📸', title: 'Portfolio', desc: 'Before/after work gallery for each service.' },
-      { icon: '📅', title: 'Online booking', desc: 'Easy selection of visit date and time.' },
-      { icon: '🔄', title: 'CRM integration', desc: 'Automatic transfer of requests to managers.' },
+      { icon: FaGem, title: 'Premium design', desc: 'Stylish dark interface highlighting status.' },
+      { icon: FiCamera, title: 'Portfolio', desc: 'Before/after work gallery for each service.' },
+      { icon: FiCalendar, title: 'Online booking', desc: 'Easy selection of visit date and time.' },
+      { icon: FiRefreshCcw, title: 'CRM integration', desc: 'Automatic transfer of requests to managers.' },
     ],
   },
 
@@ -448,16 +457,16 @@ export const caseDetails = {
     ],
 
     featuresRu: [
-      { icon: '🛍', title: 'Каталог товаров', desc: 'Ассортимент удобно просматривается внутри Telegram без лишней навигации.' },
-      { icon: '📄', title: 'Карточка товара', desc: 'Пользователь видит детали позиции и может быстро принять решение о покупке.' },
-      { icon: '🧺', title: 'Корзина', desc: 'Товары собираются в заказ в одном месте, без скачков между окнами и ссылками.' },
-      { icon: '⚡', title: 'Быстрый сценарий заказа', desc: 'Минимум трения на пути к покупке, особенно для повторных клиентов магазина.' },
+      { icon: FiShoppingBag, title: 'Каталог товаров', desc: 'Ассортимент удобно просматривается внутри Telegram без лишней навигации.' },
+      { icon: FiFileText, title: 'Карточка товара', desc: 'Пользователь видит детали позиции и может быстро принять решение о покупке.' },
+      { icon: FiShoppingCart, title: 'Корзина', desc: 'Товары собираются в заказ в одном месте, без скачков между окнами и ссылками.' },
+      { icon: FiZap, title: 'Быстрый сценарий заказа', desc: 'Минимум трения на пути к покупке, особенно для повторных клиентов магазина.' },
     ],
     featuresEn: [
-      { icon: '🛍', title: 'Product catalog', desc: 'The assortment is easy to browse inside Telegram without extra navigation.' },
-      { icon: '📄', title: 'Product page', desc: 'Users see item details and can make a purchase decision quickly.' },
-      { icon: '🧺', title: 'Cart', desc: 'Products are gathered in one order flow without jumping across windows or links.' },
-      { icon: '⚡', title: 'Fast checkout path', desc: 'Minimal friction on the way to purchase, especially for returning customers.' },
+      { icon: FiShoppingBag, title: 'Product catalog', desc: 'The assortment is easy to browse inside Telegram without extra navigation.' },
+      { icon: FiFileText, title: 'Product page', desc: 'Users see item details and can make a purchase decision quickly.' },
+      { icon: FiShoppingCart, title: 'Cart', desc: 'Products are gathered in one order flow without jumping across windows or links.' },
+      { icon: FiZap, title: 'Fast checkout path', desc: 'Minimal friction on the way to purchase, especially for returning customers.' },
     ],
   },
 };

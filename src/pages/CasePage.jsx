@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { FiArrowLeft } from 'react-icons/fi';
 import { caseDetails } from '../data/caseDetails';
+import { getStorage } from '../utils/storage';
 
 export default function CasePage() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
+  const [lang, setLang] = useState(getStorage('site-language') || 'ru');
 
   const caseData = caseDetails[slug];
 
@@ -18,12 +21,15 @@ export default function CasePage() {
     window.scrollTo({ top: 0, behavior: 'instant' });
 
     // Load script.js for burger menu, lang switcher, etc.
-    const script = document.createElement('script');
-    script.src = import.meta.env.BASE_URL + 'script.js';
-    document.body.appendChild(script);
+    const scriptSrc = import.meta.env.BASE_URL + 'script.js';
+    if (!document.querySelector(`script[src="${scriptSrc}"]`)) {
+      const script = document.createElement('script');
+      script.src = scriptSrc;
+      document.body.appendChild(script);
+    }
 
     const handleLangChange = () => {
-      setLang(localStorage.getItem('site-language') || 'ru');
+      setLang(getStorage('site-language') || 'ru');
     };
     window.addEventListener('storage', handleLangChange);
     window.addEventListener('languageChanged', handleLangChange);
@@ -63,16 +69,23 @@ export default function CasePage() {
   return (
     <main className="cp-main">
 
+      <Helmet>
+        <title>{isRu ? caseData.titleRu : caseData.titleEn} — Nexium</title>
+        <meta name="description" content={isRu ? caseData.subtitleRu : caseData.subtitleEn} />
+        <meta property="og:title" content={`${isRu ? caseData.titleRu : caseData.titleEn} — Nexium`} />
+        <meta property="og:description" content={isRu ? caseData.subtitleRu : caseData.subtitleEn} />
+        <meta property="og:url" content={`https://nexium.dev/cases/${slug}`} />
+        <meta property="og:image" content={caseData.image} />
+        <link rel="canonical" href={`https://nexium.dev/cases/${slug}`} />
+      </Helmet>
+
       {/* ─── HERO ─── */}
       <section className="cp-hero">
         <div className="cp-hero-bg" style={{ backgroundImage: `url(${caseData.image})` }} aria-hidden="true" />
         <div className="cp-hero-overlay" aria-hidden="true" />
         <div className="cp-hero-content container">
           <Link to="/cases" className="cp-breadcrumb">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12" />
-              <polyline points="12 19 5 12 12 5" />
-            </svg>
+            <FiArrowLeft size={14} />
             {t('Все кейсы', 'All cases')}
           </Link>
           <div className="cp-hero-eyebrow">{t(caseData.eyebrowRu, caseData.eyebrowEn)}</div>
@@ -160,13 +173,16 @@ export default function CasePage() {
         <div className="container">
           <h2 className="cp-section-title">{t('Что внутри', "What's inside")}</h2>
           <div className="cp-features-grid">
-            {features.map((f, i) => (
-              <div key={i} className="cp-feature-card">
-                <div className="cp-feature-icon">{f.icon}</div>
-                <h3 className="cp-feature-title">{f.title}</h3>
-                <p className="cp-feature-desc">{f.desc}</p>
-              </div>
-            ))}
+            {features.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <div key={i} className="cp-feature-card">
+                  <div className="cp-feature-icon">{Icon && <Icon />}</div>
+                  <h3 className="cp-feature-title">{f.title}</h3>
+                  <p className="cp-feature-desc">{f.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -187,15 +203,16 @@ export default function CasePage() {
           </p>
           <div className="cp-cta-actions">
             <a
-              href="https://t.me/your_telegram"
+              href="https://t.me/nexiumdm"
               target="_blank"
               rel="noreferrer"
               className="btn"
             >
               {t('Запросить демо', 'Request a demo')}
             </a>
-            <Link to="/cases" className="cp-cta-back">
-              {t('← Все кейсы', '← All cases')}
+            <Link to="/cases" className="cp-cta-back" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <FiArrowLeft size={14} />
+              {t('Все кейсы', 'All cases')}
             </Link>
           </div>
         </div>

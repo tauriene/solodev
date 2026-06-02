@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { casesCatalog } from '../data/cases';
+import { getStorage } from '../utils/storage';
 
 export default function Cases() {
-  const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
+  const [lang, setLang] = useState(getStorage('site-language') || 'ru');
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -11,26 +13,26 @@ export default function Cases() {
     const script = document.createElement('script');
     script.src = import.meta.env.BASE_URL + 'cases.js';
     document.body.appendChild(script);
-    
+
     const handleLangChange = () => {
-      setLang(localStorage.getItem('site-language') || 'ru');
+      setLang(getStorage('site-language') || 'ru');
     };
     window.addEventListener('storage', handleLangChange);
     window.addEventListener('languageChanged', handleLangChange);
-    
+
     const observer = new MutationObserver(() => {
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            if(!btn.dataset.langBound) {
-                btn.dataset.langBound = 'true';
-                btn.addEventListener('click', () => {
-                    setTimeout(() => {
-                        window.dispatchEvent(new Event('languageChanged'));
-                    }, 50);
-                });
-            }
-        });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (!btn.dataset.langBound) {
+          btn.dataset.langBound = 'true';
+          btn.addEventListener('click', () => {
+            setTimeout(() => {
+              window.dispatchEvent(new Event('languageChanged'));
+            }, 50);
+          });
+        }
+      });
     });
-    observer.observe(document.body, {childList: true, subtree: true});
+    observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       document.body.removeChild(script);
@@ -45,87 +47,97 @@ export default function Cases() {
 
   return (
     <main className="app-view cases-page-main">
+      <Helmet>
+        <title>{t('Nexium — Портфолио кейсов | CRM, боты, Telegram Mini Apps', 'Nexium — Case Studies Portfolio | CRM, Bots, Telegram Mini Apps')}</title>
+        <meta name="description" content={t(
+          'Реальные проекты студии Nexium: CRM-системы, интернет-магазины, сайты услуг и Telegram Mini Apps для малого бизнеса. Реальные цифры и результаты.',
+          'Real projects by Nexium studio: CRM systems, e-commerce stores, service websites and Telegram Mini Apps for small business. Real numbers and results.'
+        )} />
+        <meta property="og:title" content={t('Портфолио | Nexium', 'Portfolio | Nexium')} />
+        <meta property="og:url" content="https://nexium.dev/cases" />
+        <link rel="canonical" href="https://nexium.dev/cases" />
+      </Helmet>
       <section className="cases-hero">
-          <div className="cases-hero-eyebrow">{t('Портфолио', 'Portfolio')}</div>
-          <h1 className="cases-hero-title">{t('Кейсы и результаты', 'Cases and Results')}</h1>
-          <p className="cases-hero-sub">
-            {t(
-              'Портфолио постепенно наполняется реальными проектами: CRM, e-commerce, сервисные сайты и Telegram Mini Apps для локального бизнеса.',
-              'The portfolio is gradually filling up with real projects: CRM systems, e-commerce, service websites, and Telegram Mini Apps for local businesses.'
-            )}
-          </p>
+        <div className="cases-hero-eyebrow">{t('Портфолио', 'Portfolio')}</div>
+        <h1 className="cases-hero-title">{t('Кейсы и результаты', 'Cases and Results')}</h1>
+        <p className="cases-hero-sub">
+          {t(
+            'Портфолио постепенно наполняется реальными проектами: CRM, e-commerce, сервисные сайты и Telegram Mini Apps для локального бизнеса.',
+            'The portfolio is gradually filling up with real projects: CRM systems, e-commerce, service websites, and Telegram Mini Apps for local businesses.'
+          )}
+        </p>
       </section>
 
       <div className="cases-count-bar">
-          <span className="cases-count-num">{String(casesCatalog.length).padStart(2, '0')}</span>
-          <span className="cases-count-label">{t('карточек в портфолио', 'portfolio cards')}</span>
+        <span className="cases-count-num">{String(casesCatalog.length).padStart(2, '0')}</span>
+        <span className="cases-count-label">{t('карточек в портфолио', 'portfolio cards')}</span>
       </div>
 
       <section className="cg-wrap">
-          <div className="cg-grid cg-grid--portfolio">
-              {casesCatalog.map((caseItem, index) => (
-                  <article
-                    key={caseItem.slug}
-                    className={`cg-card${caseItem.isPlaceholder ? ' cg-card-placeholder' : ''}`}
-                    data-layout={caseItem.layout}
-                    data-slot={caseItem.slot}
-                  >
-                      {caseItem.isPlaceholder ? (
-                        <div className="cg-bg cg-bg-placeholder" aria-hidden="true"></div>
-                      ) : (
-                        <div
-                          className="cg-bg cg-bg-photo"
-                          style={{ 
-                            backgroundImage: `url(${caseItem.image})`,
-                            animationDelay: `${index * 0.08}s`
-                          }}
-                          aria-hidden="true"
-                        ></div>
-                      )}
-                      {caseItem.isPlaceholder && (
-                        <span className="cg-badge-new">{t('Скоро', 'Soon')}</span>
-                      )}
-                      <div className="cg-overlay"></div>
-                      <div className="cg-always">
-                          <div className="cg-niche">{t(caseItem.categoryRu, caseItem.categoryEn)}</div>
-                          <h3 className="cg-company">{t(caseItem.titleRu, caseItem.titleEn)}</h3>
-                          <div className="cg-metric">
-                            {caseItem.isPlaceholder ? t('Скоро', 'Soon') : t(caseItem.metricRu, caseItem.metricEn)}
-                          </div>
-                          <div className="cg-metric-label">{t(caseItem.summaryRu, caseItem.summaryEn)}</div>
-                      </div>
-                      <div className="cg-hover">
-                          <div className="cg-tags">
-                              {(lang === 'en' ? caseItem.tagsEn : caseItem.tagsRu).map((tag) => (
-                                  <span key={tag} className="cg-tag">{tag}</span>
-                              ))}
-                          </div>
-                          <p className="cg-task">{t(caseItem.detailsRu, caseItem.detailsEn)}</p>
-                          {caseItem.isPlaceholder ? (
-                            <span className="cg-btn cg-btn-disabled">
-                                <span>{t('Кейс скоро', 'Coming soon')}</span>
-                            </span>
-                          ) : (
-                            <Link to={`/cases/${caseItem.slug}`} className="cg-btn">
-                                <span>{t('Открыть кейс', 'Open case')}</span>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </Link>
-                          )}
-                      </div>
-                  </article>
-              ))}
-          </div>
+        <div className="cg-grid cg-grid--portfolio">
+          {casesCatalog.map((caseItem, index) => (
+            <article
+              key={caseItem.slug}
+              className={`cg-card${caseItem.isPlaceholder ? ' cg-card-placeholder' : ''}`}
+              data-layout={caseItem.layout}
+              data-slot={caseItem.slot}
+            >
+              {caseItem.isPlaceholder ? (
+                <div className="cg-bg cg-bg-placeholder" aria-hidden="true"></div>
+              ) : (
+                <div
+                  className="cg-bg cg-bg-photo"
+                  style={{
+                    backgroundImage: `url(${caseItem.image})`,
+                    animationDelay: `${index * 0.08}s`
+                  }}
+                  aria-hidden="true"
+                ></div>
+              )}
+              {caseItem.isPlaceholder && (
+                <span className="cg-badge-new">{t('Скоро', 'Soon')}</span>
+              )}
+              <div className="cg-overlay"></div>
+              <div className="cg-always">
+                <div className="cg-niche">{t(caseItem.categoryRu, caseItem.categoryEn)}</div>
+                <h3 className="cg-company">{t(caseItem.titleRu, caseItem.titleEn)}</h3>
+                <div className="cg-metric">
+                  {caseItem.isPlaceholder ? t('Скоро', 'Soon') : t(caseItem.metricRu, caseItem.metricEn)}
+                </div>
+                <div className="cg-metric-label">{t(caseItem.summaryRu, caseItem.summaryEn)}</div>
+              </div>
+              <div className="cg-hover">
+                <div className="cg-tags">
+                  {(lang === 'en' ? caseItem.tagsEn : caseItem.tagsRu).map((tag) => (
+                    <span key={tag} className="cg-tag">{tag}</span>
+                  ))}
+                </div>
+                <p className="cg-task">{t(caseItem.detailsRu, caseItem.detailsEn)}</p>
+                {caseItem.isPlaceholder ? (
+                  <span className="cg-btn cg-btn-disabled">
+                    <span>{t('Кейс скоро', 'Coming soon')}</span>
+                  </span>
+                ) : (
+                  <Link to={`/cases/${caseItem.slug}`} className="cg-btn">
+                    <span>{t('Открыть кейс', 'Open case')}</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </Link>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <div className="cases-cta">
-          <div className="cases-cta-text">
-              <h3 data-i18n="cases_cta_title">{t('Готовы обсудить ваш проект?', 'Ready to discuss your project?')}</h3>
-              <p data-i18n="cases_cta_copy">{t('Проанализируем текущую ситуацию и подберем оптимальное решение.', 'We will analyze your current situation and find the optimal solution.')}</p>
-          </div>
-          <a href="https://t.me/your_telegram" className="btn cta-button" target="_blank" rel="noreferrer">
-            <span data-i18n="cases_cta_btn">{t('Написать в Telegram', 'Message on Telegram')}</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
+        <div className="cases-cta-text">
+          <h3 data-i18n="cases_cta_title">{t('Готовы обсудить ваш проект?', 'Ready to discuss your project?')}</h3>
+          <p data-i18n="cases_cta_copy">{t('Проанализируем текущую ситуацию и подберем оптимальное решение.', 'We will analyze your current situation and find the optimal solution.')}</p>
+        </div>
+        <a href="https://t.me/nexiumdm" className="btn cta-button" target="_blank" rel="noreferrer">
+          <span data-i18n="cases_cta_btn">{t('Написать в Telegram', 'Message on Telegram')}</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
       </div>
     </main>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Header from './components/Header';
@@ -16,7 +16,7 @@ function ScrollToTop() {
     }
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (location.hash) return;
 
     const resetScroll = () => {
@@ -41,7 +41,6 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cases.html" element={<Cases />} />
         <Route path="/cases" element={<Cases />} />
         <Route path="/cases/:slug" element={<CasePage />} />
       </Routes>

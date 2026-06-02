@@ -533,17 +533,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    document.querySelectorAll('[data-testi-nav]').forEach((button) => {
-        button.addEventListener('click', () => {
-            const grid = document.querySelector('#testimonials .grid-3');
-            if (!grid) return;
-            const card = grid.querySelector('.card');
-            if (!card) return;
-            const scrollAmount = card.offsetWidth + 16;
-            const dir = button.dataset.testiNav === 'next' ? 1 : -1;
-            grid.scrollBy({ left: scrollAmount * dir, behavior: 'smooth' });
+    // Testimonial mobile slider
+    (function initTestiSlider() {
+        const cards = Array.from(document.querySelectorAll('.testi-card'));
+        const dots  = Array.from(document.querySelectorAll('.testi-dot'));
+        const prev  = document.getElementById('testi-prev');
+        const next  = document.getElementById('testi-next');
+        if (!cards.length || !prev || !next) return;
+
+        let current = 0;
+
+        function showCard(idx) {
+            cards.forEach((c, i) => {
+                c.classList.toggle('is-active', i === idx);
+            });
+            dots.forEach((d, i) => {
+                d.classList.toggle('active', i === idx);
+            });
+            current = idx;
+        }
+
+        function isSliderActive() {
+            return window.matchMedia('(max-width: 768px)').matches;
+        }
+
+        // Activate first card on mobile
+        if (isSliderActive()) showCard(0);
+
+        window.addEventListener('resize', () => {
+            if (isSliderActive()) {
+                showCard(current);
+            } else {
+                cards.forEach(c => c.classList.remove('is-active'));
+            }
         });
-    });
+
+        prev.addEventListener('click', () => {
+            if (!isSliderActive()) return;
+            showCard((current - 1 + cards.length) % cards.length);
+        });
+
+        next.addEventListener('click', () => {
+            if (!isSliderActive()) return;
+            showCard((current + 1) % cards.length);
+        });
+    })();
 
     const observerOptions = {
         root: null,

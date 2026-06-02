@@ -42,13 +42,69 @@ function initBurgerMenu() {
     });
 }
 
-/* ---- Lang switcher (minimal, header only) ---- */
+/* ---- Lang switcher with translations ---- */
+const casesTranslations = {
+    ru: {
+        logo: 'нексиум.дев',
+        header_telegram: 'Telegram',
+        header_nav_portfolio: 'Портфолио',
+        header_nav_home: 'Главная',
+        footer_privacy: 'Политика конфиденциальности',
+        footer_agreement: 'Согласие на обработку персональных данных',
+        footer_copyright: '© 2017—2026 «Nexium» —<br>студия автоматизации бизнеса',
+        footer_nav_about: 'О нас',
+        footer_nav_portfolio: 'Портфолио',
+        footer_nav_services: 'Услуги',
+        footer_nav_clients: 'Клиенты',
+        footer_nav_contacts: 'Контакты',
+        footer_up: 'Вверх',
+    },
+    en: {
+        logo: 'nexium.dev',
+        header_telegram: 'Telegram',
+        header_nav_portfolio: 'Portfolio',
+        header_nav_home: 'Home',
+        footer_privacy: 'Privacy Policy',
+        footer_agreement: 'Personal Data Processing Agreement',
+        footer_copyright: '© 2017—2026 "Nexium" —<br>business automation studio',
+        footer_nav_about: 'About Us',
+        footer_nav_portfolio: 'Portfolio',
+        footer_nav_services: 'Services',
+        footer_nav_clients: 'Clients',
+        footer_nav_contacts: 'Contacts',
+        footer_up: 'Up',
+    }
+};
+
+function applyTranslations(lang) {
+    const dict = casesTranslations[lang] || casesTranslations.ru;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+        const key = el.dataset.i18nHtml;
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+
+    document.querySelectorAll('.lang-btn').forEach((b) => {
+        b.classList.toggle('active', b.dataset.lang === lang);
+    });
+
+    localStorage.setItem('site-language', lang);
+    window.dispatchEvent(new Event('languageChanged'));
+}
+
 function initLangSwitcher() {
+    const saved = localStorage.getItem('site-language') || 'ru';
+    applyTranslations(saved);
+
     document.querySelectorAll('.lang-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.lang-btn').forEach((b) => b.classList.remove('active'));
-            btn.classList.add('active');
-            localStorage.setItem('site-language', btn.dataset.lang);
+            applyTranslations(btn.dataset.lang);
         });
     });
 }
@@ -114,4 +170,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initFilters();
     initScrollReveal();
 });
-if(document.readyState !== 'loading') { document.dispatchEvent(new Event('DOMContentLoaded')); }
+if (document.readyState !== 'loading') { document.dispatchEvent(new Event('DOMContentLoaded')); }
