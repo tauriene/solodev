@@ -1,6 +1,10 @@
+let tabs = [];
+let currentTabIndex = 0;
+
 function switchTab(paneId, btnElement) {
-    const buttons = document.querySelectorAll('.tabs-wrapper .badge');
-    buttons.forEach((btn) => btn.classList.remove('active'));
+    if (!btnElement || !tabs.length) return;
+
+    tabs.forEach((btn) => btn.classList.remove('active'));
     btnElement.classList.add('active');
 
     const panes = document.querySelectorAll('.panel-pane');
@@ -18,6 +22,7 @@ function switchTab(paneId, btnElement) {
         panes.forEach((pane) => {
             if (pane !== activePane) {
                 pane.classList.remove('active');
+                pane.classList.remove('is-leaving');
             }
         });
         activePane.classList.add('active');
@@ -31,48 +36,44 @@ function switchTab(paneId, btnElement) {
     updateMobileServiceLabel();
 }
 
-const tabs = Array.from(document.querySelectorAll('.tabs-wrapper .badge[data-pane]'));
-let autoSwitchInterval;
-let currentTabIndex = 0;
-
 function updateMobileServiceLabel() {
     const label = document.querySelector('[data-mobile-service-label]');
     if (!label || !tabs[currentTabIndex]) return;
     label.textContent = tabs[currentTabIndex].textContent.trim();
 }
 
-function startAutoSwitch() {
-    if (window.matchMedia('(max-width: 768px)').matches) return;
-    autoSwitchInterval = setInterval(() => {
-        currentTabIndex = (currentTabIndex + 1) % tabs.length;
-        const btn = tabs[currentTabIndex];
-        switchTab(btn.dataset.pane, btn);
-    }, 3000);
-}
+function initSolutionsTabs() {
+    tabs = Array.from(document.querySelectorAll('.tabs-wrapper .badge[data-pane]'));
+    if (!tabs.length) return;
 
-function stopAutoSwitch() {
-    clearInterval(autoSwitchInterval);
-}
+    const activeIndex = tabs.findIndex((tab) => tab.classList.contains('active'));
+    currentTabIndex = activeIndex >= 0 ? activeIndex : 0;
 
-tabs.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        stopAutoSwitch();
-        switchTab(button.dataset.pane, button);
-        currentTabIndex = index;
-        updateMobileServiceLabel();
+    tabs.forEach((button, index) => {
+        if (button.dataset.tabsBound === 'true') return;
+        button.dataset.tabsBound = 'true';
+        button.addEventListener('click', () => {
+            currentTabIndex = index;
+            switchTab(button.dataset.pane, button);
+        });
     });
-});
 
-if (tabs.length > 0) {
-    const tabsObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            startAutoSwitch();
-            tabsObserver.disconnect();
-        }
-    }, { threshold: 0.2 });
+    document.querySelectorAll('[data-mobile-nav]').forEach((button) => {
+        if (button.dataset.tabsBound === 'true') return;
+        button.dataset.tabsBound = 'true';
+        button.addEventListener('click', () => {
+            if (!tabs.length) return;
+            const dir = button.dataset.mobileNav === 'next' ? 1 : -1;
+            currentTabIndex = (currentTabIndex + dir + tabs.length) % tabs.length;
+            const nextTab = tabs[currentTabIndex];
+            switchTab(nextTab.dataset.pane, nextTab);
+        });
+    });
 
-    const section = document.querySelector('.interactive-section');
-    if (section) tabsObserver.observe(section);
+    const activeTab = tabs[currentTabIndex] || tabs[0];
+    if (activeTab) {
+        switchTab(activeTab.dataset.pane, activeTab);
+    }
 }
 
 const translations = {
@@ -100,6 +101,12 @@ const translations = {
         pain_card_3_title: 'Нет контроля',
         pain_card_3_copy: 'Не видно сколько обращений пришло, сколько потеряно и чья это вина.',
         pain_card_3_consequence: 'деньги утекают незаметно',
+        pain_card_4_title: 'Рутина съедает время',
+        pain_card_4_copy: 'Менеджеры вручную отвечают на одни и те же вопросы, подтверждают записи и пересылают контакты между чатами.',
+        pain_card_4_consequence: 'команда занята не продажей, а перепиской',
+        pain_card_5_title: 'После заявки тишина',
+        pain_card_5_copy: 'Клиент оставил контакт, но дальше нет ни напоминаний, ни догрева, ни понятного сценария возврата в диалог.',
+        pain_card_5_consequence: 'теплые лиды остывают сами по себе',
         solutions_title: 'Что мы внедряем',
         solutions_lead: 'Простые инструменты без лишней терминологии. Вы выбираете ключевую задачу — мы разворачиваем готовое IT-решение.',
         tab_1: '01 / Сайты под задачу',
@@ -237,6 +244,12 @@ const translations = {
         pain_card_3_title: 'No Control',
         pain_card_3_copy: 'You cannot see how many requests came in, how many were lost, or who is responsible.',
         pain_card_3_consequence: 'money leaks out unnoticed',
+        pain_card_4_title: 'Routine Eats Time',
+        pain_card_4_copy: 'Managers manually answer the same questions, confirm bookings, and forward contacts between chats.',
+        pain_card_4_consequence: 'the team is stuck in chat work instead of sales',
+        pain_card_5_title: 'Silence After the Lead',
+        pain_card_5_copy: 'A client leaves a contact, but there are no reminders, no follow-up flow, and no clear path to bring them back into the conversation.',
+        pain_card_5_consequence: 'warm leads cool down on their own',
         solutions_title: 'What We Implement',
         solutions_lead: 'Simple tools without jargon. You pick the core task, we deploy a ready-to-use IT solution.',
         tab_1: '01 / Task-Focused Websites',
@@ -424,6 +437,7 @@ function applyTranslations(lang) {
 
     localStorage.setItem('site-language', lang);
     updateMobileServiceLabel();
+    window.dispatchEvent(new Event('languageChanged'));
 }
 
 function initShowcaseTilt() {
@@ -508,30 +522,23 @@ function initBurgerMenu() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPageScripts() {
     const savedLanguage = localStorage.getItem('site-language');
     const defaultLanguage = savedLanguage === 'en' || savedLanguage === 'ru' ? savedLanguage : 'ru';
 
     document.querySelectorAll('.lang-btn').forEach((button) => {
+        if (button.dataset.langBound === 'true') return;
+        button.dataset.langBound = 'true';
         button.addEventListener('click', () => {
             applyTranslations(button.dataset.lang);
         });
     });
 
+    initSolutionsTabs();
     applyTranslations(defaultLanguage);
     initShowcaseTilt();
     initBurgerMenu();
     updateMobileServiceLabel();
-
-    document.querySelectorAll('[data-mobile-nav]').forEach((button) => {
-        button.addEventListener('click', () => {
-            stopAutoSwitch();
-            const dir = button.dataset.mobileNav === 'next' ? 1 : -1;
-            currentTabIndex = (currentTabIndex + dir + tabs.length) % tabs.length;
-            const nextTab = tabs[currentTabIndex];
-            switchTab(nextTab.dataset.pane, nextTab);
-        });
-    });
 
     // Testimonial mobile slider
     (function initTestiSlider() {
@@ -606,8 +613,8 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    const p3Cells = document.querySelectorAll('#site-main .p3-cell');
-    p3Cells.forEach((el, index) => {
+    const painRows = document.querySelectorAll('#site-main .pain-row');
+    painRows.forEach((el, index) => {
         el.classList.add('animate-on-scroll', 'animate-fade-right');
         el.style.transitionDelay = `${index * 0.15}s`;
         observer.observe(el);
@@ -657,5 +664,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
-if(document.readyState !== 'loading') { document.dispatchEvent(new Event('DOMContentLoaded')); }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPageScripts, { once: true });
+} else {
+    initPageScripts();
+}
