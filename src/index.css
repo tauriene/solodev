@@ -4155,12 +4155,43 @@ button.badge:hover:not(.active) {
         border-radius: 18px;
     }
 
-    .case-ref-hero,
     .case-ref-info-cell,
     .case-ref-split-cell,
     .case-ref-tags-row {
         padding-left: 16px;
         padding-right: 16px;
+    }
+
+    .case-ref-hero {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .case-ref-hero .cp-hero-content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .case-ref-hero-screen {
+        border: none;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .case-ref-hero-screen .case-ref-hero-media {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .case-ref-hero-screen .case-ref-frame,
+    .case-ref-hero-screen .case-ref-image {
+        width: 100%;
+        max-width: none;
     }
 
     .case-ref-top {
