@@ -390,7 +390,7 @@ export default function Home() {
                                         <span className="testi-role">{t('Управляющая салоном', 'Salon Manager')}</span>
                                     </div>
                                 </div>
-                                <Link to="/cases/zayavka" className="cg-btn testi-btn">
+                                <Link to="/cases/crm" className="cg-btn testi-btn">
                                     <span>{t('Кейс', 'Case study')}</span>
                                     <FiArrowRight />
                                 </Link>
@@ -411,7 +411,7 @@ export default function Home() {
                                         <span className="testi-role">{t('Владелец магазина', 'Flower Shop Owner')}</span>
                                     </div>
                                 </div>
-                                <Link to="/cases/moon" className="cg-btn testi-btn">
+                                <Link to="/cases/crm" className="cg-btn testi-btn">
                                     <span>{t('Кейс', 'Case study')}</span>
                                     <FiArrowRight />
                                 </Link>

@@ -52,8 +52,8 @@ export default function Cases() {
         <h1 className="cases-hero-title">{t('Кейсы и результаты', 'Cases and Results')}</h1>
         <p className="cases-hero-sub">
           {t(
-            'Портфолио постепенно наполняется реальными проектами: CRM, e-commerce, сервисные сайты и Telegram Mini Apps для локального бизнеса.',
-            'The portfolio is gradually filling up with real projects: CRM systems, e-commerce, service websites, and Telegram Mini Apps for local businesses.'
+            'Первый кейс уже в портфолио: CRM для малого бизнеса с новой логикой подачи и детальной страницей проекта.',
+            'The first case is already in the portfolio: a CRM for small business with a new presentation logic and a detailed project page.'
           )}
         </p>
       </section>
