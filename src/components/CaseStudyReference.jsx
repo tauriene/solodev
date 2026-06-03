@@ -25,6 +25,7 @@ export default function CaseStudyReference({
   roleLabel = 'Role',
   durationLabel = 'Duration',
   features = [],
+  screenCaptions = [],
   tags = [],
   images = {},
   challenge,
@@ -148,9 +149,18 @@ export default function CaseStudyReference({
         </div>
       </div>
 
-      <div className="case-ref-screens-grid">
-        <div className="case-ref-screen-cell">
-          <div className="case-ref-frame case-ref-frame-screen case-ref-frame-natural">
+      <div className="case-ref-bottom-screens">
+        <div className="case-ref-full-screen case-ref-screen-block">
+          {screenCaptions[0] ? (
+            <div className="case-ref-screen-meta">
+              <div className="case-ref-screen-meta-num">03</div>
+              <div className="case-ref-screen-meta-copy">
+                <b>{screenCaptions[0].title}</b>
+                <span>{screenCaptions[0].description}</span>
+              </div>
+            </div>
+          ) : null}
+          <div className="case-ref-frame case-ref-frame-full case-ref-frame-natural">
             <CaseImage
               src={images.screen1}
               alt={images.screen1Alt || `${title} screen 1`}
@@ -159,8 +169,18 @@ export default function CaseStudyReference({
             />
           </div>
         </div>
-        <div className="case-ref-screen-cell">
-          <div className="case-ref-frame case-ref-frame-screen case-ref-frame-natural">
+
+        <div className="case-ref-full-screen case-ref-screen-block">
+          {screenCaptions[1] ? (
+            <div className="case-ref-screen-meta">
+              <div className="case-ref-screen-meta-num">04</div>
+              <div className="case-ref-screen-meta-copy">
+                <b>{screenCaptions[1].title}</b>
+                <span>{screenCaptions[1].description}</span>
+              </div>
+            </div>
+          ) : null}
+          <div className="case-ref-frame case-ref-frame-full case-ref-frame-natural">
             <CaseImage
               src={images.screen2}
               alt={images.screen2Alt || `${title} screen 2`}
@@ -168,17 +188,6 @@ export default function CaseStudyReference({
               placeholder="screen 2"
             />
           </div>
-        </div>
-      </div>
-
-      <div className="case-ref-full-screen">
-        <div className="case-ref-frame case-ref-frame-full case-ref-frame-natural">
-          <CaseImage
-            src={images.fullwidth}
-            alt={images.fullwidthAlt || `${title} fullwidth screen`}
-            className="case-ref-image"
-            placeholder="fullwidth screen"
-          />
         </div>
       </div>
     </div>

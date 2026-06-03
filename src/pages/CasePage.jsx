@@ -74,6 +74,7 @@ export default function CasePage() {
         roleLabel={content.roleLabel}
         durationLabel={content.durationLabel}
         features={content.features}
+        screenCaptions={content.screenCaptions}
         tags={content.tags}
         images={content.images}
         challenge={content.challenge}

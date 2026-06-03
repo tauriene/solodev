@@ -1,5 +1,6 @@
-import crmLanding from '../cases_assets/crm/landing.png';
+import crmContacts from '../new_case_assets/crm/contacts_page.png';
 import crmShowcase from '../new_case_assets/crm/showcase_crm.png';
+import crmVoronka from '../new_case_assets/crm/voronka_page.png';
 
 export const caseStudyBySlug = {
   crm: {
@@ -19,6 +20,16 @@ export const caseStudyBySlug = {
       duration: '3 недели',
       roleLabel: 'Роль',
       durationLabel: 'Срок',
+      screenCaptions: [
+        {
+          title: 'Воронка продаж',
+          description: 'Все этапы сделки собраны в одном экране: менеджер видит движение лидов, суммы по этапам и узкие места без переключения между разделами.',
+        },
+        {
+          title: 'Контактная база',
+          description: 'Карточки клиентов, быстрый поиск и история взаимодействий помогают не терять контекст и возвращаться к каждому контакту без хаоса.',
+        },
+      ],
       features: [
         {
           title: 'Дашборд с метриками',
@@ -39,13 +50,11 @@ export const caseStudyBySlug = {
       solutionLabel: 'Решение',
       images: {
         hero: crmShowcase,
-        screen1: crmLanding,
-        screen2: crmLanding,
-        fullwidth: crmLanding,
+        screen1: crmVoronka,
+        screen2: crmContacts,
         heroAlt: 'Промо-экран CRM',
         screen1Alt: 'Воронка продаж CRM',
-        screen2Alt: 'Карточка сделки CRM',
-        fullwidthAlt: 'Аналитика CRM',
+        screen2Alt: 'Контакты CRM',
       },
     },
     en: {
@@ -64,6 +73,16 @@ export const caseStudyBySlug = {
       duration: '3 weeks',
       roleLabel: 'Role',
       durationLabel: 'Duration',
+      screenCaptions: [
+        {
+          title: 'Sales pipeline',
+          description: 'Every deal stage lives on one screen, so managers can track lead movement, stage totals, and bottlenecks without jumping between views.',
+        },
+        {
+          title: 'Contact base',
+          description: 'Client cards, fast search, and interaction history keep the full context visible and make every follow-up easier to manage.',
+        },
+      ],
       features: [
         {
           title: 'Metrics dashboard',
@@ -84,13 +103,11 @@ export const caseStudyBySlug = {
       solutionLabel: 'Solution',
       images: {
         hero: crmShowcase,
-        screen1: crmLanding,
-        screen2: crmLanding,
-        fullwidth: crmLanding,
+        screen1: crmVoronka,
+        screen2: crmContacts,
         heroAlt: 'CRM showcase screen',
         screen1Alt: 'CRM pipeline view',
-        screen2Alt: 'CRM deal card',
-        fullwidthAlt: 'CRM analytics screen',
+        screen2Alt: 'CRM contacts view',
       },
     },
   },

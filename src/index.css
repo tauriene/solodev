@@ -4055,8 +4055,64 @@ button.badge:hover:not(.active) {
     margin-bottom: 1px;
 }
 
-.case-ref-full-screen {
+.case-ref-bottom-screens {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: transparent;
     margin-bottom: 1px;
+}
+
+.case-ref-full-screen {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.case-ref-screen-meta {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 1rem;
+    align-items: start;
+    margin: 0;
+    padding: 1rem 1.25rem;
+    background: #0d0d0d;
+    border: 1px solid #1e1e1e;
+    border-bottom: none;
+}
+
+.case-ref-screen-meta-num {
+    font-family: 'Golos Text', -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    padding-top: 2px;
+}
+
+.case-ref-screen-meta-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: 'Golos Text', -apple-system, sans-serif;
+    font-size: 16px;
+    color: #9a9aa0;
+    line-height: 1.65;
+}
+
+.case-ref-screen-meta-copy b {
+    color: #f1f1f3;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.case-ref-screen-block .case-ref-frame {
+    width: 100%;
+    border: 1px solid #1e1e1e;
+    overflow: hidden;
+    background: #111;
 }
 
 .case-ref-tags-row {
