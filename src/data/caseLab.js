@@ -9,12 +9,14 @@ export const caseLab = {
     challenge:
       'Клиент вел продажи в таблицах Excel: сделки терялись, аналитики не было, а работа команды зависела от ручного контроля. Нужна была простая CRM без лишних кнопок, которую менеджер сможет освоить за день.',
     stats: [
-      { value: '3', label: 'недели' },
-      { value: '+34%', label: 'конверсия' },
-      { value: '2к', label: 'пользователей' },
+      { value: '3 нед', label: 'Срок разработки', width: 25 },
+      { value: '+34%', label: 'Рост конверсии', width: 34 },
+      { value: '2 000', label: 'Пользователей', width: 80 },
     ],
     role: 'Дизайн + разработка',
     duration: '3 недели',
+    roleLabel: 'Роль',
+    durationLabel: 'Срок',
     features: [
       {
         title: 'Дашборд с метриками',
@@ -30,7 +32,7 @@ export const caseLab = {
       },
     ],
     tags: ['CRM', 'B2B', 'Аналитика', 'Продажи'],
-    backLabel: 'Портфолио',
+    backLabel: 'Все кейсы',
     challengeLabel: 'Задача',
     solutionLabel: 'Решение',
     images: {
@@ -52,12 +54,14 @@ export const caseLab = {
     challenge:
       'The client managed sales in Excel spreadsheets: deals got lost, there was no analytics, and team performance depended on manual control. The goal was to create a simple CRM with no extra buttons that a manager could learn in a single day.',
     stats: [
-      { value: '3', label: 'weeks' },
-      { value: '+34%', label: 'conversion' },
-      { value: '2k', label: 'users' },
+      { value: '3 wk', label: 'Build time', width: 25 },
+      { value: '+34%', label: 'Conversion growth', width: 34 },
+      { value: '2 000', label: 'Users', width: 80 },
     ],
     role: 'Design + development',
     duration: '3 weeks',
+    roleLabel: 'Role',
+    durationLabel: 'Duration',
     features: [
       {
         title: 'Metrics dashboard',
@@ -73,7 +77,7 @@ export const caseLab = {
       },
     ],
     tags: ['CRM', 'B2B', 'Analytics', 'Sales'],
-    backLabel: 'Portfolio',
+    backLabel: 'All cases',
     challengeLabel: 'Challenge',
     solutionLabel: 'Solution',
     images: {

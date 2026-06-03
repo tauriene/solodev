@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
@@ -21,6 +22,8 @@ export default function CaseStudyReference({
   stats = [],
   role,
   duration,
+  roleLabel = 'Role',
+  durationLabel = 'Duration',
   features = [],
   tags = [],
   images = {},
@@ -30,6 +33,35 @@ export default function CaseStudyReference({
   challengeLabel = 'Задача',
   solutionLabel = 'Решение',
 }) {
+  const metricsRef = useRef(null);
+
+  useEffect(() => {
+    const root = metricsRef.current;
+    if (!root) return;
+
+    const bars = Array.from(root.querySelectorAll('.case-ref-metric-bar'));
+    if (!bars.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const bar = entry.target;
+            bar.style.width = `${bar.dataset.width || 0}%`;
+            observer.unobserve(bar);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    bars.forEach((bar) => observer.observe(bar));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [stats]);
+
   return (
     <div className="case-ref">
       <section className="case-ref-hero">
@@ -65,11 +97,14 @@ export default function CaseStudyReference({
       </section>
 
       <div className="cp-metrics-bar case-ref-metrics-bar">
-        <div className="cp-metrics-inner">
+        <div className="cp-metrics-inner" ref={metricsRef}>
           {stats.map((stat) => (
-            <div key={`${stat.value}-${stat.label}`} className="cp-metric-item">
-              <div className="cp-metric-value">{stat.value}</div>
-              <div className="cp-metric-label">{stat.label}</div>
+            <div key={`${stat.value}-${stat.label}`} className="case-ref-metric-item">
+              <div className="case-ref-metric-label">{stat.label}</div>
+              <div className="case-ref-metric-bar-wrap">
+                <div className="case-ref-metric-bar" data-width={stat.width ?? 0}></div>
+              </div>
+              <div className="case-ref-metric-value">{stat.value}</div>
             </div>
           ))}
         </div>
@@ -77,11 +112,11 @@ export default function CaseStudyReference({
 
       <div className="case-ref-info-row">
         <div className="case-ref-info-cell">
-          <div className="case-ref-info-label">Duration</div>
+          <div className="case-ref-info-label">{durationLabel}</div>
           <div className="case-ref-info-value">{duration}</div>
         </div>
         <div className="case-ref-info-cell">
-          <div className="case-ref-info-label">Role</div>
+          <div className="case-ref-info-label">{roleLabel}</div>
           <div className="case-ref-info-value">{role}</div>
         </div>
       </div>

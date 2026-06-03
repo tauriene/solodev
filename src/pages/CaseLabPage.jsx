@@ -57,6 +57,8 @@ export default function CaseLabPage() {
         stats={content.stats}
         role={content.role}
         duration={content.duration}
+        roleLabel={content.roleLabel}
+        durationLabel={content.durationLabel}
         features={content.features}
         tags={content.tags}
         images={content.images}
