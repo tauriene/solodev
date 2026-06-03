@@ -3962,6 +3962,30 @@ button.badge:hover:not(.active) {
     line-height: 1.7;
 }
 
+.case-ref-divider {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 1.4rem 0 1.2rem;
+}
+
+.case-ref-divider-line {
+    height: 1px;
+    background: #1a1a1a;
+}
+
+.case-ref-divider-label {
+    font-family: 'Inter', 'Unbounded', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+}
+
 .case-ref-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -4078,8 +4102,6 @@ button.badge:hover:not(.active) {
     margin: 0;
     padding: 1rem 1.25rem;
     background: #0d0d0d;
-    border: 1px solid #1e1e1e;
-    border-bottom: none;
 }
 
 .case-ref-screen-meta-num {
@@ -4110,9 +4132,17 @@ button.badge:hover:not(.active) {
 
 .case-ref-screen-block .case-ref-frame {
     width: 100%;
-    border: 1px solid #1e1e1e;
     overflow: hidden;
     background: #111;
+}
+
+@media (min-width: 769px) {
+    .case-ref-screen-block {
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .case-ref-tags-row {

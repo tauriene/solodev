@@ -24,6 +24,7 @@ export default function CaseStudyReference({
   duration,
   roleLabel = 'Role',
   durationLabel = 'Duration',
+  screensLabel = 'Screenshots',
   features = [],
   screenCaptions = [],
   tags = [],
@@ -147,6 +148,12 @@ export default function CaseStudyReference({
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="case-ref-divider">
+        <div className="case-ref-divider-line" aria-hidden="true" />
+        <div className="case-ref-divider-label">{screensLabel}</div>
+        <div className="case-ref-divider-line" aria-hidden="true" />
       </div>
 
       <div className="case-ref-bottom-screens">

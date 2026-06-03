@@ -20,6 +20,7 @@ export const caseStudyBySlug = {
       duration: '3 недели',
       roleLabel: 'Роль',
       durationLabel: 'Срок',
+      screensLabel: 'Скриншоты',
       screenCaptions: [
         {
           title: 'Воронка продаж',
@@ -73,6 +74,7 @@ export const caseStudyBySlug = {
       duration: '3 weeks',
       roleLabel: 'Role',
       durationLabel: 'Duration',
+      screensLabel: 'Screenshots',
       screenCaptions: [
         {
           title: 'Sales pipeline',
