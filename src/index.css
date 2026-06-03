@@ -3949,7 +3949,7 @@ button.badge:hover:not(.active) {
     font-family: 'Inter', 'Unbounded', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--accent);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -3986,7 +3986,7 @@ button.badge:hover:not(.active) {
     font-family: 'Inter', 'Unbounded', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--accent);
     letter-spacing: 0.04em;
 }
 
@@ -3994,7 +3994,7 @@ button.badge:hover:not(.active) {
     font-family: 'Inter', 'Unbounded', sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--accent);
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
