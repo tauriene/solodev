@@ -122,7 +122,7 @@ export const caseStudyBySlug = {
   },
   arhdzagi: {
     ru: {
-      title: 'ArhDzagi для шопа',
+      title: 'Telegram Mini App для шопа ArhDzagi',
       eyebrow: 'Telegram Mini App · shop',
       description:
         'Мини-приложение для шопа внутри Telegram: каталог, корзина и быстрый сценарий оформления заказа без лишних переходов и перегруженных экранов.',
@@ -178,7 +178,7 @@ export const caseStudyBySlug = {
       },
     },
     en: {
-      title: 'ArhDzagi shop app',
+      title: 'Telegram Mini App for ArhDzagi shop',
       eyebrow: 'Telegram Mini App · shop',
       description:
         'A shop-focused Telegram Mini App with a catalog, cart, and a fast checkout flow that avoids extra transitions and overloaded screens.',

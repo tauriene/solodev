@@ -1,5 +1,5 @@
 import crmLanding from '../cases_assets/crm/landing.png';
-import arhLanding from '../cases_assets/arhdzagi/main_arh.png';
+import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
 
 export const casesCatalog = [
   {
@@ -42,7 +42,7 @@ export const casesCatalog = [
     tagsEn: ['Telegram', 'Mini App', 'Shop'],
     metricRu: '+19%',
     metricEn: '+19%',
-    image: arhLanding,
+    image: arhShowcase,
     imageAltRu: 'Главный экран приложения ArhDzagi для шопа',
     imageAltEn: 'Main screen of the ArhDzagi shop app',
   },
