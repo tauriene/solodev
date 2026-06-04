@@ -369,8 +369,8 @@ export default function Home() {
                         <div className="testi-card card">
                             <div className="testi-quote-mark">&ldquo;</div>
                             <p className="testi-text">{t(
-                                'Мы работаем в очень конкурентной нише бьюти. Ключевая боль — отмены. Было 28%, стало 9% за шесть недель. Telegram-бот буквально сам напоминает клиентам и переносит записи. Мои администраторы наконец-то занимаются гостями, а не телефоном.',
-                                'We work in a very competitive beauty niche. The key pain was cancellations — 28%, down to 9% in six weeks. The Telegram bot literally reminds clients and reschedules on its own. My admins finally focus on guests, not the phone.'
+                                'Мы работаем в очень конкурентной нише бьюти. Ключевая боль — отмены. Было 28%, стало 9% за шесть недель. Система буквально сама напоминает клиентам и переносит записи. Мои администраторы наконец-то занимаются гостями, а не телефоном.',
+                                'We work in a very competitive beauty niche. The key pain was cancellations — 28%, down to 9% in six weeks. The system literally reminds clients and reschedules on its own. My admins finally focus on guests, not the phone.'
                             )}</p>
                             <div className="testi-footer">
                                 <div className="testi-author">
@@ -380,7 +380,7 @@ export default function Home() {
                                         <span className="testi-role">{t('Управляющая салоном', 'Salon Manager')}</span>
                                     </div>
                                 </div>
-                                <Link to="/cases/crm" className="cg-btn testi-btn">
+                                <Link to="/cases/zayavki" className="cg-btn testi-btn">
                                     <span>{t('Кейс', 'Case study')}</span>
                                     <FiArrowRight />
                                 </Link>
@@ -401,7 +401,7 @@ export default function Home() {
                                         <span className="testi-role">{t('Владелец магазина', 'Flower Shop Owner')}</span>
                                     </div>
                                 </div>
-                                <Link to="/cases/crm" className="cg-btn testi-btn">
+                                <Link to="/cases/moonstore" className="cg-btn testi-btn">
                                     <span>{t('Кейс', 'Case study')}</span>
                                     <FiArrowRight />
                                 </Link>
