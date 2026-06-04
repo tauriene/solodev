@@ -4,6 +4,8 @@ import crmVoronka from '../new_case_assets/crm/voronka_page.png';
 import arhBasket from '../cases_assets/arhdzagi/basket_arh.png';
 import arhItem from '../cases_assets/arhdzagi/item_arh.png';
 import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
+import zayavkiLanding from '../new_case_assets/zayavki/zayavka_landing.png';
+import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.png';
 
 export const caseStudyBySlug = {
   crm: {
@@ -231,6 +233,120 @@ export const caseStudyBySlug = {
         heroAlt: 'ArhDzagi showcase screen',
         screen1Alt: 'ArhDzagi cart screen',
         screen2Alt: 'ArhDzagi product page',
+      },
+    },
+  },
+  zayavki: {
+    ru: {
+      title: 'Заявочная система для бизнеса',
+      eyebrow: 'Заявочная система · автоматизация процессов',
+      description:
+        'Внутренняя система для сбора и обработки заявок: единая точка входа, понятные статусы, распределение по ответственным и быстрый контроль каждого обращения.',
+      challenge:
+        'До внедрения заявки приходили в разные каналы и фиксировались вручную: часть обращений терялась, статус по задаче приходилось уточнять в переписке, а руководитель не видел общей картины. Нужен был единый интерфейс, где заявка сразу создается, назначается и проходит по понятному сценарию обработки.',
+      stats: [
+        { value: '2.5 нед', label: 'Срок разработки', width: 28 },
+        { value: '-21%', label: 'Время обработки', width: 21 },
+        { value: '1 окно', label: 'Для всех заявок', width: 72 },
+      ],
+      role: 'Дизайн + разработка',
+      duration: '2,5 недели',
+      roleLabel: 'Роль',
+      durationLabel: 'Срок',
+      screensLabel: 'Скриншоты',
+      screenCaptions: [
+        {
+          title: 'Главный сценарий обработки',
+          description:
+            'Оператор видит заявку, ее статус и следующий шаг в одном интерфейсе, поэтому обработка не распадается на чаты, таблицы и ручные напоминания.',
+        },
+        {
+          title: 'Структура обращений',
+          description:
+            'Карточка заявки помогает быстро считать контекст, назначить ответственного и вернуть задачу в работу без лишних уточнений.',
+        },
+      ],
+      features: [
+        {
+          title: 'Единая точка входа',
+          description: 'Все новые обращения собираются в одну систему без ручного копирования из разных каналов.',
+        },
+        {
+          title: 'Прозрачные статусы',
+          description: 'На каждом этапе видно, кто отвечает за заявку и в каком она состоянии прямо сейчас.',
+        },
+        {
+          title: 'Контроль для бизнеса',
+          description: 'Руководитель быстрее видит загрузку команды, зависшие обращения и динамику обработки.',
+        },
+      ],
+      tags: ['Автоматизация', 'Заявки', 'B2B', 'Процессы'],
+      backLabel: 'Все кейсы',
+      challengeLabel: 'Задача',
+      solutionLabel: 'Решение',
+      images: {
+        hero: zayavkiShowcase,
+        screen1: zayavkiLanding,
+        screen2: zayavkiShowcase,
+        heroAlt: 'Промо-экран заявочной системы',
+        screen1Alt: 'Основной экран заявочной системы',
+        screen2Alt: 'Обзор интерфейса заявочной системы',
+      },
+    },
+    en: {
+      title: 'Business request system',
+      eyebrow: 'Request system · process automation',
+      description:
+        'An internal system for collecting and processing requests: one entry point, clear statuses, owner assignment, and fast visibility into every incoming task.',
+      challenge:
+        'Before the launch, requests arrived through multiple channels and were tracked manually: some inquiries were lost, status updates had to be clarified in chats, and the manager had no unified overview. The goal was to build a single interface where every request is created, assigned, and moved through a clear processing flow.',
+      stats: [
+        { value: '2.5 wk', label: 'Build time', width: 28 },
+        { value: '-21%', label: 'Processing time', width: 21 },
+        { value: '1 view', label: 'For all requests', width: 72 },
+      ],
+      role: 'Design + development',
+      duration: '2.5 weeks',
+      roleLabel: 'Role',
+      durationLabel: 'Duration',
+      screensLabel: 'Screenshots',
+      screenCaptions: [
+        {
+          title: 'Main processing flow',
+          description:
+            'The operator sees the request, its status, and the next action in one interface, so the workflow no longer falls apart across chats, spreadsheets, and manual reminders.',
+        },
+        {
+          title: 'Request structure',
+          description:
+            'The request card makes it easy to read context, assign an owner, and bring a task back into progress without extra back-and-forth.',
+        },
+      ],
+      features: [
+        {
+          title: 'Single entry point',
+          description: 'All incoming requests are collected in one system without manual copying from different channels.',
+        },
+        {
+          title: 'Transparent statuses',
+          description: 'At every stage, the team can see who owns the request and what state it is currently in.',
+        },
+        {
+          title: 'Business oversight',
+          description: 'Managers get faster visibility into team workload, stalled requests, and processing dynamics.',
+        },
+      ],
+      tags: ['Automation', 'Requests', 'B2B', 'Operations'],
+      backLabel: 'All cases',
+      challengeLabel: 'Challenge',
+      solutionLabel: 'Solution',
+      images: {
+        hero: zayavkiShowcase,
+        screen1: zayavkiLanding,
+        screen2: zayavkiShowcase,
+        heroAlt: 'Request system showcase screen',
+        screen1Alt: 'Main request system screen',
+        screen2Alt: 'Request system interface overview',
       },
     },
   },

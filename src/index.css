@@ -2481,6 +2481,12 @@ button.badge:hover:not(.active) {
         min-height: 460px;
     }
 
+    .cg-grid--portfolio .cg-card[data-slot="zayavki"] {
+        grid-column: 1 / -1 !important;
+        grid-row: 3;
+        min-height: 460px;
+    }
+
     .cg-grid--portfolio .cg-card[data-slot="bottom-right"] {
         grid-column: 5 / 7 !important;
         grid-row: 3;

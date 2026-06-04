@@ -1,5 +1,6 @@
 import crmLanding from '../cases_assets/crm/landing.png';
 import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
+import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.png';
 
 export const casesCatalog = [
   {
@@ -45,6 +46,28 @@ export const casesCatalog = [
     image: arhShowcase,
     imageAltRu: 'Главный экран приложения ArhDzagi для шопа',
     imageAltEn: 'Main screen of the ArhDzagi shop app',
+  },
+  {
+    slug: 'zayavki',
+    layout: 'A1',
+    slot: 'zayavki',
+    categoryRu: 'Заявочная система · бизнес',
+    categoryEn: 'Request system · business',
+    titleRu: 'Заявочная система для бизнеса',
+    titleEn: 'Business request system',
+    summaryRu: 'времени на обработку новых заявок',
+    summaryEn: 'time spent processing new requests',
+    detailsRu:
+      'Что внутри: единая форма заявки, статусы обращений, распределение по ответственным и наглядный сценарий обработки без потери контекста.',
+    detailsEn:
+      'Inside: a unified request form, request statuses, assignment by owner, and a clear processing flow without losing context.',
+    tagsRu: ['Автоматизация', 'Заявки', 'Бизнес'],
+    tagsEn: ['Automation', 'Requests', 'Business'],
+    metricRu: '-21%',
+    metricEn: '-21%',
+    image: zayavkiShowcase,
+    imageAltRu: 'Главный экран заявочной системы для бизнеса',
+    imageAltEn: 'Main screen of the business request system',
   },
 ];
 
