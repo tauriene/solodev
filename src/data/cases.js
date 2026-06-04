@@ -1,4 +1,5 @@
 import crmLanding from '../cases_assets/crm/landing.png';
+import arhLanding from '../cases_assets/arhdzagi/main_arh.png';
 
 export const casesCatalog = [
   {
@@ -22,6 +23,28 @@ export const casesCatalog = [
     image: crmLanding,
     imageAltRu: 'Главный экран CRM системы для малого бизнеса',
     imageAltEn: 'Main screen of the CRM system for small business',
+  },
+  {
+    slug: 'arhdzagi',
+    layout: 'A1',
+    slot: 'arh',
+    categoryRu: 'Telegram Mini App · shop',
+    categoryEn: 'Telegram Mini App · shop',
+    titleRu: 'Приложение для шопа ArhDzagi',
+    titleEn: 'ArhDzagi shop app',
+    summaryRu: 'повторных заказов через Telegram',
+    summaryEn: 'repeat orders through Telegram',
+    detailsRu:
+      'Что внутри: каталог товаров, корзина, карточка позиции и быстрый сценарий оформления заказа прямо внутри Telegram Mini App.',
+    detailsEn:
+      'Inside: a product catalog, cart, item page, and a fast checkout flow directly inside the Telegram Mini App.',
+    tagsRu: ['Telegram', 'Mini App', 'Shop'],
+    tagsEn: ['Telegram', 'Mini App', 'Shop'],
+    metricRu: '+19%',
+    metricEn: '+19%',
+    image: arhLanding,
+    imageAltRu: 'Главный экран приложения ArhDzagi для шопа',
+    imageAltEn: 'Main screen of the ArhDzagi shop app',
   },
 ];
 

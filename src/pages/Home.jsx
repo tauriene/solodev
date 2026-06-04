@@ -175,6 +175,7 @@ export default function Home() {
                     <p className="section-lead" data-i18n="cases_lead">Реальные бизнесы, реальные цифры. Считаем только
                         измеримые изменения после внедрения.</p>
                     <div className="cases-grid cases-grid-single">
+                        {featuredCase ? (
                         <article className="card case-card case-card-featured">
                             <div className="case-card-media">
                                 <img
@@ -199,6 +200,7 @@ export default function Home() {
                                 </Link>
                             </div>
                         </article>
+                        ) : null}
                     </div>
                     <div className="cases-actions">
                         <Link to="/cases" className="btn" data-i18n="cases_more_cta">Смотреть еще</Link>

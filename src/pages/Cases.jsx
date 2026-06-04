@@ -15,6 +15,7 @@ export default function Cases() {
     const handleLangChange = () => {
       setLang(localStorage.getItem('site-language') || 'ru');
     };
+
     window.addEventListener('storage', handleLangChange);
     window.addEventListener('languageChanged', handleLangChange);
 

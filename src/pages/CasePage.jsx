@@ -7,7 +7,6 @@ export default function CasePage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
-
   const caseData = caseStudyBySlug[slug];
 
   useEffect(() => {
