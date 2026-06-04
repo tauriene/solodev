@@ -4,6 +4,9 @@ import crmVoronka from '../new_case_assets/crm/voronka_page.png';
 import arhBasket from '../cases_assets/arhdzagi/basket_arh.png';
 import arhItem from '../cases_assets/arhdzagi/item_arh.png';
 import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
+import sprayCatalog from '../new_case_assets/spraystore/catalog_landing.png';
+import sprayRoulette from '../new_case_assets/spraystore/roulette_page.png';
+import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.png';
 import zayavkiLanding from '../new_case_assets/zayavki/zayavka_landing.png';
 import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.png';
 
@@ -347,6 +350,120 @@ export const caseStudyBySlug = {
         heroAlt: 'Request system showcase screen',
         screen1Alt: 'Main request system screen',
         screen2Alt: 'Request system interface overview',
+      },
+    },
+  },
+  spraystore: {
+    ru: {
+      title: 'SprayStore для постпокупочного опыта',
+      eyebrow: 'Telegram Mini App · удержание и лояльность',
+      description:
+        'Telegram Mini App для бренда, который остается с клиентом после покупки: отзыв с бонусом, рулетка, каталог сервисных центров и полезные разделы внутри одного сценария.',
+      challenge:
+        'После покупки бренд почти терял контакт с клиентом: отзыв просили вручную, бонусный сценарий не был встроен в продукт, а полезные разделы вроде сервисных центров и идей жили отдельно. Нужен был единый Mini App, который возвращает пользователя обратно в экосистему бренда и делает постпокупочный путь живым, а не формальным.',
+      stats: [
+        { value: '3 нед', label: 'Срок разработки', width: 30 },
+        { value: '+22%', label: 'Повторные касания', width: 22 },
+        { value: '1 flow', label: 'После покупки', width: 68 },
+      ],
+      role: 'Дизайн + разработка',
+      duration: '3 недели',
+      roleLabel: 'Роль',
+      durationLabel: 'Срок',
+      screensLabel: 'Скриншоты',
+      screenCaptions: [
+        {
+          title: 'Каталог и полезные разделы',
+          description:
+            'Пользователь может не только вернуться за бонусом, но и быстро перейти к сервисным центрам, идеям и проектам внутри единого интерфейса.',
+        },
+        {
+          title: 'Рулетка за отзыв',
+          description:
+            'После положительного отзыва клиент получает понятный игровой сценарий с бонусом, который делает вовлечение ощутимым и не выглядит как сухая механика.',
+        },
+      ],
+      features: [
+        {
+          title: 'QR-сценарий после заказа',
+          description: 'Путь в Mini App начинается прямо из заказа и не требует от клиента лишних поисков или ручных переходов.',
+        },
+        {
+          title: 'Бонус за хороший отзыв',
+          description: 'Система связывает отзыв и награду в единый понятный опыт, который мотивирует клиента вернуться в бренд.',
+        },
+        {
+          title: 'Полезные утилиты внутри',
+          description: 'Каталог сервисных центров, идеи и проекты превращают Mini App в рабочую точку контакта, а не в одноразовую акцию.',
+        },
+      ],
+      tags: ['Telegram', 'Mini App', 'Loyalty', 'Retention'],
+      backLabel: 'Все кейсы',
+      challengeLabel: 'Задача',
+      solutionLabel: 'Решение',
+      images: {
+        hero: sprayShowcase,
+        screen1: sprayCatalog,
+        screen2: sprayRoulette,
+        heroAlt: 'Промо-экран SprayStore',
+        screen1Alt: 'Каталог и полезные разделы SprayStore',
+        screen2Alt: 'Рулетка за отзыв в SprayStore',
+      },
+    },
+    en: {
+      title: 'SprayStore post-purchase app',
+      eyebrow: 'Telegram Mini App · retention and loyalty',
+      description:
+        'A Telegram Mini App that stays with the customer after purchase: review reward flow, roulette bonus, service center catalog, and utility sections inside one post-purchase journey.',
+      challenge:
+        'After purchase, the brand was losing contact with the customer: reviews were requested manually, the reward mechanic was disconnected from the product experience, and useful sections like service centers and ideas lived elsewhere. The goal was to build a single Mini App that brings the user back into the brand ecosystem and makes the post-purchase journey feel active rather than formal.',
+      stats: [
+        { value: '3 wk', label: 'Build time', width: 30 },
+        { value: '+22%', label: 'Repeat touchpoints', width: 22 },
+        { value: '1 flow', label: 'After purchase', width: 68 },
+      ],
+      role: 'Design + development',
+      duration: '3 weeks',
+      roleLabel: 'Role',
+      durationLabel: 'Duration',
+      screensLabel: 'Screenshots',
+      screenCaptions: [
+        {
+          title: 'Catalog and utility sections',
+          description:
+            'The user can come back not only for a reward, but also for service centers, ideas, and projects inside one consistent interface.',
+        },
+        {
+          title: 'Review reward roulette',
+          description:
+            'After a positive review, the customer gets a simple game-like reward flow that feels tangible and engaging instead of looking like a dry mechanic.',
+        },
+      ],
+      features: [
+        {
+          title: 'QR journey after order',
+          description: 'The path into the Mini App starts directly from the order and does not require extra searching or manual navigation.',
+        },
+        {
+          title: 'Reward for positive feedback',
+          description: 'The system connects the review and the reward into one clear experience that encourages the customer to return to the brand.',
+        },
+        {
+          title: 'Utility sections inside',
+          description: 'The service center catalog, ideas, and projects make the Mini App a useful brand touchpoint instead of a one-time campaign.',
+        },
+      ],
+      tags: ['Telegram', 'Mini App', 'Loyalty', 'Retention'],
+      backLabel: 'All cases',
+      challengeLabel: 'Challenge',
+      solutionLabel: 'Solution',
+      images: {
+        hero: sprayShowcase,
+        screen1: sprayCatalog,
+        screen2: sprayRoulette,
+        heroAlt: 'SprayStore showcase screen',
+        screen1Alt: 'SprayStore catalog and utilities',
+        screen2Alt: 'SprayStore review roulette',
       },
     },
   },

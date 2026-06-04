@@ -1,5 +1,6 @@
 import crmLanding from '../cases_assets/crm/landing.png';
 import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
+import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.png';
 import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.png';
 
 export const casesCatalog = [
@@ -68,6 +69,28 @@ export const casesCatalog = [
     image: zayavkiShowcase,
     imageAltRu: 'Главный экран заявочной системы для бизнеса',
     imageAltEn: 'Main screen of the business request system',
+  },
+  {
+    slug: 'spraystore',
+    layout: 'A1',
+    slot: 'spraystore',
+    categoryRu: 'Telegram Mini App · лояльность',
+    categoryEn: 'Telegram Mini App · loyalty',
+    titleRu: 'SprayStore для постпокупочного опыта',
+    titleEn: 'SprayStore post-purchase app',
+    summaryRu: 'повторных касаний после покупки',
+    summaryEn: 'repeat touchpoints after purchase',
+    detailsRu:
+      'Что внутри: бонусная рулетка за отзыв, каталог сервисных центров, идеи и проекты, а также сценарий возврата клиента в бренд после оформления заказа.',
+    detailsEn:
+      'Inside: a bonus roulette for reviews, a service center catalog, ideas and projects, and a post-purchase flow that brings the customer back into the brand.',
+    tagsRu: ['Telegram', 'Mini App', 'Retention'],
+    tagsEn: ['Telegram', 'Mini App', 'Retention'],
+    metricRu: '+22%',
+    metricEn: '+22%',
+    image: sprayShowcase,
+    imageAltRu: 'Главный экран кейса SprayStore',
+    imageAltEn: 'Main screen of the SprayStore case',
   },
 ];
 

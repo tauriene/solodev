@@ -2487,6 +2487,12 @@ button.badge:hover:not(.active) {
         min-height: 460px;
     }
 
+    .cg-grid--portfolio .cg-card[data-slot="spraystore"] {
+        grid-column: 1 / -1 !important;
+        grid-row: 4;
+        min-height: 460px;
+    }
+
     .cg-grid--portfolio .cg-card[data-slot="bottom-right"] {
         grid-column: 5 / 7 !important;
         grid-row: 3;
