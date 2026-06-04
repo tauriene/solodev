@@ -76,7 +76,8 @@ const casesTranslations = {
     }
 };
 
-function applyTranslations(lang) {
+function applyTranslations(lang, options = {}) {
+    const { persist = true, emit = true } = options;
     const dict = casesTranslations[lang] || casesTranslations.ru;
     document.documentElement.lang = lang;
 
@@ -94,19 +95,25 @@ function applyTranslations(lang) {
         b.classList.toggle('active', b.dataset.lang === lang);
     });
 
-    localStorage.setItem('site-language', lang);
-    window.dispatchEvent(new Event('languageChanged'));
+    if (persist) {
+        localStorage.setItem('site-language', lang);
+    }
+    if (emit) {
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+    }
 }
 
 function initLangSwitcher() {
     const saved = localStorage.getItem('site-language') || 'ru';
-    applyTranslations(saved);
+    applyTranslations(saved, { emit: false });
 
-    document.querySelectorAll('.lang-btn').forEach((btn) => {
-        btn.addEventListener('click', () => {
-            applyTranslations(btn.dataset.lang);
+    if (!window.__casesLanguageDomSyncBound) {
+        window.__casesLanguageDomSyncBound = 'true';
+        window.addEventListener('languageChanged', (event) => {
+            const nextLang = event?.detail?.lang || localStorage.getItem('site-language') || 'ru';
+            applyTranslations(nextLang, { persist: false, emit: false });
         });
-    });
+    }
 }
 
 

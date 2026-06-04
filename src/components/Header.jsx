@@ -1,10 +1,28 @@
+import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaTelegramPlane } from 'react-icons/fa';
 import { FiArrowRight } from 'react-icons/fi';
+import { getSiteLanguage, setSiteLanguage, SITE_LANGUAGE_EVENT } from '../utils/siteLanguage';
 
 export default function Header() {
     const location = useLocation();
     const isCases = location.pathname.includes('cases');
+    const [lang, setLang] = useState(getSiteLanguage());
+
+    useEffect(() => {
+        const syncLang = (event) => {
+            const nextLang = event?.detail?.lang || getSiteLanguage();
+            setLang(nextLang);
+        };
+
+        window.addEventListener(SITE_LANGUAGE_EVENT, syncLang);
+        window.addEventListener('storage', syncLang);
+
+        return () => {
+            window.removeEventListener(SITE_LANGUAGE_EVENT, syncLang);
+            window.removeEventListener('storage', syncLang);
+        };
+    }, []);
 
     return (
         <>
@@ -22,8 +40,22 @@ export default function Header() {
                     </nav>
                     <div className="header-controls">
                         <div className="lang-switcher" aria-label="Language switcher">
-                            <button className="lang-btn active" type="button" data-lang="ru">RU</button>
-                            <button className="lang-btn" type="button" data-lang="en">EN</button>
+                            <button
+                                className={`lang-btn ${lang === 'ru' ? 'active' : ''}`}
+                                type="button"
+                                data-lang="ru"
+                                onClick={() => setSiteLanguage('ru')}
+                            >
+                                RU
+                            </button>
+                            <button
+                                className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
+                                type="button"
+                                data-lang="en"
+                                onClick={() => setSiteLanguage('en')}
+                            >
+                                EN
+                            </button>
                         </div>
 
                         <button className="burger-btn" id="burger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">

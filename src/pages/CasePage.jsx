@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import CaseStudyReference from '../components/CaseStudyReference';
 import { caseStudyBySlug } from '../data/caseStudy';
+import { getSiteLanguage, SITE_LANGUAGE_EVENT } from '../utils/siteLanguage';
 
 export default function CasePage() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
+  const [lang, setLang] = useState(getSiteLanguage());
   const caseData = caseStudyBySlug[slug];
 
   useEffect(() => {
@@ -26,34 +27,18 @@ export default function CasePage() {
     }
 
     const handleLangChange = () => {
-      setLang(localStorage.getItem('site-language') || 'ru');
+      setLang(getSiteLanguage());
     };
 
     window.addEventListener('storage', handleLangChange);
-    window.addEventListener('languageChanged', handleLangChange);
-
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('.lang-btn').forEach((btn) => {
-        if (!btn.dataset.langBound) {
-          btn.dataset.langBound = 'true';
-          btn.addEventListener('click', () => {
-            setTimeout(() => {
-              window.dispatchEvent(new Event('languageChanged'));
-            }, 50);
-          });
-        }
-      });
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
+    window.addEventListener(SITE_LANGUAGE_EVENT, handleLangChange);
 
     return () => {
       if (script && script.parentNode) {
         script.parentNode.removeChild(script);
       }
       window.removeEventListener('storage', handleLangChange);
-      window.removeEventListener('languageChanged', handleLangChange);
-      observer.disconnect();
+      window.removeEventListener(SITE_LANGUAGE_EVENT, handleLangChange);
     };
   }, [caseData, navigate]);
 

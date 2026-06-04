@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 import { featuredCase } from '../data/cases';
+import { getSiteLanguage, SITE_LANGUAGE_EVENT } from '../utils/siteLanguage';
 
 export default function Home() {
-    const [lang, setLang] = useState(localStorage.getItem('site-language') || 'ru');
+    const [lang, setLang] = useState(getSiteLanguage());
     const [typedText, setTypedText] = useState('');
 
     useEffect(() => {
@@ -17,30 +18,17 @@ export default function Home() {
         }
 
         const handleLangChange = () => {
-            setLang(localStorage.getItem('site-language') || 'ru');
+            setLang(getSiteLanguage());
         };
         window.addEventListener('storage', handleLangChange);
-        window.addEventListener('languageChanged', handleLangChange);
-
-        const observer = new MutationObserver(() => {
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                if (!btn.dataset.langBound) {
-                    btn.dataset.langBound = 'true';
-                    btn.addEventListener('click', () => {
-                        setTimeout(() => window.dispatchEvent(new Event('languageChanged')), 50);
-                    });
-                }
-            });
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
+        window.addEventListener(SITE_LANGUAGE_EVENT, handleLangChange);
 
         return () => {
             if (script && script.parentNode) {
                 script.parentNode.removeChild(script);
             }
             window.removeEventListener('storage', handleLangChange);
-            window.removeEventListener('languageChanged', handleLangChange);
-            observer.disconnect();
+            window.removeEventListener(SITE_LANGUAGE_EVENT, handleLangChange);
         };
     }, []);
 
