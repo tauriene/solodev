@@ -36,6 +36,26 @@ export default function CaseStudyReference({
   solutionLabel = 'Решение',
 }) {
   const metricsRef = useRef(null);
+  const galleryScreens = [
+    screenCaptions[0] || images.screen1
+      ? {
+          number: '03',
+          caption: screenCaptions[0],
+          src: images.screen1,
+          alt: images.screen1Alt || `${title} screen 1`,
+          placeholder: 'screen 1',
+        }
+      : null,
+    screenCaptions[1] || images.screen2
+      ? {
+          number: '04',
+          caption: screenCaptions[1],
+          src: images.screen2,
+          alt: images.screen2Alt || `${title} screen 2`,
+          placeholder: 'screen 2',
+        }
+      : null,
+  ].filter(Boolean);
 
   useEffect(() => {
     const root = metricsRef.current;
@@ -157,45 +177,27 @@ export default function CaseStudyReference({
       </div>
 
       <div className="case-ref-bottom-screens">
-        <div className="case-ref-full-screen case-ref-screen-block">
-          {screenCaptions[0] ? (
-            <div className="case-ref-screen-meta">
-              <div className="case-ref-screen-meta-num">03</div>
-              <div className="case-ref-screen-meta-copy">
-                <b>{screenCaptions[0].title}</b>
-                <span>{screenCaptions[0].description}</span>
+        {galleryScreens.map((screen) => (
+          <div key={screen.number} className="case-ref-full-screen case-ref-screen-block">
+            {screen.caption ? (
+              <div className="case-ref-screen-meta">
+                <div className="case-ref-screen-meta-num">{screen.number}</div>
+                <div className="case-ref-screen-meta-copy">
+                  <b>{screen.caption.title}</b>
+                  <span>{screen.caption.description}</span>
+                </div>
               </div>
+            ) : null}
+            <div className="case-ref-frame case-ref-frame-full case-ref-frame-natural">
+              <CaseImage
+                src={screen.src}
+                alt={screen.alt}
+                className="case-ref-image"
+                placeholder={screen.placeholder}
+              />
             </div>
-          ) : null}
-          <div className="case-ref-frame case-ref-frame-full case-ref-frame-natural">
-            <CaseImage
-              src={images.screen1}
-              alt={images.screen1Alt || `${title} screen 1`}
-              className="case-ref-image"
-              placeholder="screen 1"
-            />
           </div>
-        </div>
-
-        <div className="case-ref-full-screen case-ref-screen-block">
-          {screenCaptions[1] ? (
-            <div className="case-ref-screen-meta">
-              <div className="case-ref-screen-meta-num">04</div>
-              <div className="case-ref-screen-meta-copy">
-                <b>{screenCaptions[1].title}</b>
-                <span>{screenCaptions[1].description}</span>
-              </div>
-            </div>
-          ) : null}
-          <div className="case-ref-frame case-ref-frame-full case-ref-frame-natural">
-            <CaseImage
-              src={images.screen2}
-              alt={images.screen2Alt || `${title} screen 2`}
-              className="case-ref-image"
-              placeholder="screen 2"
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -1,9 +1,17 @@
 import crmContacts from '../new_case_assets/crm/contacts_page.png';
 import crmShowcase from '../new_case_assets/crm/showcase_crm.png';
 import crmVoronka from '../new_case_assets/crm/voronka_page.png';
-import arhBasket from '../cases_assets/arhdzagi/basket_arh.png';
-import arhItem from '../cases_assets/arhdzagi/item_arh.png';
+import arhBasket from '../new_case_assets/arhdzagi/basket_arh.png';
+import arhItem from '../new_case_assets/arhdzagi/item_arh.png';
 import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
+import chistoContactForm from '../new_case_assets/chisto/contact_form.png';
+import chistoLanding from '../new_case_assets/chisto/landing.png';
+import chistoServices from '../new_case_assets/chisto/uslugi.png';
+import moonstoreCart from '../new_case_assets/moonstore/cart_page.png';
+import moonstoreLanding from '../new_case_assets/moonstore/moonlanding.png';
+import moonstoreLikedFlowers from '../new_case_assets/moonstore/liked_flowers.png';
+import porscheChooser from '../new_case_assets/porsche/choosing_car.png';
+import porscheLanding from '../new_case_assets/porsche/landing.png';
 import sprayCatalog from '../new_case_assets/spraystore/catalog_landing.png';
 import sprayRoulette from '../new_case_assets/spraystore/roulette_page.png';
 import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.png';
@@ -464,6 +472,334 @@ export const caseStudyBySlug = {
         heroAlt: 'SprayStore showcase screen',
         screen1Alt: 'SprayStore catalog and utilities',
         screen2Alt: 'SprayStore review roulette',
+      },
+    },
+  },
+  chisto: {
+    ru: {
+      title: 'Chisto для клининговой компании',
+      eyebrow: 'Сайт услуг · клининг',
+      description:
+        'Сайт для клининговой компании с понятной структурой услуг, акцентом на доверие и быстрым сценарием обращения без перегруженного интерфейса.',
+      challenge:
+        'Клининговой компании нужен был аккуратный и убедительный сайт, который быстро объясняет услуги, отвечает на базовые возражения и переводит посетителя к заявке без лишних экранов и длинного выбора.',
+      stats: [
+        { value: '2 нед', label: 'Срок разработки', width: 22 },
+        { value: '+17%', label: 'Конверсия в заявку', width: 17 },
+        { value: '3 экрана', label: 'До формы обращения', width: 58 },
+      ],
+      role: 'Дизайн + разработка',
+      duration: '2 недели',
+      roleLabel: 'Роль',
+      durationLabel: 'Срок',
+      screensLabel: 'Скриншоты',
+      screenCaptions: [
+        {
+          title: 'Блок услуг',
+          description:
+            'Экран с услугами помогает быстро понять формат работ, сравнить направления и выбрать подходящий сценарий обращения без лишних уточнений.',
+        },
+        {
+          title: 'Форма обращения',
+          description:
+            'Форма собрана так, чтобы клиент оставил заявку без трения: только нужные поля, понятный CTA и ощущение простого следующего шага.',
+        },
+      ],
+      features: [
+        {
+          title: 'Понятная подача услуг',
+          description: 'Структура сайта быстро объясняет, что именно делает компания и в каком формате можно заказать уборку.',
+        },
+        {
+          title: 'Доверительный визуальный тон',
+          description: 'Чистая композиция и спокойная подача усиливают ощущение аккуратного сервиса и надежности.',
+        },
+        {
+          title: 'Короткий путь к заявке',
+          description: 'Пользователь не теряется в длинной навигации и быстро доходит до формы обращения.',
+        },
+      ],
+      tags: ['Landing page', 'Cleaning', 'Services', 'Leadgen'],
+      backLabel: 'Все кейсы',
+      challengeLabel: 'Задача',
+      solutionLabel: 'Решение',
+      images: {
+        hero: chistoLanding,
+        screen1: chistoServices,
+        screen2: chistoContactForm,
+        heroAlt: 'Промо-экран Chisto',
+        screen1Alt: 'Экран услуг Chisto',
+        screen2Alt: 'Форма обращения Chisto',
+      },
+    },
+    en: {
+      title: 'Chisto cleaning company website',
+      eyebrow: 'Service website · cleaning',
+      description:
+        'A service website for a cleaning company with a clear service structure, trust-building presentation, and a fast contact flow without interface overload.',
+      challenge:
+        'The cleaning company needed a polished and persuasive website that explains the services quickly, resolves basic objections, and moves visitors to a lead form without extra screens or long decision paths.',
+      stats: [
+        { value: '2 wk', label: 'Build time', width: 22 },
+        { value: '+17%', label: 'Lead conversion', width: 17 },
+        { value: '3 screens', label: 'To contact form', width: 58 },
+      ],
+      role: 'Design + development',
+      duration: '2 weeks',
+      roleLabel: 'Role',
+      durationLabel: 'Duration',
+      screensLabel: 'Screenshots',
+      screenCaptions: [
+        {
+          title: 'Services section',
+          description:
+            'The services screen helps users quickly understand the work format, compare offerings, and choose the right inquiry path without extra clarification.',
+        },
+        {
+          title: 'Contact form',
+          description:
+            'The form is trimmed to the essentials, with a clear CTA and a low-friction next step that makes sending a request feel easy.',
+        },
+      ],
+      features: [
+        {
+          title: 'Clear service presentation',
+          description: 'The structure explains what the company does and how a visitor can book a cleaning service in just a few seconds.',
+        },
+        {
+          title: 'Trust-oriented visual tone',
+          description: 'A clean composition and restrained presentation reinforce the feeling of precision and reliability.',
+        },
+        {
+          title: 'Short path to inquiry',
+          description: 'The user is not forced through long navigation and reaches the contact form quickly.',
+        },
+      ],
+      tags: ['Landing page', 'Cleaning', 'Services', 'Leadgen'],
+      backLabel: 'All cases',
+      challengeLabel: 'Challenge',
+      solutionLabel: 'Solution',
+      images: {
+        hero: chistoLanding,
+        screen1: chistoServices,
+        screen2: chistoContactForm,
+        heroAlt: 'Chisto showcase screen',
+        screen1Alt: 'Chisto services screen',
+        screen2Alt: 'Chisto contact form',
+      },
+    },
+  },
+  porsche: {
+    ru: {
+      title: 'Porsche для детейлинг-центра',
+      eyebrow: 'Сайт услуг · детейлинг',
+      description:
+        'Премиальный сайт для детейлинг-центра с акцентом на качество сервиса, выбор автомобиля и короткий путь к записи.',
+      challenge:
+        'Для детейлинг-центра нужен был сайт с более дорогим ощущением бренда: важно было подчеркнуть уровень сервиса, собрать интерес по направлениям и помочь клиенту быстро перейти к записи без перегруженного многоступенчатого сценария.',
+      stats: [
+        { value: '10 дн', label: 'Срок разработки', width: 18 },
+        { value: '+14%', label: 'Запросы на услугу', width: 14 },
+        { value: '1 выбор', label: 'До подбора сценария', width: 54 },
+      ],
+      role: 'Дизайн + разработка',
+      duration: '10 дней',
+      roleLabel: 'Роль',
+      durationLabel: 'Срок',
+      screensLabel: 'Скриншоты',
+      screenCaptions: [
+        {
+          title: 'Выбор автомобиля',
+          description:
+            'Экран помогает быстро выбрать автомобиль и перейти к релевантному сценарию услуги, не перегружая пользователя лишними действиями.',
+        },
+      ],
+      features: [
+        {
+          title: 'Премиальная подача',
+          description: 'Интерфейс поддерживает ощущение детейлинг-сервиса высокого уровня и работает на восприятие бренда.',
+        },
+        {
+          title: 'Быстрый вход в услугу',
+          description: 'Клиент сразу понимает, куда идти дальше, и не теряется между типами работ и длинными описаниями.',
+        },
+        {
+          title: 'Фокус на записи',
+          description: 'Сайт выстроен так, чтобы интерес к сервису быстро переходил в контакт и запись.',
+        },
+      ],
+      tags: ['Landing page', 'Auto', 'Detailing', 'Premium'],
+      backLabel: 'Все кейсы',
+      challengeLabel: 'Задача',
+      solutionLabel: 'Решение',
+      images: {
+        hero: porscheLanding,
+        screen1: porscheChooser,
+        heroAlt: 'Промо-экран Porsche',
+        screen1Alt: 'Экран выбора автомобиля Porsche',
+      },
+    },
+    en: {
+      title: 'Porsche detailing center website',
+      eyebrow: 'Service website · detailing',
+      description:
+        'A premium website for a detailing center with an emphasis on service quality, car selection, and a short path to booking.',
+      challenge:
+        'The detailing center needed a website with a more premium brand feel. It had to highlight the service level, collect intent around key offerings, and help users move to booking without a heavy multi-step flow.',
+      stats: [
+        { value: '10 d', label: 'Build time', width: 18 },
+        { value: '+14%', label: 'Service inquiries', width: 14 },
+        { value: '1 choice', label: 'To service path', width: 54 },
+      ],
+      role: 'Design + development',
+      duration: '10 days',
+      roleLabel: 'Role',
+      durationLabel: 'Duration',
+      screensLabel: 'Screenshots',
+      screenCaptions: [
+        {
+          title: 'Car selection',
+          description:
+            'This screen helps users choose a car quickly and move into the relevant service path without unnecessary friction.',
+        },
+      ],
+      features: [
+        {
+          title: 'Premium presentation',
+          description: 'The interface supports a high-end detailing service feel and reinforces the brand perception.',
+        },
+        {
+          title: 'Fast service entry',
+          description: 'Clients understand where to go next immediately instead of getting lost between service categories and long descriptions.',
+        },
+        {
+          title: 'Booking-focused flow',
+          description: 'The website is structured so interest in the service quickly turns into contact and booking.',
+        },
+      ],
+      tags: ['Landing page', 'Auto', 'Detailing', 'Premium'],
+      backLabel: 'All cases',
+      challengeLabel: 'Challenge',
+      solutionLabel: 'Solution',
+      images: {
+        hero: porscheLanding,
+        screen1: porscheChooser,
+        heroAlt: 'Porsche showcase screen',
+        screen1Alt: 'Porsche car selection screen',
+      },
+    },
+  },
+  moonstore: {
+    ru: {
+      title: 'Moonstore для интернет-магазина цветов',
+      eyebrow: 'Интернет-магазин · цветы',
+      description:
+        'Интернет-магазин цветов с мягкой визуальной подачей, понятной корзиной и сценариями выбора, которые помогают быстрее довести пользователя до заказа.',
+      challenge:
+        'Цветочному магазину нужен был аккуратный e-commerce сайт, где клиенту легко выбирать букеты, сохранять понравившиеся позиции и переходить к покупке без ощущения перегруженного каталога.',
+      stats: [
+        { value: '3 нед', label: 'Срок разработки', width: 26 },
+        { value: '-16%', label: 'Время до заказа', width: 16 },
+        { value: '2 касания', label: 'До оформления', width: 52 },
+      ],
+      role: 'Дизайн + разработка',
+      duration: '3 недели',
+      roleLabel: 'Роль',
+      durationLabel: 'Срок',
+      screensLabel: 'Скриншоты',
+      screenCaptions: [
+        {
+          title: 'Корзина',
+          description:
+            'Корзина собрана без лишнего шума: пользователь видит состав заказа, стоимость и следующий шаг к оформлению в одном спокойном экране.',
+        },
+        {
+          title: 'Избранные букеты',
+          description:
+            'Сценарий избранного помогает вернуться к понравившимся композициям и не терять выбор между повторными визитами.',
+        },
+      ],
+      features: [
+        {
+          title: 'Витрина букетов',
+          description: 'Первый экран задает настроение и сразу подводит пользователя к просмотру ассортимента.',
+        },
+        {
+          title: 'Мягкий e-commerce сценарий',
+          description: 'Путь к заказу выстроен деликатно и не перегружает пользователя лишними шагами.',
+        },
+        {
+          title: 'Избранное и корзина',
+          description: 'Клиент может отложить понравившиеся позиции и вернуться к покупке в удобный момент.',
+        },
+      ],
+      tags: ['E-commerce', 'Flowers', 'Storefront', 'Retail'],
+      backLabel: 'Все кейсы',
+      challengeLabel: 'Задача',
+      solutionLabel: 'Решение',
+      images: {
+        hero: moonstoreLanding,
+        screen1: moonstoreCart,
+        screen2: moonstoreLikedFlowers,
+        heroAlt: 'Промо-экран Moonstore',
+        screen1Alt: 'Корзина Moonstore',
+        screen2Alt: 'Избранные букеты Moonstore',
+      },
+    },
+    en: {
+      title: 'Moonstore flower shop website',
+      eyebrow: 'Online store · flowers',
+      description:
+        'An online flower store with a soft visual tone, a clear cart, and selection flows that help users reach checkout faster.',
+      challenge:
+        'The flower shop needed a polished e-commerce website where customers could browse bouquets easily, save favorite items, and move to purchase without the feeling of an overloaded catalog.',
+      stats: [
+        { value: '3 wk', label: 'Build time', width: 26 },
+        { value: '-16%', label: 'Time to order', width: 16 },
+        { value: '2 touches', label: 'To checkout', width: 52 },
+      ],
+      role: 'Design + development',
+      duration: '3 weeks',
+      roleLabel: 'Role',
+      durationLabel: 'Duration',
+      screensLabel: 'Screenshots',
+      screenCaptions: [
+        {
+          title: 'Cart',
+          description:
+            'The cart is intentionally quiet: users see their order, the price, and the next checkout step on one calm screen.',
+        },
+        {
+          title: 'Favorite bouquets',
+          description:
+            'The favorites flow helps people come back to liked arrangements instead of losing their selection between visits.',
+        },
+      ],
+      features: [
+        {
+          title: 'Bouquet storefront',
+          description: 'The opening screen sets the mood and guides users into the assortment immediately.',
+        },
+        {
+          title: 'Soft e-commerce flow',
+          description: 'The path to checkout is designed to feel lightweight and free of unnecessary friction.',
+        },
+        {
+          title: 'Favorites and cart',
+          description: 'Customers can save appealing items and come back to purchase them at the right moment.',
+        },
+      ],
+      tags: ['E-commerce', 'Flowers', 'Storefront', 'Retail'],
+      backLabel: 'All cases',
+      challengeLabel: 'Challenge',
+      solutionLabel: 'Solution',
+      images: {
+        hero: moonstoreLanding,
+        screen1: moonstoreCart,
+        screen2: moonstoreLikedFlowers,
+        heroAlt: 'Moonstore showcase screen',
+        screen1Alt: 'Moonstore cart',
+        screen2Alt: 'Moonstore favorite bouquets',
       },
     },
   },

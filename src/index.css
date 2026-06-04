@@ -1281,6 +1281,7 @@ button.badge:hover:not(.active) {
 }
 
 .pain-num {
+    margin-left: 10px;
     position: relative;
     z-index: 1;
     padding-top: 6px;
@@ -2490,6 +2491,24 @@ button.badge:hover:not(.active) {
     .cg-grid--portfolio .cg-card[data-slot="spraystore"] {
         grid-column: 1 / -1 !important;
         grid-row: 4;
+        min-height: 460px;
+    }
+
+    .cg-grid--portfolio .cg-card[data-slot="chisto"] {
+        grid-column: 1 / -1 !important;
+        grid-row: 5;
+        min-height: 460px;
+    }
+
+    .cg-grid--portfolio .cg-card[data-slot="porsche"] {
+        grid-column: 1 / -1 !important;
+        grid-row: 6;
+        min-height: 460px;
+    }
+
+    .cg-grid--portfolio .cg-card[data-slot="moonstore"] {
+        grid-column: 1 / -1 !important;
+        grid-row: 7;
         min-height: 460px;
     }
 
@@ -3842,7 +3861,7 @@ button.badge:hover:not(.active) {
 
 .case-ref-metric-item {
     display: grid;
-    grid-template-columns: 160px 1fr 120px;
+    grid-template-columns: 160px 1fr minmax(120px, max-content);
     align-items: center;
     gap: 2rem;
     padding: 1.65rem 2.4rem;
@@ -3891,7 +3910,9 @@ button.badge:hover:not(.active) {
     color: #fff;
     text-align: right;
     letter-spacing: 0.02em;
-    line-height: 1;
+    line-height: 0.95;
+    white-space: normal;
+    overflow-wrap: anywhere;
     transition: color 0.2s ease;
 }
 
@@ -4211,7 +4232,7 @@ button.badge:hover:not(.active) {
     }
 
     .case-ref-metric-item {
-        grid-template-columns: 140px 1fr 100px;
+        grid-template-columns: 140px 1fr minmax(100px, max-content);
         gap: 1.25rem;
     }
 }

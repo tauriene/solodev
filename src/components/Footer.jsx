@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer-col footer-col-info">
           <Link to="/" className="footer-logo" data-i18n="logo">нексиум.дев</Link>
           <div className="footer-text-small mt-4" data-i18n-html="footer_copyright">
-            © 2017—2026 «Nexium» —<br />
+            © 2025—2026 «Nexium» —<br />
             студия автоматизации бизнеса
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-col footer-col-contacts">
-          <a href="mailto:info@nexium.dev" className="footer-email">info@nexium.dev</a>
+          <a href="mailto:nexiumdev@protonmail.com" className="footer-email">nexiumdev@protonmail.com</a>
 
           <button className="footer-up-btn" onClick={scrollToTop} aria-label="Наверх">
             <FiChevronUp size={18} />

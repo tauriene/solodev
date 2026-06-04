@@ -1,5 +1,8 @@
-import crmLanding from '../cases_assets/crm/landing.png';
+import crmLanding from '../new_case_assets/crm/landing.png';
 import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
+import chistoLanding from '../new_case_assets/chisto/landing.png';
+import moonstoreLanding from '../new_case_assets/moonstore/moonlanding.png';
+import porscheLanding from '../new_case_assets/porsche/landing.png';
 import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.png';
 import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.png';
 
@@ -91,6 +94,72 @@ export const casesCatalog = [
     image: sprayShowcase,
     imageAltRu: 'Главный экран кейса SprayStore',
     imageAltEn: 'Main screen of the SprayStore case',
+  },
+  {
+    slug: 'chisto',
+    layout: 'A1',
+    slot: 'chisto',
+    categoryRu: 'Сайт услуг · клининг',
+    categoryEn: 'Service website · cleaning',
+    titleRu: 'Chisto для клининговой компании',
+    titleEn: 'Chisto cleaning company website',
+    summaryRu: 'конверсии в заявки с сайта',
+    summaryEn: 'conversion into website leads',
+    detailsRu:
+      'Что внутри: промо-лендинг, понятная подача услуг, акценты на преимуществах и форма обращения, которая быстро переводит посетителя в диалог.',
+    detailsEn:
+      'Inside: a promo landing page, clear service presentation, value-focused sections, and a contact form that quickly turns visitors into conversations.',
+    tagsRu: ['Лендинг', 'Услуги', 'Клининг'],
+    tagsEn: ['Landing page', 'Services', 'Cleaning'],
+    metricRu: '+17%',
+    metricEn: '+17%',
+    image: chistoLanding,
+    imageAltRu: 'Главный экран сайта Chisto для клининговой компании',
+    imageAltEn: 'Main screen of the Chisto cleaning company website',
+  },
+  {
+    slug: 'porsche',
+    layout: 'A1',
+    slot: 'porsche',
+    categoryRu: 'Сайт услуг · детейлинг',
+    categoryEn: 'Service website · detailing',
+    titleRu: 'Porsche для детейлинг-центра',
+    titleEn: 'Porsche detailing center website',
+    summaryRu: 'запросов на подбор услуги',
+    summaryEn: 'requests for service selection',
+    detailsRu:
+      'Что внутри: премиальная подача услуг, экран выбора автомобиля и сценарий, который помогает быстро перейти от интереса к записи.',
+    detailsEn:
+      'Inside: a premium service presentation, a car selection screen, and a flow that moves users from interest to booking faster.',
+    tagsRu: ['Лендинг', 'Auto', 'Detailing'],
+    tagsEn: ['Landing page', 'Auto', 'Detailing'],
+    metricRu: '+14%',
+    metricEn: '+14%',
+    image: porscheLanding,
+    imageAltRu: 'Главный экран сайта Porsche для детейлинг-центра',
+    imageAltEn: 'Main screen of the Porsche detailing center website',
+  },
+  {
+    slug: 'moonstore',
+    layout: 'A1',
+    slot: 'moonstore',
+    categoryRu: 'Интернет-магазин · цветы',
+    categoryEn: 'Online store · flowers',
+    titleRu: 'Moonstore для цветочного магазина',
+    titleEn: 'Moonstore flower shop website',
+    summaryRu: 'времени до оформления заказа',
+    summaryEn: 'time to complete an order',
+    detailsRu:
+      'Что внутри: витрина букетов, избранное, корзина и мягкий e-commerce сценарий, который не перегружает пользователя лишними шагами.',
+    detailsEn:
+      'Inside: a bouquet storefront, favorites, cart, and a soft e-commerce flow that avoids unnecessary friction.',
+    tagsRu: ['E-commerce', 'Flowers', 'Storefront'],
+    tagsEn: ['E-commerce', 'Flowers', 'Storefront'],
+    metricRu: '-16%',
+    metricEn: '-16%',
+    image: moonstoreLanding,
+    imageAltRu: 'Главный экран сайта Moonstore для магазина цветов',
+    imageAltEn: 'Main screen of the Moonstore flower shop website',
   },
 ];
 
