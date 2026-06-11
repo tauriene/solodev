@@ -1,22 +1,29 @@
-import crmContacts from '../new_case_assets/crm/contacts_page.png';
-import crmShowcase from '../new_case_assets/crm/showcase_crm.png';
-import crmVoronka from '../new_case_assets/crm/voronka_page.png';
-import arhBasket from '../new_case_assets/arhdzagi/basket_arh.png';
-import arhItem from '../new_case_assets/arhdzagi/item_arh.png';
-import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
-import chistoContactForm from '../new_case_assets/chisto/contact_form.png';
-import chistoLanding from '../new_case_assets/chisto/landing.png';
-import chistoServices from '../new_case_assets/chisto/uslugi.png';
-import moonstoreCart from '../new_case_assets/moonstore/cart_page.png';
-import moonstoreLanding from '../new_case_assets/moonstore/moonlanding.png';
-import moonstoreLikedFlowers from '../new_case_assets/moonstore/liked_flowers.png';
-import porscheChooser from '../new_case_assets/porsche/choosing_car.png';
-import porscheLanding from '../new_case_assets/porsche/landing.png';
-import sprayCatalog from '../new_case_assets/spraystore/catalog_landing.png';
-import sprayRoulette from '../new_case_assets/spraystore/roulette_page.png';
-import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.png';
-import zayavkiLanding from '../new_case_assets/zayavki/zayavka_landing.png';
-import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.png';
+import crmContacts from '../new_case_assets/crm/contacts_page.webp';
+import crmShowcase from '../new_case_assets/crm/showcase_crm.webp';
+import crmVoronka from '../new_case_assets/crm/voronka_page.webp';
+import arhBasket from '../new_case_assets/arhdzagi/basket_arh.webp';
+import arhItem from '../new_case_assets/arhdzagi/item_arh.webp';
+import arhShowcase from '../new_case_assets/arh/arh_showcase.webp';
+import chistoContactForm from '../new_case_assets/chisto/contact_form.webp';
+import chistoLanding from '../new_case_assets/chisto/landing.webp';
+import chistoServices from '../new_case_assets/chisto/uslugi.webp';
+import moonstoreCart from '../new_case_assets/moonstore/cart_page.webp';
+import moonstoreLanding from '../new_case_assets/moonstore/moonlanding.webp';
+import moonstoreLikedFlowers from '../new_case_assets/moonstore/liked_flowers.webp';
+import porscheChooser from '../new_case_assets/porsche/choosing_car.webp';
+import porscheLanding from '../new_case_assets/porsche/landing.webp';
+import sprayCatalog from '../new_case_assets/spraystore/catalog_landing.webp';
+import sprayRoulette from '../new_case_assets/spraystore/roulette_page.webp';
+import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.webp';
+import zayavkiLanding from '../new_case_assets/zayavki/zayavka_landing.webp';
+import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.webp';
+
+// Public mockups — used as hero/card backgrounds
+const arhdzagiMockup    = '/mockups/arhdzagibot.webp';
+const chistoMockup      = '/mockups/chisto.webp';
+const moonstoreMockup   = '/mockups/moonstore.webp';
+const porscheMockup     = '/mockups/porsche.webp';
+const sprayMockup       = '/mockups/spray.webp';
 
 export const caseStudyBySlug = {
   crm: {
@@ -182,10 +189,10 @@ export const caseStudyBySlug = {
       challengeLabel: 'Задача',
       solutionLabel: 'Решение',
       images: {
-        hero: arhShowcase,
+        hero: arhdzagiMockup,
         screen1: arhBasket,
         screen2: arhItem,
-        heroAlt: 'Промо-экран ArhDzagi',
+        heroAlt: 'Мокап приложения ArhDzagi',
         screen1Alt: 'Экран корзины ArhDzagi',
         screen2Alt: 'Карточка товара ArhDzagi',
       },
@@ -230,7 +237,7 @@ export const caseStudyBySlug = {
         },
         {
           title: 'Product cards',
-          description: 'Each item includes details, variants, and a clear add-to-cart action.', 
+          description: 'Each item includes details, variants, and a clear add-to-cart action.',
         },
       ],
       tags: ['Telegram', 'Mini App', 'Retail', 'Shop'],
@@ -238,10 +245,10 @@ export const caseStudyBySlug = {
       challengeLabel: 'Challenge',
       solutionLabel: 'Solution',
       images: {
-        hero: arhShowcase,
+        hero: arhdzagiMockup,
         screen1: arhBasket,
         screen2: arhItem,
-        heroAlt: 'ArhDzagi showcase screen',
+        heroAlt: 'ArhDzagi app mockup',
         screen1Alt: 'ArhDzagi cart screen',
         screen2Alt: 'ArhDzagi product page',
       },
@@ -368,7 +375,7 @@ export const caseStudyBySlug = {
       description:
         'Telegram Mini App для бренда, который остается с клиентом после покупки: отзыв с бонусом, рулетка, каталог сервисных центров и полезные разделы внутри одного сценария.',
       challenge:
-        'После покупки бренд почти терял контакт с клиентом: отзыв просили вручную, бонусный сценарий не был встроен в продукт, а полезные разделы вроде сервисных центров и идей жили отдельно. Нужен был единый Mini App, который возвращает пользователя обратно в экосистему бренда и делает постпокупочный путь живым, а не формальным.',
+        'После покупки бренд почти терял контакт с клиентом: отзыв просили вручную, бонусный сценарий не был встроен в продукт, а полезные разделы вроде сервисных центров и идей жили отдельно. Нужен был единый Mini App, который возвращает пользователя обратно в экосистему бренда.',
       stats: [
         { value: '3 нед', label: 'Срок разработки', width: 30 },
         { value: '+22%', label: 'Повторные касания', width: 22 },
@@ -388,21 +395,21 @@ export const caseStudyBySlug = {
         {
           title: 'Рулетка за отзыв',
           description:
-            'После положительного отзыва клиент получает понятный игровой сценарий с бонусом, который делает вовлечение ощутимым и не выглядит как сухая механика.',
+            'После положительного отзыва клиент получает понятный игровой сценарий с бонусом, который делает вовлечение ощутимым.',
         },
       ],
       features: [
         {
           title: 'QR-сценарий после заказа',
-          description: 'Путь в Mini App начинается прямо из заказа и не требует от клиента лишних поисков или ручных переходов.',
+          description: 'Путь в Mini App начинается прямо из заказа и не требует от клиента лишних поисков.',
         },
         {
           title: 'Бонус за хороший отзыв',
-          description: 'Система связывает отзыв и награду в единый понятный опыт, который мотивирует клиента вернуться в бренд.',
+          description: 'Система связывает отзыв и награду в единый понятный опыт.',
         },
         {
           title: 'Полезные утилиты внутри',
-          description: 'Каталог сервисных центров, идеи и проекты превращают Mini App в рабочую точку контакта, а не в одноразовую акцию.',
+          description: 'Каталог сервисных центров, идеи и проекты превращают Mini App в рабочую точку контакта.',
         },
       ],
       tags: ['Telegram', 'Mini App', 'Loyalty', 'Retention'],
@@ -410,10 +417,10 @@ export const caseStudyBySlug = {
       challengeLabel: 'Задача',
       solutionLabel: 'Решение',
       images: {
-        hero: sprayShowcase,
+        hero: sprayMockup,
         screen1: sprayCatalog,
         screen2: sprayRoulette,
-        heroAlt: 'Промо-экран SprayStore',
+        heroAlt: 'Мокап SprayStore',
         screen1Alt: 'Каталог и полезные разделы SprayStore',
         screen2Alt: 'Рулетка за отзыв в SprayStore',
       },
@@ -424,7 +431,7 @@ export const caseStudyBySlug = {
       description:
         'A Telegram Mini App that stays with the customer after purchase: review reward flow, roulette bonus, service center catalog, and utility sections inside one post-purchase journey.',
       challenge:
-        'After purchase, the brand was losing contact with the customer: reviews were requested manually, the reward mechanic was disconnected from the product experience, and useful sections like service centers and ideas lived elsewhere. The goal was to build a single Mini App that brings the user back into the brand ecosystem and makes the post-purchase journey feel active rather than formal.',
+        'After purchase, the brand was losing contact with the customer: reviews were requested manually, the reward mechanic was disconnected from the product, and useful sections like service centers lived elsewhere.',
       stats: [
         { value: '3 wk', label: 'Build time', width: 30 },
         { value: '+22%', label: 'Repeat touchpoints', width: 22 },
@@ -444,21 +451,21 @@ export const caseStudyBySlug = {
         {
           title: 'Review reward roulette',
           description:
-            'After a positive review, the customer gets a simple game-like reward flow that feels tangible and engaging instead of looking like a dry mechanic.',
+            'After a positive review, the customer gets a simple game-like reward flow that feels tangible and engaging.',
         },
       ],
       features: [
         {
           title: 'QR journey after order',
-          description: 'The path into the Mini App starts directly from the order and does not require extra searching or manual navigation.',
+          description: 'The path into the Mini App starts directly from the order without extra searching.',
         },
         {
           title: 'Reward for positive feedback',
-          description: 'The system connects the review and the reward into one clear experience that encourages the customer to return to the brand.',
+          description: 'The system connects the review and the reward into one clear experience.',
         },
         {
           title: 'Utility sections inside',
-          description: 'The service center catalog, ideas, and projects make the Mini App a useful brand touchpoint instead of a one-time campaign.',
+          description: 'The service center catalog, ideas, and projects make the Mini App a useful brand touchpoint.',
         },
       ],
       tags: ['Telegram', 'Mini App', 'Loyalty', 'Retention'],
@@ -466,10 +473,10 @@ export const caseStudyBySlug = {
       challengeLabel: 'Challenge',
       solutionLabel: 'Solution',
       images: {
-        hero: sprayShowcase,
+        hero: sprayMockup,
         screen1: sprayCatalog,
         screen2: sprayRoulette,
-        heroAlt: 'SprayStore showcase screen',
+        heroAlt: 'SprayStore mockup',
         screen1Alt: 'SprayStore catalog and utilities',
         screen2Alt: 'SprayStore review roulette',
       },
@@ -482,7 +489,7 @@ export const caseStudyBySlug = {
       description:
         'Сайт для клининговой компании с понятной структурой услуг, акцентом на доверие и быстрым сценарием обращения без перегруженного интерфейса.',
       challenge:
-        'Клининговой компании нужен был аккуратный и убедительный сайт, который быстро объясняет услуги, отвечает на базовые возражения и переводит посетителя к заявке без лишних экранов и длинного выбора.',
+        'Клининговой компании нужен был аккуратный и убедительный сайт, который быстро объясняет услуги, отвечает на базовые возражения и переводит посетителя к заявке без лишних экранов.',
       stats: [
         { value: '2 нед', label: 'Срок разработки', width: 22 },
         { value: '+17%', label: 'Конверсия в заявку', width: 17 },
@@ -497,26 +504,26 @@ export const caseStudyBySlug = {
         {
           title: 'Блок услуг',
           description:
-            'Экран с услугами помогает быстро понять формат работ, сравнить направления и выбрать подходящий сценарий обращения без лишних уточнений.',
+            'Экран с услугами помогает быстро понять формат работ и выбрать подходящий сценарий обращения без лишних уточнений.',
         },
         {
           title: 'Форма обращения',
           description:
-            'Форма собрана так, чтобы клиент оставил заявку без трения: только нужные поля, понятный CTA и ощущение простого следующего шага.',
+            'Форма собрана так, чтобы клиент оставил заявку без трения: только нужные поля и понятный CTA.',
         },
       ],
       features: [
         {
           title: 'Понятная подача услуг',
-          description: 'Структура сайта быстро объясняет, что именно делает компания и в каком формате можно заказать уборку.',
+          description: 'Структура сайта быстро объясняет, что именно делает компания.',
         },
         {
           title: 'Доверительный визуальный тон',
-          description: 'Чистая композиция и спокойная подача усиливают ощущение аккуратного сервиса и надежности.',
+          description: 'Чистая композиция усиливает ощущение аккуратного сервиса и надежности.',
         },
         {
           title: 'Короткий путь к заявке',
-          description: 'Пользователь не теряется в длинной навигации и быстро доходит до формы обращения.',
+          description: 'Пользователь не теряется в длинной навигации и быстро доходит до формы.',
         },
       ],
       tags: ['Landing page', 'Cleaning', 'Services', 'Leadgen'],
@@ -524,10 +531,10 @@ export const caseStudyBySlug = {
       challengeLabel: 'Задача',
       solutionLabel: 'Решение',
       images: {
-        hero: chistoLanding,
+        hero: chistoMockup,
         screen1: chistoServices,
         screen2: chistoContactForm,
-        heroAlt: 'Промо-экран Chisto',
+        heroAlt: 'Мокап сайта Chisto',
         screen1Alt: 'Экран услуг Chisto',
         screen2Alt: 'Форма обращения Chisto',
       },
@@ -538,7 +545,7 @@ export const caseStudyBySlug = {
       description:
         'A service website for a cleaning company with a clear service structure, trust-building presentation, and a fast contact flow without interface overload.',
       challenge:
-        'The cleaning company needed a polished and persuasive website that explains the services quickly, resolves basic objections, and moves visitors to a lead form without extra screens or long decision paths.',
+        'The cleaning company needed a polished and persuasive website that explains services quickly and moves visitors to a lead form without extra screens.',
       stats: [
         { value: '2 wk', label: 'Build time', width: 22 },
         { value: '+17%', label: 'Lead conversion', width: 17 },
@@ -553,26 +560,26 @@ export const caseStudyBySlug = {
         {
           title: 'Services section',
           description:
-            'The services screen helps users quickly understand the work format, compare offerings, and choose the right inquiry path without extra clarification.',
+            'The services screen helps users quickly understand the work format and choose the right inquiry path.',
         },
         {
           title: 'Contact form',
           description:
-            'The form is trimmed to the essentials, with a clear CTA and a low-friction next step that makes sending a request feel easy.',
+            'The form is trimmed to the essentials with a clear CTA that makes sending a request feel easy.',
         },
       ],
       features: [
         {
           title: 'Clear service presentation',
-          description: 'The structure explains what the company does and how a visitor can book a cleaning service in just a few seconds.',
+          description: 'The structure explains what the company does in just a few seconds.',
         },
         {
           title: 'Trust-oriented visual tone',
-          description: 'A clean composition and restrained presentation reinforce the feeling of precision and reliability.',
+          description: 'A clean composition reinforces the feeling of precision and reliability.',
         },
         {
           title: 'Short path to inquiry',
-          description: 'The user is not forced through long navigation and reaches the contact form quickly.',
+          description: 'The user reaches the contact form quickly without long navigation.',
         },
       ],
       tags: ['Landing page', 'Cleaning', 'Services', 'Leadgen'],
@@ -580,10 +587,10 @@ export const caseStudyBySlug = {
       challengeLabel: 'Challenge',
       solutionLabel: 'Solution',
       images: {
-        hero: chistoLanding,
+        hero: chistoMockup,
         screen1: chistoServices,
         screen2: chistoContactForm,
-        heroAlt: 'Chisto showcase screen',
+        heroAlt: 'Chisto website mockup',
         screen1Alt: 'Chisto services screen',
         screen2Alt: 'Chisto contact form',
       },
@@ -596,7 +603,7 @@ export const caseStudyBySlug = {
       description:
         'Премиальный сайт для детейлинг-центра с акцентом на качество сервиса, выбор автомобиля и короткий путь к записи.',
       challenge:
-        'Для детейлинг-центра нужен был сайт с более дорогим ощущением бренда: важно было подчеркнуть уровень сервиса, собрать интерес по направлениям и помочь клиенту быстро перейти к записи без перегруженного многоступенчатого сценария.',
+        'Для детейлинг-центра нужен был сайт с более дорогим ощущением бренда: важно было подчеркнуть уровень сервиса и помочь клиенту быстро перейти к записи.',
       stats: [
         { value: '10 дн', label: 'Срок разработки', width: 18 },
         { value: '+14%', label: 'Запросы на услугу', width: 14 },
@@ -611,21 +618,21 @@ export const caseStudyBySlug = {
         {
           title: 'Выбор автомобиля',
           description:
-            'Экран помогает быстро выбрать автомобиль и перейти к релевантному сценарию услуги, не перегружая пользователя лишними действиями.',
+            'Экран помогает быстро выбрать автомобиль и перейти к релевантному сценарию услуги без лишних действий.',
         },
       ],
       features: [
         {
           title: 'Премиальная подача',
-          description: 'Интерфейс поддерживает ощущение детейлинг-сервиса высокого уровня и работает на восприятие бренда.',
+          description: 'Интерфейс поддерживает ощущение детейлинг-сервиса высокого уровня.',
         },
         {
           title: 'Быстрый вход в услугу',
-          description: 'Клиент сразу понимает, куда идти дальше, и не теряется между типами работ и длинными описаниями.',
+          description: 'Клиент сразу понимает, куда идти дальше, и не теряется в описаниях.',
         },
         {
           title: 'Фокус на записи',
-          description: 'Сайт выстроен так, чтобы интерес к сервису быстро переходил в контакт и запись.',
+          description: 'Сайт выстроен так, чтобы интерес быстро переходил в контакт.',
         },
       ],
       tags: ['Landing page', 'Auto', 'Detailing', 'Premium'],
@@ -633,9 +640,9 @@ export const caseStudyBySlug = {
       challengeLabel: 'Задача',
       solutionLabel: 'Решение',
       images: {
-        hero: porscheLanding,
+        hero: porscheMockup,
         screen1: porscheChooser,
-        heroAlt: 'Промо-экран Porsche',
+        heroAlt: 'Мокап сайта Porsche',
         screen1Alt: 'Экран выбора автомобиля Porsche',
       },
     },
@@ -645,7 +652,7 @@ export const caseStudyBySlug = {
       description:
         'A premium website for a detailing center with an emphasis on service quality, car selection, and a short path to booking.',
       challenge:
-        'The detailing center needed a website with a more premium brand feel. It had to highlight the service level, collect intent around key offerings, and help users move to booking without a heavy multi-step flow.',
+        'The detailing center needed a website with a more premium brand feel that highlights the service level and helps users move to booking quickly.',
       stats: [
         { value: '10 d', label: 'Build time', width: 18 },
         { value: '+14%', label: 'Service inquiries', width: 14 },
@@ -666,15 +673,15 @@ export const caseStudyBySlug = {
       features: [
         {
           title: 'Premium presentation',
-          description: 'The interface supports a high-end detailing service feel and reinforces the brand perception.',
+          description: 'The interface supports a high-end detailing service feel.',
         },
         {
           title: 'Fast service entry',
-          description: 'Clients understand where to go next immediately instead of getting lost between service categories and long descriptions.',
+          description: 'Clients understand where to go next immediately.',
         },
         {
           title: 'Booking-focused flow',
-          description: 'The website is structured so interest in the service quickly turns into contact and booking.',
+          description: 'The website is structured so interest quickly turns into contact.',
         },
       ],
       tags: ['Landing page', 'Auto', 'Detailing', 'Premium'],
@@ -682,9 +689,9 @@ export const caseStudyBySlug = {
       challengeLabel: 'Challenge',
       solutionLabel: 'Solution',
       images: {
-        hero: porscheLanding,
+        hero: porscheMockup,
         screen1: porscheChooser,
-        heroAlt: 'Porsche showcase screen',
+        heroAlt: 'Porsche website mockup',
         screen1Alt: 'Porsche car selection screen',
       },
     },
@@ -696,7 +703,7 @@ export const caseStudyBySlug = {
       description:
         'Интернет-магазин цветов с мягкой визуальной подачей, понятной корзиной и сценариями выбора, которые помогают быстрее довести пользователя до заказа.',
       challenge:
-        'Цветочному магазину нужен был аккуратный e-commerce сайт, где клиенту легко выбирать букеты, сохранять понравившиеся позиции и переходить к покупке без ощущения перегруженного каталога.',
+        'Цветочному магазину нужен был аккуратный e-commerce сайт, где клиенту легко выбирать букеты, сохранять понравившиеся позиции и переходить к покупке без перегруженного каталога.',
       stats: [
         { value: '3 нед', label: 'Срок разработки', width: 26 },
         { value: '-16%', label: 'Время до заказа', width: 16 },
@@ -711,26 +718,26 @@ export const caseStudyBySlug = {
         {
           title: 'Корзина',
           description:
-            'Корзина собрана без лишнего шума: пользователь видит состав заказа, стоимость и следующий шаг к оформлению в одном спокойном экране.',
+            'Корзина собрана без лишнего шума: пользователь видит состав заказа, стоимость и следующий шаг к оформлению.',
         },
         {
           title: 'Избранные букеты',
           description:
-            'Сценарий избранного помогает вернуться к понравившимся композициям и не терять выбор между повторными визитами.',
+            'Сценарий избранного помогает вернуться к понравившимся композициям между повторными визитами.',
         },
       ],
       features: [
         {
           title: 'Витрина букетов',
-          description: 'Первый экран задает настроение и сразу подводит пользователя к просмотру ассортимента.',
+          description: 'Первый экран задает настроение и сразу подводит к просмотру ассортимента.',
         },
         {
           title: 'Мягкий e-commerce сценарий',
-          description: 'Путь к заказу выстроен деликатно и не перегружает пользователя лишними шагами.',
+          description: 'Путь к заказу выстроен деликатно и не перегружает лишними шагами.',
         },
         {
           title: 'Избранное и корзина',
-          description: 'Клиент может отложить понравившиеся позиции и вернуться к покупке в удобный момент.',
+          description: 'Клиент может отложить понравившиеся позиции и вернуться в удобный момент.',
         },
       ],
       tags: ['E-commerce', 'Flowers', 'Storefront', 'Retail'],
@@ -738,10 +745,10 @@ export const caseStudyBySlug = {
       challengeLabel: 'Задача',
       solutionLabel: 'Решение',
       images: {
-        hero: moonstoreLanding,
+        hero: moonstoreMockup,
         screen1: moonstoreCart,
         screen2: moonstoreLikedFlowers,
-        heroAlt: 'Промо-экран Moonstore',
+        heroAlt: 'Мокап сайта Moonstore',
         screen1Alt: 'Корзина Moonstore',
         screen2Alt: 'Избранные букеты Moonstore',
       },
@@ -752,7 +759,7 @@ export const caseStudyBySlug = {
       description:
         'An online flower store with a soft visual tone, a clear cart, and selection flows that help users reach checkout faster.',
       challenge:
-        'The flower shop needed a polished e-commerce website where customers could browse bouquets easily, save favorite items, and move to purchase without the feeling of an overloaded catalog.',
+        'The flower shop needed a polished e-commerce website where customers could browse bouquets easily, save favorites, and move to purchase without an overloaded catalog.',
       stats: [
         { value: '3 wk', label: 'Build time', width: 26 },
         { value: '-16%', label: 'Time to order', width: 16 },
@@ -772,7 +779,7 @@ export const caseStudyBySlug = {
         {
           title: 'Favorite bouquets',
           description:
-            'The favorites flow helps people come back to liked arrangements instead of losing their selection between visits.',
+            'The favorites flow helps people come back to liked arrangements instead of losing their selection.',
         },
       ],
       features: [
@@ -782,11 +789,11 @@ export const caseStudyBySlug = {
         },
         {
           title: 'Soft e-commerce flow',
-          description: 'The path to checkout is designed to feel lightweight and free of unnecessary friction.',
+          description: 'The path to checkout is designed to feel lightweight and friction-free.',
         },
         {
           title: 'Favorites and cart',
-          description: 'Customers can save appealing items and come back to purchase them at the right moment.',
+          description: 'Customers can save appealing items and come back to purchase at the right moment.',
         },
       ],
       tags: ['E-commerce', 'Flowers', 'Storefront', 'Retail'],
@@ -794,11 +801,11 @@ export const caseStudyBySlug = {
       challengeLabel: 'Challenge',
       solutionLabel: 'Solution',
       images: {
-        hero: moonstoreLanding,
+        hero: moonstoreMockup,
         screen1: moonstoreCart,
         screen2: moonstoreLikedFlowers,
-        heroAlt: 'Moonstore showcase screen',
-        screen1Alt: 'Moonstore cart',
+        heroAlt: 'Moonstore website mockup',
+        screen1Alt: 'Moonstore cart screen',
         screen2Alt: 'Moonstore favorite bouquets',
       },
     },

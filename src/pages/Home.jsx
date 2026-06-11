@@ -385,7 +385,7 @@ export default function Home() {
                             )}</p>
                             <div className="testi-footer">
                                 <div className="testi-author">
-                                    <img className="testi-avatar" src="/avatar_ilya.png" alt="Илья" />
+                                    <img className="testi-avatar" src="/avatar_ilya.webp" alt="Илья" />
                                     <div className="testi-author-info">
                                         <span className="testi-name">{t('Илья Романов', 'Ilya Romanov')}</span>
                                         <span className="testi-role">{t('Владелец автосервиса', 'Auto Service Owner')}</span>
@@ -406,7 +406,7 @@ export default function Home() {
                             )}</p>
                             <div className="testi-footer">
                                 <div className="testi-author">
-                                    <img className="testi-avatar" src="/avatar_marina.png" alt="Марина" />
+                                    <img className="testi-avatar" src="/avatar_marina.webp" alt="Марина" />
                                     <div className="testi-author-info">
                                         <span className="testi-name">{t('Марина Соколова', 'Marina Sokolova')}</span>
                                         <span className="testi-role">{t('Управляющая салоном', 'Salon Manager')}</span>
@@ -427,7 +427,7 @@ export default function Home() {
                             )}</p>
                             <div className="testi-footer">
                                 <div className="testi-author">
-                                    <img className="testi-avatar" src="/avatar_oleg.png" alt="Олег" />
+                                    <img className="testi-avatar" src="/avatar_oleg.webp" alt="Олег" />
                                     <div className="testi-author-info">
                                         <span className="testi-name">{t('Олег Павлов', 'Oleg Pavlov')}</span>
                                         <span className="testi-role">{t('Владелец магазина', 'Flower Shop Owner')}</span>

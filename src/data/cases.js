@@ -1,10 +1,17 @@
-import crmLanding from '../new_case_assets/crm/landing.png';
-import arhShowcase from '../new_case_assets/arh/arh_showcase.png';
-import chistoLanding from '../new_case_assets/chisto/landing.png';
-import moonstoreLanding from '../new_case_assets/moonstore/moonlanding.png';
-import porscheLanding from '../new_case_assets/porsche/landing.png';
-import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.png';
-import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.png';
+import crmLanding from '../new_case_assets/crm/landing.webp';
+import arhShowcase from '../new_case_assets/arh/arh_showcase.webp';
+import chistoLanding from '../new_case_assets/chisto/landing.webp';
+import moonstoreLanding from '../new_case_assets/moonstore/moonlanding.webp';
+import porscheLanding from '../new_case_assets/porsche/landing.webp';
+import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.webp';
+import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.webp';
+
+// Public mockups — used as card backgrounds in /cases
+const arhdzagiMockup  = '/mockups/arhdzagibot.webp';
+const chistoMockup    = '/mockups/chisto.webp';
+const moonstoreMockup = '/mockups/moonstore.webp';
+const porscheMockup   = '/mockups/porsche.webp';
+const sprayMockup     = '/mockups/spray.webp';
 
 export const casesCatalog = [
   {
@@ -50,9 +57,9 @@ export const casesCatalog = [
     tagsEn: ['Telegram', 'Mini App', 'Shop'],
     metricRu: '+19%',
     metricEn: '+19%',
-    image: arhShowcase,
-    imageAltRu: 'Главный экран приложения ArhDzagi для шопа',
-    imageAltEn: 'Main screen of the ArhDzagi shop app',
+    image: arhdzagiMockup,
+    imageAltRu: 'Мокап приложения ArhDzagi',
+    imageAltEn: 'ArhDzagi app mockup',
   },
   {
     slug: 'zayavki',
@@ -97,9 +104,9 @@ export const casesCatalog = [
     tagsEn: ['Telegram', 'Mini App', 'Retention'],
     metricRu: '+22%',
     metricEn: '+22%',
-    image: sprayShowcase,
-    imageAltRu: 'Главный экран кейса SprayStore',
-    imageAltEn: 'Main screen of the SprayStore case',
+    image: sprayMockup,
+    imageAltRu: 'Мокап SprayStore',
+    imageAltEn: 'SprayStore mockup',
   },
   {
     slug: 'chisto',
@@ -120,9 +127,9 @@ export const casesCatalog = [
     tagsEn: ['Landing page', 'Services', 'Cleaning'],
     metricRu: '+17%',
     metricEn: '+17%',
-    image: chistoLanding,
-    imageAltRu: 'Главный экран сайта Chisto для клининговой компании',
-    imageAltEn: 'Main screen of the Chisto cleaning company website',
+    image: chistoMockup,
+    imageAltRu: 'Мокап сайта Chisto',
+    imageAltEn: 'Chisto website mockup',
   },
   {
     slug: 'porsche',
@@ -143,9 +150,9 @@ export const casesCatalog = [
     tagsEn: ['Landing page', 'Auto', 'Detailing'],
     metricRu: '+14%',
     metricEn: '+14%',
-    image: porscheLanding,
-    imageAltRu: 'Главный экран сайта Porsche для детейлинг-центра',
-    imageAltEn: 'Main screen of the Porsche detailing center website',
+    image: porscheMockup,
+    imageAltRu: 'Мокап сайта Porsche',
+    imageAltEn: 'Porsche website mockup',
   },
   {
     slug: 'moonstore',
@@ -166,9 +173,9 @@ export const casesCatalog = [
     tagsEn: ['E-commerce', 'Flowers', 'Storefront'],
     metricRu: '-16%',
     metricEn: '-16%',
-    image: moonstoreLanding,
-    imageAltRu: 'Главный экран сайта Moonstore для магазина цветов',
-    imageAltEn: 'Main screen of the Moonstore flower shop website',
+    image: moonstoreMockup,
+    imageAltRu: 'Мокап сайта Moonstore',
+    imageAltEn: 'Moonstore website mockup',
   },
 ];
 
