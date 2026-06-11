@@ -1,0 +1,45 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1100" fill="#0A0A0A"/>
+  <rect width="1600" height="1100" fill="url(#bg)"/>
+  <circle cx="1238" cy="180" r="240" fill="#C8F135" fill-opacity="0.11"/>
+  <circle cx="220" cy="980" r="360" fill="#C8F135" fill-opacity="0.06"/>
+  <rect x="74" y="76" width="1452" height="948" rx="40" fill="#10110F" fill-opacity="0.95" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="126" y="126" width="562" height="360" rx="28" fill="#151713" stroke="rgba(255,255,255,0.08)"/>
+  <text x="174" y="186" fill="#C8F135" font-family="Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="4">NEXIUM.BEAUTY</text>
+  <text x="174" y="244" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="72" font-weight="700">AI-администратор</text>
+  <text x="174" y="306" fill="#8E8E93" font-family="Arial, sans-serif" font-size="32">Ведет запись, напоминает и мягко доводит до визита</text>
+  <rect x="174" y="358" width="204" height="54" rx="27" fill="#1A1D15" stroke="#C8F135" stroke-opacity="0.4"/>
+  <text x="208" y="394" fill="#C8F135" font-family="Arial, sans-serif" font-size="24" font-weight="700">- неявки</text>
+  <rect x="758" y="140" width="644" height="442" rx="34" fill="#0D0F0C" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="808" y="192" width="544" height="88" rx="24" fill="#171A15"/>
+  <text x="846" y="246" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="32" font-weight="700">Календарь мастеров</text>
+  <rect x="818" y="318" width="112" height="118" rx="24" fill="#141712"/>
+  <text x="850" y="370" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Пн</text>
+  <text x="850" y="420" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="44" font-weight="700">12</text>
+  <rect x="948" y="318" width="112" height="118" rx="24" fill="#C8F135"/>
+  <text x="980" y="370" fill="#10110F" font-family="Arial, sans-serif" font-size="22">Вт</text>
+  <text x="980" y="420" fill="#10110F" font-family="Arial, sans-serif" font-size="44" font-weight="700">13</text>
+  <rect x="1078" y="318" width="112" height="118" rx="24" fill="#141712"/>
+  <text x="1110" y="370" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Ср</text>
+  <text x="1110" y="420" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="44" font-weight="700">14</text>
+  <rect x="1208" y="318" width="112" height="118" rx="24" fill="#141712"/>
+  <text x="1240" y="370" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Чт</text>
+  <text x="1240" y="420" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="44" font-weight="700">15</text>
+  <rect x="146" y="558" width="1308" height="316" rx="34" fill="#0D0F0C" stroke="rgba(255,255,255,0.08)"/>
+  <text x="194" y="620" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="34" font-weight="700">Напоминания и возврат в диалог</text>
+  <rect x="194" y="688" width="410" height="118" rx="26" fill="#171A15"/>
+  <text x="228" y="740" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="28">Напоминание за 2 часа отправлено</text>
+  <text x="228" y="778" fill="#8E8E93" font-family="Arial, sans-serif" font-size="24">клиент подтвердил визит в один тап</text>
+  <rect x="636" y="688" width="298" height="118" rx="26" fill="#141712"/>
+  <text x="670" y="742" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="30">+ запись</text>
+  <text x="670" y="780" fill="#C8F135" font-family="Arial, sans-serif" font-size="24">из Instagram и Telegram</text>
+  <rect x="968" y="688" width="438" height="118" rx="26" fill="#C8F135"/>
+  <text x="1002" y="742" fill="#10110F" font-family="Arial, sans-serif" font-size="30" font-weight="700">Мягкий Tone of Voice</text>
+  <text x="1002" y="780" fill="#10110F" font-family="Arial, sans-serif" font-size="24">без сухих шаблонных ответов</text>
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1188 148) rotate(131.066) scale(1301.99 1259.25)">
+      <stop stop-color="#1A1D15"/>
+      <stop offset="1" stop-color="#090909"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,34 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1100" fill="#0A0A0A"/>
+  <rect x="74" y="74" width="1452" height="952" rx="36" fill="#10110F" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="126" y="126" width="592" height="410" rx="30" fill="#0C0D0B" stroke="rgba(255,255,255,0.08)"/>
+  <text x="174" y="194" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="36" font-weight="700">Запись по мастерам</text>
+  <text x="174" y="240" fill="#8E8E93" font-family="Arial, sans-serif" font-size="24">администратор видит занятость и не дублирует окна</text>
+  <rect x="174" y="292" width="496" height="74" rx="22" fill="#171A15"/>
+  <text x="210" y="338" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="28">Марина · окрашивание · 12:00</text>
+  <rect x="520" y="308" width="110" height="42" rx="14" fill="#C8F135"/>
+  <text x="548" y="336" fill="#10110F" font-family="Arial, sans-serif" font-size="18" font-weight="700">подтверждено</text>
+  <rect x="174" y="384" width="496" height="74" rx="22" fill="#141712"/>
+  <text x="210" y="430" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="28">Ольга · уход · 14:30</text>
+  <rect x="782" y="126" width="692" height="410" rx="30" fill="#0C0D0B" stroke="rgba(255,255,255,0.08)"/>
+  <text x="830" y="194" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="36" font-weight="700">Чат-сценарий</text>
+  <rect x="830" y="248" width="428" height="98" rx="24" fill="#171A15"/>
+  <text x="862" y="292" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="26">Здравствуйте, подберу удобное время</text>
+  <text x="862" y="326" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">и сразу запишу вас к нужному мастеру</text>
+  <rect x="1018" y="374" width="324" height="88" rx="24" fill="#C8F135"/>
+  <text x="1054" y="426" fill="#10110F" font-family="Arial, sans-serif" font-size="28" font-weight="700">Записаться на 16:00</text>
+  <rect x="126" y="592" width="1348" height="382" rx="30" fill="#0C0D0B" stroke="rgba(255,255,255,0.08)"/>
+  <text x="174" y="660" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="36" font-weight="700">Эффект для салона</text>
+  <rect x="174" y="720" width="284" height="196" rx="24" fill="#141712"/>
+  <text x="210" y="772" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Неявки</text>
+  <text x="210" y="854" fill="#C8F135" font-family="Arial, sans-serif" font-size="84" font-weight="700">-68%</text>
+  <rect x="484" y="720" width="284" height="196" rx="24" fill="#141712"/>
+  <text x="520" y="772" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Ручные ответы</text>
+  <text x="520" y="854" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="84" font-weight="700">x3</text>
+  <rect x="794" y="720" width="284" height="196" rx="24" fill="#141712"/>
+  <text x="830" y="772" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Скорость</text>
+  <text x="830" y="854" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="84" font-weight="700">24/7</text>
+  <rect x="1104" y="720" width="322" height="196" rx="24" fill="#C8F135"/>
+  <text x="1140" y="772" fill="#10110F" font-family="Arial, sans-serif" font-size="22">Администратор</text>
+  <text x="1140" y="854" fill="#10110F" font-family="Arial, sans-serif" font-size="72" font-weight="700">свободнее</text>
+</svg>

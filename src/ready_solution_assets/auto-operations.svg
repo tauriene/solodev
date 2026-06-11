@@ -1,0 +1,36 @@
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1100" fill="#0A0A0A"/>
+  <rect x="74" y="74" width="1452" height="952" rx="36" fill="#10110F" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="126" y="126" width="420" height="848" rx="30" fill="#0C0D0B" stroke="rgba(255,255,255,0.08)"/>
+  <text x="174" y="194" fill="#C8F135" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">ЭТАПЫ ДИАЛОГА</text>
+  <rect x="174" y="246" width="324" height="116" rx="24" fill="#161814"/>
+  <text x="206" y="298" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="32" font-weight="700">1. Приветствие</text>
+  <text x="206" y="338" fill="#8E8E93" font-family="Arial, sans-serif" font-size="24">Бот отвечает без очереди</text>
+  <rect x="174" y="392" width="324" height="116" rx="24" fill="#161814"/>
+  <text x="206" y="444" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="32" font-weight="700">2. Диагностика</text>
+  <text x="206" y="484" fill="#8E8E93" font-family="Arial, sans-serif" font-size="24">Уточняет марку и задачу</text>
+  <rect x="174" y="538" width="324" height="116" rx="24" fill="#C8F135"/>
+  <text x="206" y="590" fill="#10110F" font-family="Arial, sans-serif" font-size="32" font-weight="700">3. Слот</text>
+  <text x="206" y="630" fill="#10110F" font-family="Arial, sans-serif" font-size="24">Предлагает свободное окно</text>
+  <rect x="586" y="126" width="888" height="380" rx="30" fill="#0C0D0B" stroke="rgba(255,255,255,0.08)"/>
+  <text x="636" y="194" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="36" font-weight="700">Лента обращений</text>
+  <rect x="636" y="242" width="788" height="88" rx="22" fill="#171A15"/>
+  <text x="674" y="294" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="28">Volkswagen Polo · замена колодок</text>
+  <rect x="1222" y="258" width="164" height="54" rx="18" fill="#C8F135"/>
+  <text x="1260" y="292" fill="#10110F" font-family="Arial, sans-serif" font-size="22" font-weight="700">в записи</text>
+  <rect x="636" y="348" width="788" height="88" rx="22" fill="#121412"/>
+  <text x="674" y="400" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="28">BMW X5 · диагностика кондиционера</text>
+  <rect x="1168" y="364" width="218" height="54" rx="18" fill="#1B1E15" stroke="#C8F135" stroke-opacity="0.3"/>
+  <text x="1206" y="398" fill="#C8F135" font-family="Arial, sans-serif" font-size="22" font-weight="700">ожидает клиента</text>
+  <rect x="586" y="548" width="888" height="426" rx="30" fill="#0C0D0B" stroke="rgba(255,255,255,0.08)"/>
+  <text x="636" y="616" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="36" font-weight="700">Панель загрузки СТО</text>
+  <rect x="636" y="670" width="250" height="244" rx="24" fill="#141712"/>
+  <text x="672" y="726" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Принято сегодня</text>
+  <text x="672" y="814" fill="#C8F135" font-family="Arial, sans-serif" font-size="86" font-weight="700">18</text>
+  <rect x="906" y="670" width="250" height="244" rx="24" fill="#141712"/>
+  <text x="942" y="726" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Средний ответ</text>
+  <text x="942" y="814" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="86" font-weight="700">41с</text>
+  <rect x="1176" y="670" width="250" height="244" rx="24" fill="#141712"/>
+  <text x="1212" y="726" fill="#8E8E93" font-family="Arial, sans-serif" font-size="22">Пропущенных</text>
+  <text x="1212" y="814" fill="#F5F5F7" font-family="Arial, sans-serif" font-size="86" font-weight="700">0</text>
+</svg>
