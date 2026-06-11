@@ -1234,8 +1234,14 @@ button.badge:hover:not(.active) {
     padding-left: 4px;
 }
 
+/* ─── Pain Points Card Grid ─── */
+
+.pain-header {
+    margin-bottom: 52px;
+}
+
 .pain-section-label {
-    margin-bottom: 48px;
+    margin-bottom: 14px;
     font-family: 'Unbounded', sans-serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
     line-height: 1.2;
@@ -1244,105 +1250,176 @@ button.badge:hover:not(.active) {
     color: var(--text-main);
 }
 
-.pain-list {
+.pain-section-sub {
+    font-size: 15px;
+    color: var(--text-sec);
+    max-width: 520px;
+    line-height: 1.65;
+}
+
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.pain-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-}
-
-.pain-row {
-    position: relative;
-    display: grid;
-    grid-template-columns: 72px minmax(0, 1fr) auto;
-    align-items: start;
-    gap: 28px;
-    padding: 34px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 16px;
+    padding: 28px 28px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
     overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: default;
 }
 
-.pain-row:last-child {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.pain-row::before {
+.pain-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    left: -32px;
-    right: -32px;
-    background: linear-gradient(90deg, rgba(200, 241, 53, 0.08), rgba(200, 241, 53, 0.02));
+    background: radial-gradient(ellipse at 0% 0%, rgba(200, 241, 53, 0.07) 0%, transparent 60%);
     opacity: 0;
-    transition: opacity 0.28s ease;
+    transition: opacity 0.35s ease;
     pointer-events: none;
+    border-radius: inherit;
 }
 
-.pain-row:hover::before {
+.pain-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(200, 241, 53, 0.6), rgba(200, 241, 53, 0.1));
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    border-radius: inherit;
+}
+
+.pain-card:hover {
+    border-color: var(--accent-border);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(200, 241, 53, 0.15);
+}
+
+.pain-card:hover::before,
+.pain-card:hover::after {
     opacity: 1;
 }
 
-.pain-num {
-    margin-left: 10px;
-    position: relative;
-    z-index: 1;
-    padding-top: 6px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    color: rgba(255, 255, 255, 0.22);
-    transition: color 0.25s ease;
+.pain-card-wide {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 28px;
 }
 
-.pain-copy {
-    position: relative;
-    z-index: 1;
-    min-width: 0;
+.pain-card-wide .pain-card-body {
+    flex: 1;
 }
 
-.pain-row-title {
-    margin-bottom: 10px;
+.pain-card-wide .pain-card-consequence {
+    align-self: flex-end;
+    flex-shrink: 0;
+    max-width: 280px;
+}
+
+.pain-card-watermark {
+    position: absolute;
+    top: -10px;
+    right: 20px;
     font-family: 'Unbounded', sans-serif;
-    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
-    line-height: 0.98;
-    letter-spacing: -0.04em;
-    color: var(--text-main);
-    transition: color 0.25s ease;
+    font-size: 7rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+    transition: color 0.35s ease;
 }
 
-.pain-row-desc {
-    max-width: 560px;
+.pain-card:hover .pain-card-watermark {
+    color: rgba(200, 241, 53, 0.06);
+}
+
+.pain-card-icon {
+    font-size: 2rem;
+    line-height: 1;
+    user-select: none;
+    filter: grayscale(0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.pain-card-body {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.pain-card-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.pain-card-desc {
     font-size: 14px;
     line-height: 1.72;
-    color: rgba(255, 255, 255, 0.34);
+    color: rgba(255, 255, 255, 0.42);
     transition: color 0.25s ease;
 }
 
-.pain-row-consequence {
+.pain-card:hover .pain-card-desc {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.pain-card-consequence {
     position: relative;
     z-index: 1;
-    align-self: start;
-    padding-top: 6px;
-    font-family: 'Golos Text', -apple-system, sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    letter-spacing: 0;
-    color: rgba(255, 255, 255, 0.42);
-    white-space: nowrap;
-    text-align: right;
-    transition: color 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    font-size: 12px;
+    color: #d6f96b;
+    line-height: 1.4;
+    align-self: flex-start;
+    margin-top: auto;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-.pain-row-consequence::before {
-    content: '→ ';
+.pain-card:hover .pain-card-consequence {
+    background: rgba(200, 241, 53, 0.15);
+    border-color: rgba(200, 241, 53, 0.5);
 }
 
-.pain-row:hover .pain-num,
-.pain-row:hover .pain-row-title,
-.pain-row:hover .pain-row-consequence {
-    color: var(--accent);
+.pain-consequence-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    box-shadow: 0 0 6px rgba(200, 241, 53, 0.6);
+    animation: pulse-accent 2s ease-out infinite;
 }
 
-.pain-row:hover .pain-row-desc {
-    color: rgba(255, 255, 255, 0.56);
+@keyframes pulse-accent {
+    0% { box-shadow: 0 0 0 0 rgba(200, 241, 53, 0.5); }
+    70% { box-shadow: 0 0 0 6px rgba(200, 241, 53, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(200, 241, 53, 0); }
 }
 
 .cases-grid {
@@ -1535,10 +1612,10 @@ button.badge:hover:not(.active) {
 .testi-quote-mark {
     font-family: 'Georgia', serif;
     font-size: 72px;
-    line-height: 0.6;
+    line-height: 0.2;
     color: var(--accent);
     opacity: 0.4;
-    margin-bottom: 4px;
+    margin-top: 40px;
     user-select: none;
 }
 
@@ -1891,8 +1968,15 @@ button.badge:hover:not(.active) {
 }
 
 @keyframes testitFadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Адаптивность */
@@ -2033,28 +2117,29 @@ button.badge:hover:not(.active) {
 
 @media (max-width: 768px) {
     .pain-section-label {
+        margin-bottom: 12px;
+    }
+
+    .pain-header {
         margin-bottom: 36px;
     }
 
-    .pain-row {
-        grid-template-columns: 56px minmax(0, 1fr);
-        gap: 18px 20px;
-        padding: 26px 0;
+    .pain-grid {
+        grid-template-columns: 1fr;
     }
 
-    .pain-row-consequence {
-        grid-column: 2;
-        padding-top: 0;
-        white-space: normal;
-        text-align: left;
+    .pain-card-wide {
+        flex-direction: column;
+        gap: 16px;
     }
 
-    .pain-row-title {
-        font-size: clamp(1.45rem, 7vw, 2.05rem);
-    }
-
-    .pain-row-desc {
+    .pain-card-wide .pain-card-consequence {
+        align-self: flex-start;
         max-width: none;
+    }
+
+    .pain-card-watermark {
+        font-size: 5rem;
     }
 
     .cases-grid {
@@ -2937,7 +3022,7 @@ button.badge:hover:not(.active) {
     .case-card-media {
         min-height: 280px;
     }
-    
+
     .case-card-image {
         border-radius: 20px;
     }

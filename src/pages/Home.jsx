@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
+import { FiArrowRight, FiArrowLeft, FiPhoneOff, FiLayers, FiEyeOff, FiClock, FiInbox } from 'react-icons/fi';
 import { featuredCase } from '../data/cases';
 import { getSiteLanguage, SITE_LANGUAGE_EVENT } from '../utils/siteLanguage';
 
@@ -108,50 +108,74 @@ export default function Home() {
 
             <section id="pain-points">
                 <div className="container">
-                    <h2 className="pain-section-label" data-i18n="pain_title">Знакомая ситуация?</h2>
-                    <div className="pain-list" role="list">
-                        <article className="pain-row" role="listitem">
-                            <span className="pain-num">01</span>
-                            <div className="pain-copy">
-                                <h3 className="pain-row-title" data-i18n="pain_card_1_title">Никто не отвечает</h3>
-                                <p className="pain-row-desc" data-i18n="pain_card_1_copy">Клиенты пишут ночью или пока администратор занят
-                                    звонком. Каждый пропущенный контакт — готовый лид конкурента.</p>
+                    <div className="pain-header">
+                        <h2 className="pain-section-label" data-i18n="pain_title">Знакомая ситуация?</h2>
+                        <p className="pain-section-sub">{t('Малый бизнес каждый день теряет клиентов из-за одних и тех же проблем.', 'Small businesses lose clients every day because of the same recurring problems.')}</p>
+                    </div>
+                    <div className="pain-grid" role="list">
+                        <article className="pain-card" role="listitem">
+                            <div className="pain-card-watermark">01</div>
+                            <div className="pain-card-icon"><FiPhoneOff /></div>
+                            <div className="pain-card-body">
+                                <h3 className="pain-card-title" data-i18n="pain_card_1_title">Никто не отвечает</h3>
+                                <p className="pain-card-desc" data-i18n="pain_card_1_copy">Клиенты пишут ночью или пока администратор занят звонком. Каждый пропущенный контакт — готовый лид конкурента.</p>
                             </div>
-                            <span className="pain-row-consequence" data-i18n="pain_card_1_consequence">клиент уходит не дождавшись ответа</span>
+                            <div className="pain-card-consequence">
+                                <span className="pain-consequence-dot"></span>
+                                <span data-i18n="pain_card_1_consequence">{t('клиент уходит не дождавшись ответа', 'client leaves without a reply')}</span>
+                            </div>
                         </article>
-                        <article className="pain-row" role="listitem">
-                            <span className="pain-num">02</span>
-                            <div className="pain-copy">
-                                <h3 className="pain-row-title" data-i18n="pain_card_2_title">Хаос в каналах</h3>
-                                <p className="pain-row-desc" data-i18n="pain_card_2_copy">Заявки в WhatsApp, Telegram, соцсетях и личных
-                                    номерах. База не ведётся, аналитики ноль.</p>
+
+                        <article className="pain-card" role="listitem">
+                            <div className="pain-card-watermark">02</div>
+                            <div className="pain-card-icon"><FiLayers /></div>
+                            <div className="pain-card-body">
+                                <h3 className="pain-card-title" data-i18n="pain_card_2_title">Хаос в каналах</h3>
+                                <p className="pain-card-desc" data-i18n="pain_card_2_copy">Заявки в WhatsApp, Telegram, соцсетях и личных номерах. База не ведётся, аналитики ноль.</p>
                             </div>
-                            <span className="pain-row-consequence" data-i18n="pain_card_2_consequence">теряется каждая третья заявка</span>
+                            <div className="pain-card-consequence">
+                                <span className="pain-consequence-dot"></span>
+                                <span data-i18n="pain_card_2_consequence">{t('теряется каждая третья заявка', 'one in three leads is lost')}</span>
+                            </div>
                         </article>
-                        <article className="pain-row" role="listitem">
-                            <span className="pain-num">03</span>
-                            <div className="pain-copy">
-                                <h3 className="pain-row-title" data-i18n="pain_card_3_title">Нет контроля</h3>
-                                <p className="pain-row-desc" data-i18n="pain_card_3_copy">Не видно сколько обращений пришло, сколько
-                                    потеряно и чья это вина.</p>
+
+                        <article className="pain-card" role="listitem">
+                            <div className="pain-card-watermark">03</div>
+                            <div className="pain-card-icon"><FiEyeOff /></div>
+                            <div className="pain-card-body">
+                                <h3 className="pain-card-title" data-i18n="pain_card_3_title">Нет контроля</h3>
+                                <p className="pain-card-desc" data-i18n="pain_card_3_copy">Не видно сколько обращений пришло, сколько потеряно и чья это вина.</p>
                             </div>
-                            <span className="pain-row-consequence" data-i18n="pain_card_3_consequence">деньги утекают незаметно</span>
+                            <div className="pain-card-consequence">
+                                <span className="pain-consequence-dot"></span>
+                                <span data-i18n="pain_card_3_consequence">{t('деньги утекают незаметно', 'money leaks without notice')}</span>
+                            </div>
                         </article>
-                        <article className="pain-row" role="listitem">
-                            <span className="pain-num">04</span>
-                            <div className="pain-copy">
-                                <h3 className="pain-row-title" data-i18n="pain_card_4_title">Рутина съедает время</h3>
-                                <p className="pain-row-desc" data-i18n="pain_card_4_copy">Менеджеры вручную отвечают на одни и те же вопросы, подтверждают записи и пересылают контакты между чатами.</p>
+
+                        <article className="pain-card" role="listitem">
+                            <div className="pain-card-watermark">04</div>
+                            <div className="pain-card-icon"><FiClock /></div>
+                            <div className="pain-card-body">
+                                <h3 className="pain-card-title" data-i18n="pain_card_4_title">Рутина съедает время</h3>
+                                <p className="pain-card-desc" data-i18n="pain_card_4_copy">Менеджеры вручную отвечают на одни и те же вопросы, подтверждают записи и пересылают контакты между чатами.</p>
                             </div>
-                            <span className="pain-row-consequence" data-i18n="pain_card_4_consequence">команда занята не продажей, а перепиской</span>
+                            <div className="pain-card-consequence">
+                                <span className="pain-consequence-dot"></span>
+                                <span data-i18n="pain_card_4_consequence">{t('команда занята не продажей, а перепиской', 'team chats instead of selling')}</span>
+                            </div>
                         </article>
-                        <article className="pain-row" role="listitem">
-                            <span className="pain-num">05</span>
-                            <div className="pain-copy">
-                                <h3 className="pain-row-title" data-i18n="pain_card_5_title">После заявки тишина</h3>
-                                <p className="pain-row-desc" data-i18n="pain_card_5_copy">Клиент оставил контакт, но дальше нет ни напоминаний, ни догрева, ни понятного сценария возврата в диалог.</p>
+
+                        <article className="pain-card pain-card-wide" role="listitem">
+                            <div className="pain-card-watermark">05</div>
+                            <div className="pain-card-icon"><FiInbox /></div>
+                            <div className="pain-card-body">
+                                <h3 className="pain-card-title" data-i18n="pain_card_5_title">После заявки тишина</h3>
+                                <p className="pain-card-desc" data-i18n="pain_card_5_copy">Клиент оставил контакт, но дальше нет ни напоминаний, ни догрева, ни понятного сценария возврата в диалог.</p>
                             </div>
-                            <span className="pain-row-consequence" data-i18n="pain_card_5_consequence">теплые лиды остывают сами по себе</span>
+                            <div className="pain-card-consequence">
+                                <span className="pain-consequence-dot"></span>
+                                <span data-i18n="pain_card_5_consequence">{t('теплые лиды остывают сами по себе', 'warm leads go cold on their own')}</span>
+                            </div>
                         </article>
                     </div>
                 </div>
