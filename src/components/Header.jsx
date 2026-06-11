@@ -7,6 +7,7 @@ import { getSiteLanguage, setSiteLanguage, SITE_LANGUAGE_EVENT } from '../utils/
 export default function Header() {
     const location = useLocation();
     const isCases = location.pathname.includes('cases');
+    const isReadySolutions = location.pathname.includes('ready-solutions');
     const [lang, setLang] = useState(getSiteLanguage());
 
     useEffect(() => {
@@ -32,6 +33,7 @@ export default function Header() {
 
                     <nav className="header-nav" aria-label="Main navigation">
                         <Link to="/cases" className={`nav-link unbounded ${isCases ? 'is-active' : ''}`} data-i18n="header_nav_portfolio">Портфолио</Link>
+                        <Link to="/ready-solutions" className={`nav-link unbounded ${isReadySolutions ? 'is-active' : ''}`} data-i18n="header_nav_ready_solutions">Готовые решения</Link>
                         <a href="https://t.me/nexiumdm" target="_blank" rel="noreferrer" className="nav-link nav-link--tg unbounded">
                             <FaTelegramPlane size={15} className="nav-link-icon" />
                             <span data-i18n="header_telegram">Telegram</span>
@@ -72,6 +74,7 @@ export default function Header() {
                     <nav className="mobile-menu-nav">
                         <Link to="/" className="mobile-menu-link" data-i18n="header_nav_home">Главная</Link>
                         <Link to="/cases" className="mobile-menu-link" data-i18n="header_nav_portfolio">Портфолио</Link>
+                        <Link to="/ready-solutions" className="mobile-menu-link" data-i18n="header_nav_ready_solutions">Готовые решения</Link>
                         <a href="https://t.me/nexiumdm" target="_blank" rel="noreferrer" className="mobile-menu-link mobile-menu-link--tg">
                             <span data-i18n="header_telegram">Telegram</span>
                             <FiArrowRight size={14} />

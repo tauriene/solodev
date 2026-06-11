@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Cases from './pages/Cases';
 import CasePage from './pages/CasePage';
+import ReadySolutions from './pages/ReadySolutions';
 import Footer from './components/Footer';
 
 function ScrollToTop() {
@@ -43,6 +44,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cases" element={<Cases />} />
         <Route path="/cases/:slug" element={<CasePage />} />
+        <Route path="/ready-solutions" element={<ReadySolutions />} />
       </Routes>
       <Footer />
     </div>
