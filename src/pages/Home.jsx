@@ -4,6 +4,13 @@ import { FiArrowRight, FiArrowLeft, FiPhoneOff, FiLayers, FiEyeOff, FiClock, FiI
 import { featuredCase } from '../data/cases';
 import { getSiteLanguage, SITE_LANGUAGE_EVENT } from '../utils/siteLanguage';
 
+const getTgLink = (lang) => {
+    const msg = lang === 'en'
+        ? 'Hello! I came across your website nexiumdev.tech and would like to discuss a project.'
+        : 'Здравствуйте! Перешёл с сайта nexiumdev.tech — хотел бы обсудить разработку проекта.';
+    return `https://t.me/nexiumdm?text=${encodeURIComponent(msg)}`;
+};
+
 export default function Home() {
     const [lang, setLang] = useState(getSiteLanguage());
     const [typedText, setTypedText] = useState('');
@@ -74,6 +81,7 @@ export default function Home() {
     }, [lang]);
 
     const t = (ru, en) => lang === 'en' ? en : ru;
+    const tgLink = getTgLink(lang);
 
     return (
         <main id="site-main" className="app-view">
@@ -97,7 +105,7 @@ export default function Home() {
                         умных ботов, которые удерживают клиентов, пока вы заняты операционкой.
                     </p>
                     <div className="hero-actions">
-                        <a href="https://t.me/nexiumdm" target="_blank" rel="noreferrer" className="btn" data-i18n="hero_cta">Запросить
+                        <a href={tgLink} target="_blank" rel="noreferrer" className="btn" data-i18n="hero_cta">Запросить
                             демо-версию</a>
                         <div className="hero-note" data-i18n-html="hero_note_html">
                             Покажем работающий прототип под вашу нишу <span className="text-accent">до оплаты</span>.
@@ -480,7 +488,7 @@ export default function Home() {
                         Напишите мне в Telegram. Задам 3 коротких вопроса о вашей специфике, а через день наглядно
                         продемонстрирую архитектуру вашей будущей системы.
                     </p>
-                    <a href="https://t.me/nexiumdm" target="_blank" rel="noreferrer" className="btn cta-button"
+                    <a href={tgLink} target="_blank" rel="noreferrer" className="btn cta-button"
                         data-i18n="cta_button">Обсудить проект в Telegram</a>
 
                     <div className="cta-badges-container">
