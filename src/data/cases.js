@@ -7,11 +7,11 @@ import sprayShowcase from '../new_case_assets/spraystore/spray_showcase.webp';
 import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.webp';
 
 // Public mockups — used as card backgrounds in /cases
-const arhdzagiMockup  = '/mockups/arhdzagibot.webp';
-const chistoMockup    = '/mockups/chisto.webp';
+const arhdzagiMockup = '/mockups/arhdzagibot.webp';
+const chistoMockup = '/mockups/chisto.webp';
 const moonstoreMockup = '/mockups/moonstore.webp';
-const porscheMockup   = '/mockups/porsche.webp';
-const sprayMockup     = '/mockups/spray.webp';
+const porscheMockup = '/mockups/porsche.webp';
+const sprayMockup = '/mockups/spray.webp';
 
 export const casesCatalog = [
   {
@@ -161,7 +161,7 @@ export const casesCatalog = [
     filterKey: 'ecommerce',
     categoryRu: 'Интернет-магазин · цветы',
     categoryEn: 'Online store · flowers',
-    titleRu: 'Moonstore для цветочного магазина',
+    titleRu: 'Интернет-магазин цветов Moonstore',
     titleEn: 'Moonstore flower shop website',
     summaryRu: 'времени до оформления заказа',
     summaryEn: 'time to complete an order',
@@ -179,4 +179,4 @@ export const casesCatalog = [
   },
 ];
 
-export const featuredCase = casesCatalog[0];
+export const featuredCase = casesCatalog.find((caseItem) => caseItem.slug === 'moonstore') ?? null;

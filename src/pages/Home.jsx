@@ -200,14 +200,16 @@ export default function Home() {
                             <div className="case-card-media">
                                 <img
                                     src={featuredCase.image}
-                                    alt={featuredCase.imageAltRu}
+                                    alt={t(featuredCase.imageAltRu, featuredCase.imageAltEn)}
                                     className="case-card-image"
                                 />
                             </div>
                             <div className="case-card-copy">
                                 <div className="case-meta">{t(featuredCase.categoryRu, featuredCase.categoryEn)}</div>
                                 <h3 className="case-metric-title">{t(featuredCase.titleRu, featuredCase.titleEn)}</h3>
-                                <p className="case-feature-copy">{t(featuredCase.summaryRu, featuredCase.summaryEn)}</p>
+                                <p className="case-feature-copy">
+                                    {t(featuredCase.metricRu, featuredCase.metricEn)} {t(featuredCase.summaryRu, featuredCase.summaryEn)}
+                                </p>
                                 <div className="case-card-tags">
                                     {(lang === 'en' ? featuredCase.tagsEn : featuredCase.tagsRu).map((tag) => (
                                         <span key={tag} className="case-card-tag">{tag}</span>

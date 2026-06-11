@@ -1546,6 +1546,10 @@ button.badge:hover:not(.active) {
     overflow: hidden;
 }
 
+.case-card-featured .case-metric-title {
+    margin-bottom: 8px;
+}
+
 .case-card-media {
     min-height: 320px;
     background: #050505;

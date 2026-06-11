@@ -19,11 +19,11 @@ import zayavkiLanding from '../new_case_assets/zayavki/zayavka_landing.webp';
 import zayavkiShowcase from '../new_case_assets/zayavki/zayavki_showcase.webp';
 
 // Public mockups — used as hero/card backgrounds
-const arhdzagiMockup    = '/mockups/arhdzagibot.webp';
-const chistoMockup      = '/mockups/chisto.webp';
-const moonstoreMockup   = '/mockups/moonstore.webp';
-const porscheMockup     = '/mockups/porsche.webp';
-const sprayMockup       = '/mockups/spray.webp';
+const arhdzagiMockup = '/mockups/arhdzagibot.webp';
+const chistoMockup = '/mockups/chisto.webp';
+const moonstoreMockup = '/mockups/moonstore.webp';
+const porscheMockup = '/mockups/porsche.webp';
+const sprayMockup = '/mockups/spray.webp';
 
 export const caseStudyBySlug = {
   crm: {
@@ -698,7 +698,7 @@ export const caseStudyBySlug = {
   },
   moonstore: {
     ru: {
-      title: 'Moonstore для интернет-магазина цветов',
+      title: 'Интернет-магазин цветов Moonstore',
       eyebrow: 'Интернет-магазин · цветы',
       description:
         'Интернет-магазин цветов с мягкой визуальной подачей, понятной корзиной и сценариями выбора, которые помогают быстрее довести пользователя до заказа.',
