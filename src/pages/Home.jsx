@@ -11,6 +11,21 @@ const getTgLink = (lang) => {
     return `https://t.me/nexiumdm?text=${encodeURIComponent(msg)}`;
 };
 
+const PlaceholderAvatar = () => (
+    <div className="testi-avatar" style={{ 
+        border: '2px solid var(--accent)', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        overflow: 'hidden'
+    }}>
+        <svg viewBox="0 0 24 24" fill="var(--accent)" style={{ width: '100%', height: '100%', transform: 'translateY(3px)' }}>
+            <circle cx="12" cy="7" r="5" />
+            <path d="M12 14C8.134 14 5 17.134 5 21V24H19V21C19 17.134 15.866 14 12 14Z" />
+        </svg>
+    </div>
+);
+
 export default function Home() {
     const [lang, setLang] = useState(getSiteLanguage());
     const [typedText, setTypedText] = useState('');
@@ -387,7 +402,7 @@ export default function Home() {
                             )}</p>
                             <div className="testi-footer">
                                 <div className="testi-author">
-                                    <img className="testi-avatar" src="/avatar_ilya.webp" alt="Илья" />
+                                    <PlaceholderAvatar />
                                     <div className="testi-author-info">
                                         <span className="testi-name">{t('Илья Романов', 'Ilya Romanov')}</span>
                                         <span className="testi-role">{t('Владелец автосервиса', 'Auto Service Owner')}</span>
@@ -408,7 +423,7 @@ export default function Home() {
                             )}</p>
                             <div className="testi-footer">
                                 <div className="testi-author">
-                                    <img className="testi-avatar" src="/avatar_marina.webp" alt="Марина" />
+                                    <PlaceholderAvatar />
                                     <div className="testi-author-info">
                                         <span className="testi-name">{t('Марина Соколова', 'Marina Sokolova')}</span>
                                         <span className="testi-role">{t('Управляющая салоном', 'Salon Manager')}</span>
@@ -429,7 +444,7 @@ export default function Home() {
                             )}</p>
                             <div className="testi-footer">
                                 <div className="testi-author">
-                                    <img className="testi-avatar" src="/avatar_oleg.webp" alt="Олег" />
+                                    <PlaceholderAvatar />
                                     <div className="testi-author-info">
                                         <span className="testi-name">{t('Олег Павлов', 'Oleg Pavlov')}</span>
                                         <span className="testi-role">{t('Владелец магазина', 'Flower Shop Owner')}</span>
