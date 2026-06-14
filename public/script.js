@@ -78,7 +78,7 @@ function initSolutionsTabs() {
 
 const translations = {
     ru: {
-        meta_title: 'Бизнес-решения под ключ | Не теряйте заявки',
+        meta_title: 'Нексиум Дев | Автоматизация бизнеса и внедрение CRM',
         logo: 'нексиум.дев',
         header_telegram: 'Telegram',
         header_nav_portfolio: 'Портфолио',
@@ -222,7 +222,7 @@ const translations = {
         footer_up: 'Вверх'
     },
     en: {
-        meta_title: 'Turnkey Business Automation | Stop Losing Leads',
+        meta_title: 'Nexium Dev | Business Automation & CRM Solutions',
         logo: 'nexium.dev',
         header_telegram: 'Telegram',
         header_nav_portfolio: 'Portfolio',
@@ -492,6 +492,8 @@ function initBurgerMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const backdrop = document.getElementById('mobile-menu-backdrop');
     if (!burgerBtn || !mobileMenu || !backdrop) return;
+    if (burgerBtn.dataset.burgerBound === 'true') return;
+    burgerBtn.dataset.burgerBound = 'true';
 
     const openMenu = () => {
         burgerBtn.classList.add('is-open');
@@ -606,7 +608,7 @@ function initPageScripts() {
         observer.observe(el);
     });
 
-    const cardElements = document.querySelectorAll('#site-main .card, #site-main .hero-actions');
+    const cardElements = document.querySelectorAll('#site-main .card, #site-main .pain-card, #site-main .hero-actions');
     cardElements.forEach((el) => {
         el.classList.add('animate-on-scroll', 'animate-slide');
         observer.observe(el);

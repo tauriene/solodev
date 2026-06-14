@@ -397,48 +397,6 @@ export default function Home() {
                         <div className="testi-card card">
                             <div className="testi-quote-mark">&ldquo;</div>
                             <p className="testi-text">{t(
-                                'Раньше теряли по 30–40 заявок в месяц — люди писали ночью, а утром уже уходили к конкурентам. После внедрения CRM-системы пропущенные обращения упали до трёх. Это просто другой уровень.',
-                                'We used to lose 30–40 leads per month — people wrote at night and by morning they\'d gone to competitors. After implementing the CRM system, missed contacts dropped to three. It\'s just a different level.'
-                            )}</p>
-                            <div className="testi-footer">
-                                <div className="testi-author">
-                                    <PlaceholderAvatar />
-                                    <div className="testi-author-info">
-                                        <span className="testi-name">{t('Илья Романов', 'Ilya Romanov')}</span>
-                                        <span className="testi-role">{t('Владелец автосервиса', 'Auto Service Owner')}</span>
-                                    </div>
-                                </div>
-                                <Link to="/cases/crm" className="cg-btn testi-btn">
-                                    <span>{t('Кейс', 'Case study')}</span>
-                                    <FiArrowRight />
-                                </Link>
-                            </div>
-                        </div>
-
-                        <div className="testi-card card">
-                            <div className="testi-quote-mark">&ldquo;</div>
-                            <p className="testi-text">{t(
-                                'Мы работаем в очень конкурентной нише бьюти. Ключевая боль — отмены. Было 28%, стало 9% за шесть недель. Система буквально сама напоминает клиентам и переносит записи. Мои администраторы наконец-то занимаются гостями, а не телефоном.',
-                                'We work in a very competitive beauty niche. The key pain was cancellations — 28%, down to 9% in six weeks. The system literally reminds clients and reschedules on its own. My admins finally focus on guests, not the phone.'
-                            )}</p>
-                            <div className="testi-footer">
-                                <div className="testi-author">
-                                    <PlaceholderAvatar />
-                                    <div className="testi-author-info">
-                                        <span className="testi-name">{t('Марина Соколова', 'Marina Sokolova')}</span>
-                                        <span className="testi-role">{t('Управляющая салоном', 'Salon Manager')}</span>
-                                    </div>
-                                </div>
-                                <Link to="/cases/zayavki" className="cg-btn testi-btn">
-                                    <span>{t('Кейс', 'Case study')}</span>
-                                    <FiArrowRight />
-                                </Link>
-                            </div>
-                        </div>
-
-                        <div className="testi-card card">
-                            <div className="testi-quote-mark">&ldquo;</div>
-                            <p className="testi-text">{t(
                                 'До запуска нового сайта половина клиентов уходила прямо из каталога — неудобная корзина, непонятное оформление. После редизайна конверсия выросла на 18%. Люди стали заказывать больше и возвращаться повторно. Для нас это ощутимо в деньгах.',
                                 'Before the new site, half of our customers dropped off right in the catalog — a clunky cart, confusing checkout. After the redesign, conversion jumped 18%. People started ordering more and coming back. For us, that is real money.'
                             )}</p>
@@ -451,6 +409,48 @@ export default function Home() {
                                     </div>
                                 </div>
                                 <Link to="/cases/moonstore" className="cg-btn testi-btn">
+                                    <span>{t('Кейс', 'Case study')}</span>
+                                    <FiArrowRight />
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className="testi-card card">
+                            <div className="testi-quote-mark">&ldquo;</div>
+                            <p className="testi-text">{t(
+                                'Раньше мы вручную обрабатывали каждый заказ в мессенджерах, путались в остатках и постоянно заставляли клиентов ждать. С новым ботом и CRM процесс автоматизирован: актуальный каталог всегда под рукой, а заказы собираются в один клик. Скорость обработки выросла в разы.',
+                                'We used to process every order manually in messengers, got confused with stock, and constantly kept customers waiting. With the new bot and CRM, the process is automated: an up-to-date catalog is always available, and orders are placed in one click. Processing speed has increased massively.'
+                            )}</p>
+                            <div className="testi-footer">
+                                <div className="testi-author">
+                                    <PlaceholderAvatar />
+                                    <div className="testi-author-info">
+                                        <span className="testi-name">{t('Максим Девяткин', 'Maksim Deviatkin')}</span>
+                                        <span className="testi-role">{t('Владелец вейп-шопа', 'Vape Shop Owner')}</span>
+                                    </div>
+                                </div>
+                                <Link to="/cases/arhdzagi" className="cg-btn testi-btn">
+                                    <span>{t('Кейс', 'Case study')}</span>
+                                    <FiArrowRight />
+                                </Link>
+                            </div>
+                        </div>
+
+                        <div className="testi-card card">
+                            <div className="testi-quote-mark">&ldquo;</div>
+                            <p className="testi-text">{t(
+                                'Собирать отзывы от клиентов всегда было головной болью — мало кто хотел переходить по внешним ссылкам. С внедрением Telegram Mini App для обратной связи конверсия в отзыв выросла почти до 40%. Всё происходит прямо в мессенджере, быстро и интуитивно понятно.',
+                                'Collecting customer feedback was always a headache — few people wanted to click external links. With the new Telegram Mini App for feedback, our response conversion jumped to nearly 40%. Everything happens right in the messenger, fast and intuitive.'
+                            )}</p>
+                            <div className="testi-footer">
+                                <div className="testi-author">
+                                    <PlaceholderAvatar />
+                                    <div className="testi-author-info">
+                                        <span className="testi-name">{t('Екатерина Орлова', 'Ekaterina Orlova')}</span>
+                                        <span className="testi-role">{t('Руководитель сервиса', 'Service Manager')}</span>
+                                    </div>
+                                </div>
+                                <Link to="/cases/spraystore" className="cg-btn testi-btn">
                                     <span>{t('Кейс', 'Case study')}</span>
                                     <FiArrowRight />
                                 </Link>
