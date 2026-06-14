@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
+import Services from './pages/Services';
 import Cases from './pages/Cases';
 import CasePage from './pages/CasePage';
 import ReadySolutions from './pages/ReadySolutions';
@@ -43,6 +44,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/cases" element={<Cases />} />
         <Route path="/cases/:slug" element={<CasePage />} />
         <Route path="/ready-solutions" element={<ReadySolutions />} />

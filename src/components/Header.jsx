@@ -14,6 +14,7 @@ const getTgLink = (lang) => {
 export default function Header() {
     const location = useLocation();
     const isCases = location.pathname.includes('cases');
+    const isServices = location.pathname.includes('services');
     const [lang, setLang] = useState(getSiteLanguage());
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -70,7 +71,8 @@ export default function Header() {
                     <Link to="/" className="logo" data-i18n="logo">нексиум.дев</Link>
 
                     <nav className="header-nav" aria-label="Main navigation">
-                        <Link to="/cases" className={`nav-link unbounded ${isCases ? 'is-active' : ''}`} data-i18n="header_nav_portfolio">Портфолио</Link>
+                        <Link to="/services" className={`nav-link unbounded ${isServices ? 'is-active' : ''}`}>{lang === 'en' ? 'Services' : 'Услуги'}</Link>
+                        <Link to="/cases" className={`nav-link unbounded ${isCases ? 'is-active' : ''}`}>{lang === 'en' ? 'Portfolio' : 'Портфолио'}</Link>
                         <a href={tgLink} target="_blank" rel="noreferrer" className="nav-link nav-link--tg unbounded">
                             <FaTelegramPlane size={15} className="nav-link-icon" />
                             <span data-i18n="header_telegram">Telegram</span>
@@ -121,8 +123,9 @@ export default function Header() {
             >
                 <div className="mobile-menu-inner">
                     <nav className="mobile-menu-nav">
-                        <Link to="/" className="mobile-menu-link" data-i18n="header_nav_home" onClick={closeMenu}>Главная</Link>
-                        <Link to="/cases" className="mobile-menu-link" data-i18n="header_nav_portfolio" onClick={closeMenu}>Портфолио</Link>
+                        <Link to="/" className="mobile-menu-link" onClick={closeMenu}>{lang === 'en' ? 'Home' : 'Главная'}</Link>
+                        <Link to="/services" className="mobile-menu-link" onClick={closeMenu}>{lang === 'en' ? 'Services' : 'Услуги'}</Link>
+                        <Link to="/cases" className="mobile-menu-link" onClick={closeMenu}>{lang === 'en' ? 'Portfolio' : 'Портфолио'}</Link>
                         <a href={tgLink} target="_blank" rel="noreferrer" className="mobile-menu-link mobile-menu-link--tg" onClick={closeMenu}>
                             <span data-i18n="header_telegram">Telegram</span>
                             <FiArrowRight size={14} />
