@@ -14,8 +14,8 @@ const getTgLink = (lang) => {
 export default function Header() {
     const location = useLocation();
     const isCases = location.pathname.includes('cases');
-    const isReadySolutions = location.pathname.includes('ready-solutions');
     const [lang, setLang] = useState(getSiteLanguage());
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const syncLang = (event) => {
@@ -32,7 +32,36 @@ export default function Header() {
         };
     }, []);
 
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location.pathname, location.search, location.hash]);
+
+    useEffect(() => {
+        document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMenuOpen]);
+
+    useEffect(() => {
+        if (!isMenuOpen) return undefined;
+
+        const handleEscape = (event) => {
+            if (event.key === 'Escape') {
+                setIsMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('keydown', handleEscape);
+
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+        };
+    }, [isMenuOpen]);
+
     const tgLink = getTgLink(lang);
+    const closeMenu = () => setIsMenuOpen(false);
 
     return (
         <>
@@ -68,7 +97,15 @@ export default function Header() {
                             </button>
                         </div>
 
-                        <button className="burger-btn" id="burger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <button
+                            className={`burger-btn ${isMenuOpen ? 'is-open' : ''}`}
+                            id="site-burger-btn"
+                            type="button"
+                            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                            aria-expanded={isMenuOpen}
+                            aria-controls="site-mobile-menu"
+                            onClick={() => setIsMenuOpen((open) => !open)}
+                        >
                             <span className="burger-bar"></span>
                             <span className="burger-bar"></span>
                             <span className="burger-bar"></span>
@@ -77,12 +114,16 @@ export default function Header() {
                 </div>
             </header>
 
-            <div className="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <div
+                className={`mobile-menu ${isMenuOpen ? 'is-open' : ''}`}
+                id="site-mobile-menu"
+                aria-hidden={!isMenuOpen}
+            >
                 <div className="mobile-menu-inner">
                     <nav className="mobile-menu-nav">
-                        <Link to="/" className="mobile-menu-link" data-i18n="header_nav_home">Главная</Link>
-                        <Link to="/cases" className="mobile-menu-link" data-i18n="header_nav_portfolio">Портфолио</Link>
-                        <a href={tgLink} target="_blank" rel="noreferrer" className="mobile-menu-link mobile-menu-link--tg">
+                        <Link to="/" className="mobile-menu-link" data-i18n="header_nav_home" onClick={closeMenu}>Главная</Link>
+                        <Link to="/cases" className="mobile-menu-link" data-i18n="header_nav_portfolio" onClick={closeMenu}>Портфолио</Link>
+                        <a href={tgLink} target="_blank" rel="noreferrer" className="mobile-menu-link mobile-menu-link--tg" onClick={closeMenu}>
                             <span data-i18n="header_telegram">Telegram</span>
                             <FiArrowRight size={14} />
                         </a>
@@ -92,7 +133,11 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-            <div className="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+            <div
+                className={`mobile-menu-backdrop ${isMenuOpen ? 'is-visible' : ''}`}
+                id="site-mobile-menu-backdrop"
+                onClick={closeMenu}
+            ></div>
         </>
     );
 }

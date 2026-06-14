@@ -492,8 +492,12 @@ function initBurgerMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const backdrop = document.getElementById('mobile-menu-backdrop');
     if (!burgerBtn || !mobileMenu || !backdrop) return;
-    if (burgerBtn.dataset.burgerBound === 'true') return;
-    burgerBtn.dataset.burgerBound = 'true';
+
+    // Используем глобальный флаг вместо data-атрибута,
+    // чтобы повторное выполнение script.js (после React-навигации)
+    // не навешивало дублирующие слушатели
+    if (window.__burgerBound) return;
+    window.__burgerBound = true;
 
     const openMenu = () => {
         burgerBtn.classList.add('is-open');
@@ -513,16 +517,21 @@ function initBurgerMenu() {
         document.body.style.overflow = '';
     };
 
-    burgerBtn.addEventListener('click', () => {
-        const isOpen = burgerBtn.classList.contains('is-open');
+    // Делегируем клик бургера на document — переживает удаление/добавление script.js
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('#burger-btn');
+        if (!btn) return;
+        const isOpen = btn.classList.contains('is-open');
         isOpen ? closeMenu() : openMenu();
     });
 
     backdrop.addEventListener('click', closeMenu);
 
-    // Close on link click
-    mobileMenu.querySelectorAll('.mobile-menu-link').forEach((link) => {
-        link.addEventListener('click', closeMenu);
+    // Close on link click — после React-навигации меню закрывается корректно
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.classList.contains('is-open')) return;
+        const link = e.target.closest('.mobile-menu-link');
+        if (link) closeMenu();
     });
 
     // Close on Escape
